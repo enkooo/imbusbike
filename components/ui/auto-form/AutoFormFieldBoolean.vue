@@ -9,13 +9,15 @@ import {
   FormMessage,
 } from '@/components/ui/form'
 import { Switch } from '@/components/ui/switch'
-import { computed } from 'vue'
+import { computed, type ComputedRef } from 'vue'
 import AutoFormLabel from './AutoFormLabel.vue'
 import { beautifyObjectName } from './utils'
 
 const props = defineProps<FieldProps>()
 
-const booleanComponent = computed(() => (props.config?.component === 'switch' ? Switch : Checkbox))
+const booleanComponent: ComputedRef<typeof Switch | typeof Checkbox> = computed(() =>
+  props.config?.component === 'switch' ? Switch : Checkbox,
+)
 </script>
 
 <template>
