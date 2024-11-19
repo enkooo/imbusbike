@@ -25,7 +25,7 @@ const booleanComponent: ComputedRef<typeof Switch | typeof Checkbox> = computed(
     v-slot="slotProps"
     :name="fieldName"
   >
-    <FormItem>
+    <FormItem v-auto-animate>
       <div class="mb-3 flex items-center gap-3 space-y-0">
         <FormControl>
           <slot v-bind="slotProps">

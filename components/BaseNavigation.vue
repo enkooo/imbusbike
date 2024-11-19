@@ -22,28 +22,24 @@ function onToggleMenu() {
     class="sticky top-0 z-50 border-b bg-white md:border-gray-200 md:bg-background/75 md:backdrop-blur"
   >
     <nav class="container flex items-center justify-between py-5 text-sm font-semibold">
-      <div class="flex items-center gap-3">
-        <NuxtLinkLocale to="/">
-          <NuxtImg
-            src="/img/logo.png"
-            alt="IMBUSBIKE Logo"
-            width="60"
-            height="60"
-            densities="x1"
-          />
-        </NuxtLinkLocale>
-        <div>
-          <NuxtLinkLocale
-            class="flex flex-col md:text-xs lg:text-sm"
-            to="/"
-          >
-            {{ $t('menu.home.label') }}
-            <span class="text-xs font-normal text-typography-gray md:text-[10px] lg:text-xs">
-              {{ $t('menu.home.subLabel') }}
-            </span>
-          </NuxtLinkLocale>
-        </div>
-      </div>
+      <NuxtLinkLocale
+        to="/"
+        class="flex items-center gap-2"
+      >
+        <NuxtImg
+          src="/img/logo.png"
+          alt="IMBUSBIKE Logo"
+          width="60"
+          height="60"
+          densities="x1"
+        />
+        <span class="flex flex-col md:text-xs lg:text-sm">
+          {{ $t('menu.home.label') }}
+          <span class="text-xs font-normal text-typography-gray md:text-[10px] lg:text-xs">
+            {{ $t('menu.home.subLabel') }}
+          </span>
+        </span>
+      </NuxtLinkLocale>
       <div
         class="absolute left-[-100%] top-[70px] flex w-full items-center bg-transparent bg-white px-5 duration-500 md:static md:min-h-fit md:w-auto md:bg-transparent md:px-0"
         :class="{ 'left-[0%]': isOpen }"

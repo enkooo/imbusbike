@@ -24,7 +24,10 @@ const inputComponent: ComputedRef<typeof Textarea | typeof Input> = computed(() 
     v-slot="slotProps"
     :name="fieldName"
   >
-    <FormItem v-bind="$attrs">
+    <FormItem
+      v-auto-animate
+      v-bind="$attrs"
+    >
       <AutoFormLabel
         v-if="!config?.hideLabel"
         :required="required"
