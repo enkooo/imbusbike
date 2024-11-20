@@ -52,7 +52,7 @@
           <p>
             <a
               class="hover:underline"
-              :href="$t('footer.companyDetails.email')"
+              :href="$t('footer.companyDetails.email.link')"
             >
               {{ $t('footer.companyDetails.email.label') }}
             </a>

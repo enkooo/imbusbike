@@ -2,7 +2,7 @@
 
 <template>
   <div class="relative overflow-hidden">
-    <section class="relative w-full overflow-hidden p-10 sm:h-[calc(100dvh-101px)]">
+    <section class="relative w-full overflow-hidden p-8 sm:h-[calc(100dvh-101px)]">
       <div class="relative h-3/4 w-full overflow-hidden rounded-md bg-primary py-10 sm:py-0">
         <NuxtImg
           src="/img/hero.png"
@@ -49,7 +49,7 @@
       </div>
       <div class="flex h-1/3 w-full flex-col justify-center gap-10 md:h-1/4">
         <p class="pt-10 text-center text-typography-gray md:pt-0">{{ $t('hero.partners') }}</p>
-        <div class="container flex w-full flex-wrap justify-center gap-20">
+        <div class="container flex w-full flex-wrap justify-center gap-10 md:gap-20">
           <NuxtImg
             src="/img/bosch-logo.svg"
             alt="Bosch Logo"
