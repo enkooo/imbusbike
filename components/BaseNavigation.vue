@@ -40,7 +40,7 @@ function onToggleMenu() {
         </span>
       </NuxtLinkLocale>
       <div
-        class="absolute left-[-100%] top-[70px] flex w-full items-center bg-transparent bg-white px-5 duration-500 md:static md:min-h-fit md:w-auto md:bg-transparent md:px-0"
+        class="absolute left-[-100%] top-[101px] flex w-full items-center bg-transparent bg-white px-5 duration-500 md:static md:min-h-fit md:w-auto md:bg-transparent md:px-0"
         :class="{ 'left-[0%]': isOpen }"
       >
         <ul

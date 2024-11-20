@@ -38,6 +38,7 @@ export default {
       offer: 'Oferta',
       contact: 'Kontakt',
     },
+    partners: 'PARTNERZY',
   },
   contactForm: {
     heading: 'Kontakt',
