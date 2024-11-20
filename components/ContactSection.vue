@@ -146,7 +146,7 @@ function onSubmit(values: FormValues) {
 <template>
   <div
     :id="$t('links.contact').split('#')[1]"
-    class="container pb-20 pt-20"
+    class="container py-12"
   >
     <section class="text-center">
       <h2 class="text-3xl font-bold">{{ $t('contactForm.heading') }}</h2>

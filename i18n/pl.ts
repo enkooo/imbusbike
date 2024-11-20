@@ -17,10 +17,6 @@ export default {
       link: '/oferta',
       label: 'Oferta',
     },
-    about: {
-      link: '/o-nas',
-      label: 'O nas',
-    },
     faq: {
       link: '/faq',
       label: 'FAQ',
@@ -104,10 +100,6 @@ export default {
       offer: {
         link: '/oferta',
         label: 'Oferta',
-      },
-      about: {
-        link: '/o-nas',
-        label: 'O nas',
       },
       faq: {
         link: '/faq',

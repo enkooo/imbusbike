@@ -5,7 +5,7 @@
         <div class="flex w-1/2 flex-col gap-3 md:w-full lg:flex-row lg:gap-3">
           <div class="flex flex-col gap-3 md:flex-row">
             <NuxtLinkLocale
-              class="font-bold hover:underline"
+              class="hover:underline"
               :to="$t('footer.navigation.products.link')"
             >
               {{ $t('footer.navigation.products.label') }}
@@ -23,12 +23,6 @@
               :to="$t('footer.navigation.offer.link')"
             >
               {{ $t('footer.navigation.offer.label') }}
-            </NuxtLinkLocale>
-            <NuxtLinkLocale
-              class="hover:underline"
-              :to="$t('footer.navigation.about.link')"
-            >
-              {{ $t('footer.navigation.about.label') }}
             </NuxtLinkLocale>
             <NuxtLinkLocale
               class="hover:underline"
@@ -70,7 +64,9 @@
         <p class="text-[10px]">{{ $t('footer.allRightReserved') }}</p>
       </div>
       <div class="ml-auto hidden md:block">
-        <div class="md:flex md:flex-col md:justify-end md:gap-3 md:text-xs lg:flex-row">
+        <div
+          class="md:flex md:flex-col md:justify-end md:gap-x-3 md:text-xs lg:flex-row lg:gap-x-8"
+        >
           <div>
             <p>{{ $t('footer.companyDetails.name') }}</p>
             <p>{{ $t('footer.companyDetails.address') }}</p>
