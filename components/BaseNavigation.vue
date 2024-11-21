@@ -17,9 +17,7 @@ function onToggleMenu() {
 </script>
 
 <template>
-  <header
-    class="sticky top-0 z-50 border-b bg-white md:border-gray-200 md:bg-background/75 md:backdrop-blur"
-  >
+  <header class="sticky top-0 z-50 border-b bg-white md:border-gray-200">
     <nav class="container flex items-center justify-between py-5 text-sm font-semibold">
       <NuxtLinkLocale
         to="/"

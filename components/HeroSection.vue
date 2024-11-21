@@ -1,14 +1,14 @@
-<script setup lang="ts"></script>
-
 <template>
   <div class="relative overflow-hidden">
     <section class="relative w-full overflow-hidden p-8 sm:h-[calc(100dvh-101px)]">
       <div class="relative h-3/4 w-full overflow-hidden rounded-md bg-primary py-10 sm:py-0">
         <NuxtImg
-          src="/img/hero.png"
+          src="/img/hero.webp"
           class="absolute left-0 top-0 z-0 h-full w-full object-cover opacity-10"
           sizes="365px sm:640px md:320px md:800px lg:1024px xl:1280px 2xl:1536px"
           densities="x1"
+          quality="80"
+          preload
         />
         <div
           class="xxl:px-0 relative z-10 mx-auto flex h-full min-h-[500px] max-w-[1840px] flex-col justify-center gap-8 px-10 md:px-24"

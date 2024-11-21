@@ -3,6 +3,7 @@
 <template>
   <main class="min-h-screen">
     <HeroSection />
+    <BestsellersSection />
     <ContactSection />
   </main>
 </template>
