@@ -1,19 +1,21 @@
 <script setup lang="ts"></script>
 
 <template>
-  <main class="min-h-screen">
+  <main>
     <HeroSection />
     <CarouselSection
       :title="$t('bestsellers.title')"
       :description="$t('bestsellers.description')"
+      class="mt-16 sm:mt-24 md:mt-10 lg:mt-0"
     />
-    <NewsSection />
-    <ContactSection />
+    <NewsSection class="mt-32" />
     <CarouselSection
       :title="$t('recommendedProducts.title')"
       :description="$t('recommendedProducts.description')"
+      class="mt-32"
     />
-
-    <div class="py-10"></div>
+    <OfferSection class="mt-32" />
+    <CallToActionSection class="mt-32" />
+    <ContactSection class="mt-32" />
   </main>
 </template>

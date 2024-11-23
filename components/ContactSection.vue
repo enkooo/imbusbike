@@ -144,7 +144,7 @@ function onSubmit(values: FormValues) {
 </script>
 
 <template>
-  <div class="container py-12">
+  <div class="container">
     <section class="text-center">
       <h2 class="text-3xl font-bold">{{ $t('contactForm.heading') }}</h2>
       <p class="mx-auto mt-7 max-w-5xl text-typography-gray">{{ $t('contactForm.subheading') }}</p>

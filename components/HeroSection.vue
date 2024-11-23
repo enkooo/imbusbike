@@ -49,7 +49,9 @@
       </div>
       <div class="flex h-1/3 w-full flex-col justify-center gap-10 md:h-1/4">
         <p class="pt-10 text-center text-typography-gray md:pt-0">{{ $t('hero.partners') }}</p>
-        <div class="container flex w-full flex-wrap justify-center gap-10 md:gap-20">
+        <div
+          class="container flex w-full max-w-[500px] flex-wrap justify-center gap-10 md:gap-20 lg:max-w-full"
+        >
           <NuxtImg
             src="/img/bosch-logo.svg"
             alt="Bosch Logo"

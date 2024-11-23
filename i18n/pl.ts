@@ -61,6 +61,60 @@ export default {
       url: '/aktualnosci',
     },
   },
+  offer: {
+    title: 'Oferta',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    benefits: 'Korzyści',
+    learnMore: 'Dowiedz się więcej',
+    items: {
+      mvp: {
+        title: 'Aplikacje Minimum Viable Product (MVP)',
+        description:
+          'Nasze usługi tworzenia MVP są idealne dla startupów i firm, które chcą szybko zweryfikować swoje pomysły.',
+        benefits: {
+          0: 'Szybkie wdrożenie podstawowych funkcji',
+          1: 'Zmniejszenie kosztów produkcji',
+          2: 'Skoncentrowane na doświadczeniu użytkownika',
+          3: 'Efektywne cykle zbierania opinii',
+        },
+        summary:
+          'Pozwól nam stworzyć aplikację, która spełni kluczowe potrzeby Twojego biznesu, pozwalając na szybkie wejście na rynek z minimalnymi kosztami.',
+      },
+      custom: {
+        title: 'Dedykowane aplikacje dla biznesu',
+        description:
+          'Specjalizujemy się w tworzeniu aplikacji dostosowanych do potrzeb Twojej firmy.',
+        benefits: {
+          0: 'W pełni dostosowane rozwiązania',
+          1: 'Integracja z istniejącymi systemami',
+          2: 'Skalowalna architektura',
+          3: 'Zwiększona wygoda użytkowania',
+        },
+        summary:
+          'Zaprojektujemy aplikację specjalnie dostosowaną do Twoich wymagań i celów biznesowych, aby wspierać Twój rozwój i efektywność.',
+      },
+      digitalization: {
+        title: 'Aplikacje do digitalizacji',
+        description:
+          'Zdigitalizuj swoje procesy biznesowe za pomocą zaawansowanych aplikacji zaprojektowanych w celu poprawy efektywności.',
+        benefits: {
+          0: 'Usprawnione operacje',
+          1: 'Zwiększona dokładność i spójność',
+          2: 'Lepsze decyzje oparte na danych',
+          3: 'Oszczędności dzięki redukcji pracy ręcznej',
+        },
+        summary:
+          'Ułatw sobie zarządzanie firmą dzięki rozwiązaniom, które automatyzują i digitalizują kluczowe procesy, zwiększając wydajność i redukując koszty.',
+      },
+    },
+  },
+  callToAction: {
+    title: 'Wybierz rower idealny dla siebie!',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    buttonLabel: 'Sprawdź nasz sklep',
+  },
   contactForm: {
     heading: 'Kontakt',
     subheading:

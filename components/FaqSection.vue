@@ -93,7 +93,7 @@ const faqSections = [
 </script>
 
 <template>
-  <section class="w-full px-4 py-12">
+  <section class="w-full px-4">
     <div class="container mx-auto">
       <h2 class="mb-4 text-center text-3xl font-bold">FAQ</h2>
       <p class="mx-auto mb-12 max-w-3xl text-center text-muted-foreground">
