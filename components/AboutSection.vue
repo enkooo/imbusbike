@@ -32,7 +32,7 @@ const FEATURE_SECTION_ITEMS = computed(() => [
         src="/img/about-us.jpg"
         alt=""
         format="webp"
-        class="hidden h-full w-full rounded-md object-cover shadow-lg lg:col-span-4 lg:block lg:max-h-none xl:col-span-3"
+        class="hidden h-full w-full rounded-sm object-cover shadow-lg lg:col-span-4 lg:block lg:max-h-none xl:col-span-3"
       />
       <div class="col-start-5 col-end-13 xl:col-start-4">
         <div class="flex flex-col gap-6 text-muted-foreground">
@@ -44,7 +44,7 @@ const FEATURE_SECTION_ITEMS = computed(() => [
             src="/img/about-us.jpg"
             alt=""
             format="webp"
-            class="h-full max-h-[300px] w-full rounded-md object-cover object-[0_27%] shadow-lg lg:hidden"
+            class="h-full max-h-[300px] w-full rounded-sm object-cover object-[0_27%] shadow-lg lg:hidden"
           />
           <div
             class="flex flex-col gap-8 md:col-start-1 md:col-end-3 md:row-start-4 md:grid md:grid-cols-2 md:grid-rows-2 md:gap-4 xl:col-start-2 xl:row-start-4"

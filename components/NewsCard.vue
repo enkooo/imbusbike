@@ -8,12 +8,12 @@ defineProps<{
 </script>
 
 <template>
-  <div class="border border-gray-200">
+  <div class="overflow-hidden rounded-sm border border-gray-200">
     <div class="flex flex-col sm:flex-row md:flex-col lg:flex-row">
       <NuxtImg
         :src="imageUrl"
         alt=""
-        class="max-h-40 w-full min-w-44 object-cover sm:max-h-48"
+        class="max-h-40 w-full min-w-44 rounded-l-sm object-cover sm:max-h-48"
       />
       <div class="flex flex-col gap-y-2 p-6">
         <h3 class="font-semibold">{{ title }}</h3>

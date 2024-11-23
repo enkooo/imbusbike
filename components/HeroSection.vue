@@ -1,7 +1,7 @@
 <template>
   <div class="relative overflow-hidden">
     <section class="relative w-full overflow-hidden p-8 sm:h-[calc(100dvh-101px)]">
-      <div class="relative h-3/4 w-full overflow-hidden rounded-md bg-primary py-10 sm:py-0">
+      <div class="relative h-3/4 w-full overflow-hidden rounded-sm bg-primary py-10 sm:py-0">
         <NuxtImg
           src="/img/hero.webp"
           class="absolute left-0 top-0 z-0 h-full w-full object-cover opacity-10"

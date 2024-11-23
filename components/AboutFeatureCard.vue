@@ -7,7 +7,7 @@ defineProps<{
 </script>
 
 <template>
-  <div class="h-full rounded-md bg-white p-7 shadow-lg">
+  <div class="h-full rounded-sm bg-white p-7 shadow-lg">
     <div class="flex items-center justify-start gap-2">
       <Icon
         :name="icon"

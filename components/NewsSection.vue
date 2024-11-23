@@ -53,7 +53,7 @@ const news = [
             :date="newsItem.date"
           />
         </div>
-        <div class="hidden flex-col justify-between bg-primary xl:flex">
+        <div class="hidden flex-col justify-between overflow-hidden rounded-sm bg-primary xl:flex">
           <NuxtImg
             src="/img/news/news-bike.jpg"
             alt=""

@@ -10,13 +10,13 @@ defineProps<{
 
 <template>
   <div>
-    <div class="h-full w-full max-w-[435px] rounded-xl p-[1px]">
-      <div class="flex h-full w-full items-center justify-center rounded-xl">
+    <div class="h-full w-full max-w-[435px] rounded-sm p-[1px]">
+      <div class="flex h-full w-full items-center justify-center rounded-sm">
         <div
-          class="relative z-10 flex h-full flex-col gap-8 overflow-hidden rounded-xl p-8 text-muted-foreground shadow-[0px_16px_25px_0px_rgba(0,0,0,0.06)]"
+          class="relative z-10 flex h-full flex-col gap-8 overflow-hidden rounded-sm p-8 text-muted-foreground shadow-[0px_16px_25px_0px_rgba(0,0,0,0.06)]"
         >
           <div class="flex gap-x-6">
-            <div class="relative flex size-16 items-center justify-center rounded-xl shadow-lg">
+            <div class="relative flex size-16 items-center justify-center rounded-sm shadow-lg">
               <NuxtImg
                 :src="iconUrl"
                 alt=""
