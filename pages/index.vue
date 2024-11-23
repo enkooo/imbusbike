@@ -3,7 +3,17 @@
 <template>
   <main class="min-h-screen">
     <HeroSection />
-    <BestsellersSection />
+    <CarouselSection
+      :title="$t('bestsellers.title')"
+      :description="$t('bestsellers.description')"
+    />
+    <NewsSection />
     <ContactSection />
+    <CarouselSection
+      :title="$t('recommendedProducts.title')"
+      :description="$t('recommendedProducts.description')"
+    />
+
+    <div class="py-10"></div>
   </main>
 </template>
