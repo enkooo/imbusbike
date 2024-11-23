@@ -16,6 +16,6 @@
     />
     <OfferSection class="mt-32" />
     <CallToActionSection class="mt-32" />
-    <ContactSection class="mt-32" />
+    <AboutSection class="mb-40 mt-32" />
   </main>
 </template>

@@ -115,6 +115,33 @@ export default {
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     buttonLabel: 'Sprawdź nasz sklep',
   },
+  about: {
+    title: 'O Nas',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    values: {
+      experience: {
+        title: 'Doświadczenie',
+        description:
+          'Nasze doświadczenie pozwala nam na realizację projektów na najwyższym poziomie. Stawiamy na skuteczne rozwiązania, które przynoszą wymierne efekty naszym klientom.',
+      },
+      teamwork: {
+        title: 'Praca zespołowa',
+        description:
+          'Współpraca w zespole to podstawa naszego sukcesu. Każdy projekt jest wynikiem wspólnych wysiłków ekspertów z różnych dziedzin, co pozwala na dostarczenie wszechstronnych i optymalnych rozwiązań.',
+      },
+      clientUnderstanding: {
+        title: 'Zrozumienie potrzeb klienta',
+        description:
+          'Dbamy o to, aby zrozumieć unikalne potrzeby naszych klientów. Każde rozwiązanie jest dostosowane indywidualnie, by sprostać specyficznym wymaganiom oraz oczekiwaniom klienta.',
+      },
+      businessIt: {
+        title: 'Połączenie biznesu oraz IT',
+        description:
+          'Łączymy wiedzę z zakresu IT z praktycznym podejściem biznesowym, dzięki czemu nasze produkty są nie tylko nowoczesne technologicznie, ale także użyteczne i wartościowe dla biznesu.',
+      },
+    },
+  },
   contactForm: {
     heading: 'Kontakt',
     subheading:
