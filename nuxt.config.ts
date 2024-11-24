@@ -36,6 +36,9 @@ export default defineNuxtConfig({
       contact: {
         pl: '/kontakt',
       },
+      news: {
+        pl: '/aktualnosci',
+      },
     },
   },
 

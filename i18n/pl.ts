@@ -10,8 +10,8 @@ export default {
       label: 'Produkty',
     },
     news: {
-      link: '/akutalnosci',
-      label: 'Akutalności',
+      link: '/aktualnosci',
+      label: 'Aktualności',
     },
     offer: {
       link: '/oferta',
@@ -59,6 +59,10 @@ export default {
       label2: 'by zobaczyć więcej aktualności',
       label3: 'Zobacz więcej',
       url: '/aktualnosci',
+    },
+    searchInput: {
+      label: 'Szukaj',
+      placeholder: 'Szukaj...',
     },
   },
   offer: {
@@ -197,8 +201,8 @@ export default {
         label: 'Produkty',
       },
       news: {
-        link: '/akutalnosci',
-        label: 'Akutalności',
+        link: '/aktualnosci',
+        label: 'Aktualności',
       },
       offer: {
         link: '/oferta',
