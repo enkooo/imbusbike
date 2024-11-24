@@ -39,6 +39,9 @@ export default defineNuxtConfig({
       news: {
         pl: '/aktualnosci',
       },
+      products: {
+        pl: '/produkty',
+      },
     },
   },
 

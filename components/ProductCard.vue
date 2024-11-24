@@ -25,7 +25,7 @@ defineProps<{
         {{ category }}
       </span>
 
-      <h3 class="mb-2 text-base md:text-sm lg:text-base">
+      <h3 class="mb-2 self-start text-base md:text-sm lg:text-base">
         {{ name }}
       </h3>
       <p class="self-end text-xs text-muted-foreground line-through">

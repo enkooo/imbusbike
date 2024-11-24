@@ -65,6 +65,13 @@ export default {
       placeholder: 'Szukaj...',
     },
   },
+  products: {
+    title: 'Produkty',
+    searchInput: {
+      label: 'Szukaj',
+      placeholder: 'Szukaj...',
+    },
+  },
   offer: {
     title: 'Oferta',
     description:

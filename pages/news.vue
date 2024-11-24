@@ -100,11 +100,11 @@ const news = [
 </script>
 
 <template>
-  <main class="container">
+  <main class="container min-h-[calc(100dvh-189px)]">
     <div
       class="mt-6 flex h-36 w-full items-center justify-center rounded-sm bg-primary text-secondary"
     >
-      <h1 class="text-2xl font-bold">{{ $t('news.title') }}</h1>
+      <h1 class="text-3xl font-bold">{{ $t('news.title') }}</h1>
     </div>
     <div class="relative mt-6 flex w-full max-w-lg items-center gap-x-2">
       <Input
