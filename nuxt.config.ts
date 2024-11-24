@@ -42,6 +42,9 @@ export default defineNuxtConfig({
       products: {
         pl: '/produkty',
       },
+      offer: {
+        pl: '/oferta',
+      },
     },
   },
 
