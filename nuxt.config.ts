@@ -36,17 +36,17 @@ export default defineNuxtConfig({
       contact: {
         pl: '/kontakt',
       },
-      news: {
+      'news/index': {
         pl: '/aktualnosci',
+      },
+      'news/[id]': {
+        pl: '/aktualnosci/[id]',
       },
       products: {
         pl: '/produkty',
       },
       offer: {
         pl: '/oferta',
-      },
-      'articles/[id]': {
-        pl: '/artykuly/[id]',
       },
     },
   },

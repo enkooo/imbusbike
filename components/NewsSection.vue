@@ -6,7 +6,7 @@ const news = [
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...',
     date: 'wtorek, 20.09.2024',
-    link: '/artykuly/1',
+    link: '/aktualnosci/1',
     imageUrl: '/img/news/article1.jpg',
   },
   {
@@ -15,7 +15,7 @@ const news = [
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...',
     date: 'wtorek, 20.09.2024',
-    link: '/artykuly/2',
+    link: '/aktualnosci/2',
     imageUrl: '/img/news/article2.jpg',
   },
   {
@@ -24,7 +24,7 @@ const news = [
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...',
     date: 'wtorek, 20.09.2024',
-    link: '/artykuly/3',
+    link: '/aktualnosci/3',
     imageUrl: '/img/news/article2.jpg',
   },
   {
@@ -33,7 +33,7 @@ const news = [
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...',
     date: 'wtorek, 20.09.2024',
-    link: '/artykuly/4',
+    link: '/aktualnosci/4',
     imageUrl: '/img/news/article1.jpg',
   },
 ]
