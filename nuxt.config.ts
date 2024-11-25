@@ -45,6 +45,9 @@ export default defineNuxtConfig({
       offer: {
         pl: '/oferta',
       },
+      'articles/[id]': {
+        pl: '/artykuly/[id]',
+      },
     },
   },
 

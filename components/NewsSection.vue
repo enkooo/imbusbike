@@ -6,6 +6,7 @@ const news = [
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...',
     date: 'wtorek, 20.09.2024',
+    link: '/artykuly/1',
     imageUrl: '/img/news/article1.jpg',
   },
   {
@@ -14,6 +15,7 @@ const news = [
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...',
     date: 'wtorek, 20.09.2024',
+    link: '/artykuly/2',
     imageUrl: '/img/news/article2.jpg',
   },
   {
@@ -22,6 +24,7 @@ const news = [
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...',
     date: 'wtorek, 20.09.2024',
+    link: '/artykuly/3',
     imageUrl: '/img/news/article2.jpg',
   },
   {
@@ -30,6 +33,7 @@ const news = [
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...',
     date: 'wtorek, 20.09.2024',
+    link: '/artykuly/4',
     imageUrl: '/img/news/article1.jpg',
   },
 ]
@@ -44,14 +48,18 @@ const news = [
     <div class="mt-10">
       <div class="flex gap-x-6">
         <div class="grid w-full grid-cols-1 gap-6 md:grid-cols-2">
-          <NewsCard
+          <NuxtLinkLocale
             v-for="newsItem in news"
             :key="newsItem.id"
-            :title="newsItem.title"
-            :description="newsItem.description"
-            :image-url="newsItem.imageUrl"
-            :date="newsItem.date"
-          />
+            :to="newsItem.link"
+          >
+            <NewsCard
+              :title="newsItem.title"
+              :description="newsItem.description"
+              :image-url="newsItem.imageUrl"
+              :date="newsItem.date"
+            />
+          </NuxtLinkLocale>
         </div>
         <div class="hidden flex-col justify-between overflow-hidden rounded-sm bg-primary xl:flex">
           <NuxtImg

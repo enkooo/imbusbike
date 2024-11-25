@@ -150,7 +150,7 @@ const products = ref([
 <template>
   <main class="mx-2 min-h-[calc(100dvh-189px)] sm:container">
     <div
-      class="mt-6 flex h-36 w-full items-center justify-center rounded-sm bg-primary text-secondary"
+      class="mt-2 flex h-36 w-full items-center justify-center rounded-sm bg-primary text-secondary sm:mt-6"
     >
       <h1 class="text-3xl font-bold">{{ $t('products.title') }}</h1>
     </div>

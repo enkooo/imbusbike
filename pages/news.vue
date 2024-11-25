@@ -6,6 +6,7 @@ const news = [
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...',
     date: 'wtorek, 20.09.2024',
+    link: '/artykuly/1',
     imageUrl: '/img/news/article1.jpg',
   },
   {
@@ -14,6 +15,7 @@ const news = [
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...',
     date: 'wtorek, 20.09.2024',
+    link: '/artykuly/2',
     imageUrl: '/img/news/article2.jpg',
   },
   {
@@ -22,6 +24,7 @@ const news = [
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...',
     date: 'wtorek, 20.09.2024',
+    link: '/artykuly/3',
     imageUrl: '/img/news/article2.jpg',
   },
   {
@@ -30,6 +33,7 @@ const news = [
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...',
     date: 'wtorek, 20.09.2024',
+    link: '/artykuly/4',
     imageUrl: '/img/news/article1.jpg',
   },
   {
@@ -38,6 +42,7 @@ const news = [
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...',
     date: 'wtorek, 20.09.2024',
+    link: '/artykuly/5',
     imageUrl: '/img/news/article1.jpg',
   },
   {
@@ -46,6 +51,7 @@ const news = [
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...',
     date: 'wtorek, 20.09.2024',
+    link: '/artykuly/6',
     imageUrl: '/img/news/article2.jpg',
   },
   {
@@ -54,6 +60,7 @@ const news = [
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...',
     date: 'wtorek, 20.09.2024',
+    link: '/artykuly/7',
     imageUrl: '/img/news/article2.jpg',
   },
   {
@@ -62,6 +69,7 @@ const news = [
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...',
     date: 'wtorek, 20.09.2024',
+    link: '/artykuly/8',
     imageUrl: '/img/news/article1.jpg',
   },
   {
@@ -70,6 +78,7 @@ const news = [
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...',
     date: 'wtorek, 20.09.2024',
+    link: '/artykuly/9',
     imageUrl: '/img/news/article1.jpg',
   },
   {
@@ -78,6 +87,7 @@ const news = [
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...',
     date: 'wtorek, 20.09.2024',
+    link: '/artykuly/10',
     imageUrl: '/img/news/article2.jpg',
   },
   {
@@ -86,6 +96,7 @@ const news = [
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...',
     date: 'wtorek, 20.09.2024',
+    link: '/artykuly/11',
     imageUrl: '/img/news/article2.jpg',
   },
   {
@@ -94,15 +105,16 @@ const news = [
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...',
     date: 'wtorek, 20.09.2024',
+    link: '/artykuly/12',
     imageUrl: '/img/news/article1.jpg',
   },
 ]
 </script>
 
 <template>
-  <main class="container min-h-[calc(100dvh-189px)]">
+  <main class="mx-2 min-h-[calc(100dvh-189px)] sm:container">
     <div
-      class="mt-6 flex h-36 w-full items-center justify-center rounded-sm bg-primary text-secondary"
+      class="mt-2 flex h-36 w-full items-center justify-center rounded-sm bg-primary text-secondary sm:mt-6"
     >
       <h1 class="text-3xl font-bold">{{ $t('news.title') }}</h1>
     </div>
@@ -128,14 +140,18 @@ const news = [
       </Button>
     </div>
     <div class="mb-20 mt-6 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
-      <NewsCard
+      <NuxtLinkLocale
         v-for="newsItem in news"
         :key="newsItem.id"
-        :title="newsItem.title"
-        :description="newsItem.description"
-        :image-url="newsItem.imageUrl"
-        :date="newsItem.date"
-      />
+        :to="newsItem.link"
+      >
+        <NewsCard
+          :title="newsItem.title"
+          :description="newsItem.description"
+          :image-url="newsItem.imageUrl"
+          :date="newsItem.date"
+        />
+      </NuxtLinkLocale>
     </div>
   </main>
 </template>
