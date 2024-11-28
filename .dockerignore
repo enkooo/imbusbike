@@ -1,0 +1,11 @@
+.nuxt
+static
+node_modules
+node_modules/**
+
+
+dist
+build
+.cache
+output
+coverage
