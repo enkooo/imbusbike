@@ -13,6 +13,23 @@ export default defineNuxtConfig({
     'shadcn-nuxt',
     '@formkit/auto-animate/nuxt',
     'nuxt-delay-hydration',
+    [
+      'nuxt-mail',
+      {
+        message: {
+          to: process.env.NUXT_MAIL_TARGET,
+        },
+        smtp: {
+          host: process.env.NUXT_MAIL_SMTP,
+          port: process.env.NUXT_MAIL_PORT,
+          secure: true,
+          auth: {
+            user: process.env.NUXT_MAIL_USERNAME,
+            pass: process.env.NUXT_MAIL_PASSWORD,
+          },
+        },
+      },
+    ],
   ],
 
   delayHydration: {
@@ -35,6 +52,9 @@ export default defineNuxtConfig({
     pages: {
       contact: {
         pl: '/kontakt',
+      },
+      service: {
+        pl: '/serwis',
       },
       'news/index': {
         pl: '/aktualnosci',
@@ -67,7 +87,8 @@ export default defineNuxtConfig({
     public: {
       EMAILJS_PUBLIC_KEY: process.env.NUXT_EMAILJS_PUBLIC_KEY || '',
       EMAILJS_SERVICE_ID: process.env.NUXT_EMAILJS_SERVICE_ID || '',
-      EMAILJS_TEMPLATE_ID: process.env.NUXT_EMAILJS_TEMPLATE_ID || '',
+      EMAILJS_CONTACT_TEMPLATE_ID: process.env.NUXT_EMAILJS_CONTACT_TEMPLATE_ID || '',
+      EMAILJS_SERVICE_TEMPLATE_ID: process.env.NUXT_EMAILJS_SERVICE_TEMPLATE_ID || '',
     },
   },
 })

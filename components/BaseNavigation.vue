@@ -5,6 +5,7 @@ const MENU_ITEMS = computed(() => [
   { label: t('menu.products.label'), path: t('menu.products.link') },
   { label: t('menu.news.label'), path: t('menu.news.link') },
   { label: t('menu.offer.label'), path: t('menu.offer.link') },
+  { label: t('menu.service.label'), path: t('menu.service.link') },
   { label: t('menu.faq.label'), path: t('menu.faq.link') },
   { label: t('menu.contact.label'), path: t('menu.contact.link') },
 ])

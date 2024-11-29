@@ -4,12 +4,6 @@ import { useForm } from 'vee-validate'
 import * as z from 'zod'
 import { Button } from '@/components/ui/button'
 import { useToast } from '@/components/ui/toast/use-toast'
-import emailjs from '@emailjs/browser'
-
-const config = useRuntimeConfig()
-const EMAILJS_PUBLIC_KEY = config.public.EMAILJS_PUBLIC_KEY
-const EMAILJS_SERVICE_ID = config.public.EMAILJS_SERVICE_ID
-const EMAILJS_TEMPLATE_ID = config.public.EMAILJS_TEMPLATE_ID
 
 interface FormValues {
   name: string
@@ -22,7 +16,6 @@ interface FormValues {
 }
 
 const { t } = useI18n()
-const router = useRouter()
 
 const Messages: [string, ...string[]] = [
   t('contactForm.messageTypes.quoteInquiry'),
@@ -33,7 +26,7 @@ const Messages: [string, ...string[]] = [
   t('contactForm.messageTypes.technicalIssue'),
 ]
 
-const phoneRegex = new RegExp(/^([+]?[\s0-9]+)?(\d{3}|[(]?[0-9]+[)])?([-]?[\s]?[0-9])+$/)
+const phoneRegex = new RegExp(/^(\+48)?[ ]?(\d{3}[ -]?){2}\d{3}$/)
 
 const schema = z.object({
   name: z
@@ -43,25 +36,21 @@ const schema = z.object({
     .min(2, {
       message: t('contactForm.messages.nameMin'),
     }),
-
   email: z
     .string({
       required_error: t('contactForm.messages.emailRequired'),
     })
     .email(t('contactForm.messages.invalidEmail')),
-
   phone: z
     .string({
       required_error: t('contactForm.messages.phoneRequired'),
     })
     .regex(phoneRegex, t('contactForm.messages.invalidNumber')),
-
   messageType: z
     .enum(Messages, {
       required_error: t('contactForm.messages.messageTypeRequired'),
     })
     .describe(t('contactForm.fields.messageType')),
-
   messageTitle: z
     .string({
       required_error: t('contactForm.messages.messageTitleRequired'),
@@ -69,7 +58,6 @@ const schema = z.object({
     .min(2, {
       message: t('contactForm.messages.messageTitleMin'),
     }),
-
   messageContent: z
     .string({
       required_error: t('contactForm.messages.messageContentRequired'),
@@ -80,7 +68,6 @@ const schema = z.object({
     .max(2000, {
       message: t('contactForm.messages.messageContentMax'),
     }),
-
   acceptTerms: z
     .boolean({
       required_error: t('contactForm.messages.acceptTermsRequired'),
@@ -93,53 +80,36 @@ const schema = z.object({
 const form = useForm({
   validationSchema: toTypedSchema(schema),
 })
-
-watch(
-  () => router.currentRoute.value.query.q,
-  (value) => {
-    nextTick(() => {
-      if (value === 'project') {
-        form.setFieldValue('messageType', t('contactForm.messageTypes.quoteInquiry'))
-      } else {
-        form.resetField('messageType')
-      }
-    })
-  },
-  { immediate: true },
-)
+const mail = useMail()
 
 const { toast } = useToast()
 const resetButton = ref<InstanceType<typeof Button> | null>(null)
 
-function onSubmit(values: FormValues) {
-  emailjs
-    .send(
-      EMAILJS_SERVICE_ID!,
-      EMAILJS_TEMPLATE_ID!,
-      {
-        from_name: values.name,
-        from_email: values.email,
-        from_phone: values.phone,
-        message_type: values.messageType,
-        message_title: values.messageTitle,
-        message_content: values.messageContent,
-      },
-      EMAILJS_PUBLIC_KEY!,
-    )
-    .then(() => {
-      toast({
-        description: t('contactForm.messages.messageSuccessSent'),
-      })
+async function onSubmit(values: FormValues) {
+  try {
+    await mail.send({
+      from: values.email,
+      subject: values.messageTitle,
+      text: `
+        Name: ${values.name}
+        Email: ${values.email}
+        Phone: ${values.phone}
+        Message Title: ${values.messageTitle}
+        Message Content: ${values.messageContent}
+      `,
+    })
 
-      resetButton.value?.$el.click()
-      form.resetField('messageType')
+    toast({
+      description: t('contactForm.messages.messageSuccessSent'),
     })
-    .catch(() => {
-      console.error('Error sending message')
-      toast({
-        description: t('contactForm.messages.messageErrorSent'),
-      })
+
+    form.resetForm()
+  } catch (error) {
+    console.error('Error processing files or sending mail:', error)
+    toast({
+      description: t('contactForm.messages.messageErrorSent'),
     })
+  }
 }
 </script>
 

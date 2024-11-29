@@ -26,6 +26,12 @@
             </NuxtLinkLocale>
             <NuxtLinkLocale
               class="hover:underline"
+              :to="$t('footer.navigation.service.link')"
+            >
+              {{ $t('footer.navigation.service.label') }}
+            </NuxtLinkLocale>
+            <NuxtLinkLocale
+              class="hover:underline"
               :to="$t('footer.navigation.faq.link')"
             >
               {{ $t('footer.navigation.faq.label') }}
