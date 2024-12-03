@@ -66,7 +66,7 @@
         </div>
       </div>
       <div class="mt-10 text-center text-xs md:mt-0">
-        <p>{{ $t('footer.copyright') }}</p>
+        <p>{{ $t('footer.copyright', { year: new Date().getFullYear() }) }}</p>
         <p class="text-[10px]">{{ $t('footer.allRightReserved') }}</p>
       </div>
       <div class="ml-auto hidden md:block">

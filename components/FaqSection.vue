@@ -8,7 +8,7 @@ import {
 
 const faqSections = [
   {
-    title: 'Pracownia i serwis rowerowy',
+    title: 'Pracownia i serwis rowerów',
     items: [
       {
         id: 1,

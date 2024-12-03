@@ -3,7 +3,7 @@ export default {
     home: {
       link: '/',
       label: 'IMBUSBIKE',
-      subLabel: 'Pracownia - Serwis Rowerowy',
+      subLabel: 'Pracownia - Serwis Rowerów',
     },
     products: {
       link: '/produkty',
@@ -273,10 +273,10 @@ export default {
         label: 'Kontakt',
       },
     },
-    copyright: 'Copyright 2024 IMBUSBIKE.',
+    copyright: 'Copyrigh {year} IMBUSBIKE.',
     allRightReserved: 'Wszelkie prawa zastrzeżone.',
     companyDetails: {
-      name: 'IMBUSBIKE Pracownia - Serwis Rowerowy',
+      name: 'IMBUSBIKE Pracownia - Serwis Rowerów',
       address: 'ul. Gen. Grota-Roweckiego 26 A',
       postCode: '97-200 Tomaszów Mazowiecki,',
       phone: {

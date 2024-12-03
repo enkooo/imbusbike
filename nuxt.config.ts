@@ -82,13 +82,4 @@ export default defineNuxtConfig({
      */
     componentDir: './components/ui',
   },
-
-  runtimeConfig: {
-    public: {
-      EMAILJS_PUBLIC_KEY: process.env.NUXT_EMAILJS_PUBLIC_KEY || '',
-      EMAILJS_SERVICE_ID: process.env.NUXT_EMAILJS_SERVICE_ID || '',
-      EMAILJS_CONTACT_TEMPLATE_ID: process.env.NUXT_EMAILJS_CONTACT_TEMPLATE_ID || '',
-      EMAILJS_SERVICE_TEMPLATE_ID: process.env.NUXT_EMAILJS_SERVICE_TEMPLATE_ID || '',
-    },
-  },
 })
