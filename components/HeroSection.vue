@@ -1,6 +1,6 @@
 <template>
-  <div class="relative overflow-hidden">
-    <section class="relative w-full overflow-hidden p-8 sm:h-[calc(100dvh-101px)]">
+  <div class="relative">
+    <section class="relative w-full p-8 sm:h-[calc(100dvh-101px)]">
       <div class="relative h-3/4 w-full overflow-hidden rounded-sm bg-primary py-10 sm:py-0">
         <NuxtImg
           src="/img/hero.webp"
@@ -14,7 +14,7 @@
         <div
           class="xxl:px-0 relative z-10 mx-auto flex h-full min-h-[500px] max-w-[1840px] flex-col justify-center gap-8 px-10 md:px-24"
         >
-          <h1 class="c text-5xl font-bold text-primary-foreground sm:text-[3.75rem] lg:text-[5rem]">
+          <h1 class="text-5xl font-bold text-primary-foreground sm:text-[3.75rem] lg:text-[5rem]">
             {{ $t('hero.title') }}
           </h1>
           <p class="max-w-[755px] text-sm text-typography-light sm:text-base">
@@ -51,7 +51,7 @@
       <div class="flex h-1/3 w-full flex-col justify-center gap-10 md:h-1/4">
         <p class="pt-10 text-center text-typography-gray md:pt-0">{{ $t('hero.partners') }}</p>
         <div
-          class="container flex w-full max-w-[500px] flex-wrap justify-center gap-10 md:gap-20 lg:max-w-full"
+          class="container flex w-full max-w-[500px] flex-wrap justify-center gap-10 lg:max-w-full lg:gap-20"
         >
           <NuxtImg
             src="/img/bosch-logo.svg"
@@ -68,10 +68,11 @@
             densities="x1"
           />
           <NuxtImg
-            src="/img/bolt-logo.svg"
+            src="/img/bolt-logo.jpg"
             alt="Bolt Logo"
-            width="51"
-            height="30"
+            format="webp"
+            width="150"
+            height="50"
             densities="x1"
           />
 
@@ -83,10 +84,11 @@
             densities="x1"
           />
           <NuxtImg
-            src="/img/bolt-logo.svg"
-            alt="Shimano Logo"
-            width="51"
-            height="30"
+            src="/img/oko-logo.png"
+            format="webp"
+            alt="Oko Logo"
+            width="90"
+            height="50"
             densities="x1"
           />
         </div>

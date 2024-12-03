@@ -25,7 +25,7 @@ function onToggleMenu() {
         class="flex items-center gap-2"
       >
         <NuxtImg
-          src="/img/logo.png"
+          src="/img/logo.svg"
           alt="IMBUSBIKE Logo"
           width="60"
           height="60"
