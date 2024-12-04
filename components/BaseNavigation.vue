@@ -15,6 +15,10 @@ const isOpen = ref(false)
 function onToggleMenu() {
   isOpen.value = !isOpen.value
 }
+
+function onLinkClick() {
+  isOpen.value = false
+}
 </script>
 
 <template>
@@ -53,19 +57,23 @@ function onToggleMenu() {
             <NuxtLinkLocale
               :to="item.path"
               class="py-2"
+              @click="onLinkClick"
             >
               {{ item.label }}
             </NuxtLinkLocale>
           </li>
           <li>
-            <a :href="$t('menu.call.link')">
+            <NuxtLinkLocale
+              :to="$t('menu.call.link')"
+              @click="onLinkClick"
+            >
               <Button class="lg:py- hidden md:block lg:h-10 lg:px-8">
                 {{ $t('menu.call.label') }}
               </Button>
               <span class="md:hidden">
                 {{ $t('menu.call.label') }}
               </span>
-            </a>
+            </NuxtLinkLocale>
           </li>
         </ul>
       </div>
