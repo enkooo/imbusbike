@@ -10,6 +10,7 @@ const route = useRoute()
 
 const products = ref<Product[]>([])
 const filters = ref<Filter[]>([])
+const selectedSort = ref<string>(typeof route.query.sort === 'string' ? route.query.sort : '')
 
 const fetchProducts = async (query: LocationQuery) => {
   let queryString = ''
@@ -19,7 +20,11 @@ const fetchProducts = async (query: LocationQuery) => {
     const filters = filterValue.split(',').map((filter, index) => {
       return `filters[category][id][$in][${index}]=${filter}`
     })
-    queryString = filters.join('&')
+    queryString += filters.join('&')
+  }
+
+  if (query.sort && query.sort !== 'default') {
+    queryString += (queryString ? '&' : '') + `sort[0]=${query.sort}`
   }
 
   const { data: productsData } = await useIFetch<{ data: ProductResponse[] }>(
@@ -27,15 +32,13 @@ const fetchProducts = async (query: LocationQuery) => {
   )
 
   if (productsData.value) {
-    products.value = productsData.value.data.map((product) => {
-      return {
-        id: product.id,
-        name: product.name,
-        category: product.category.name,
-        price: product.price + ' zł',
-        imageUrl: 'https://panel.imbusbike.pl' + product.images?.[0]?.url,
-      }
-    })
+    products.value = productsData.value.data.map((product) => ({
+      id: product.id,
+      name: product.name,
+      category: product.category.name,
+      price: product.price + ' zł',
+      imageUrl: 'https://panel.imbusbike.pl' + product.images?.[0]?.url,
+    }))
   } else {
     products.value = []
   }
@@ -91,8 +94,15 @@ const onSubmit = handleSubmit((formValues) => {
 })
 
 watch(
-  () => route.query,
-  async (newQuery) => {
+  selectedSort,
+  async (newSort) => {
+    const newQuery = {
+      ...route.query,
+      sort: newSort || null,
+    }
+
+    router.push({ query: newQuery })
+
     await fetchProducts(newQuery)
   },
   { immediate: true },
@@ -146,15 +156,15 @@ watch(
             </Button>
           </div>
           <div class="flex w-full gap-2 sm:w-max">
-            <Select>
+            <Select v-model="selectedSort">
               <SelectTrigger class="w-full sm:w-[180px]">
                 <SelectValue placeholder="Sortowanie" />
               </SelectTrigger>
               <SelectContent>
                 <SelectGroup>
-                  <SelectItem value="default"> Domyślnie </SelectItem>
-                  <SelectItem value="price-up"> Cena rosnąco </SelectItem>
-                  <SelectItem value="price-down"> Cena malejąco </SelectItem>
+                  <SelectItem value="default">Domyślnie</SelectItem>
+                  <SelectItem value="price:asc">Cena rosnąco</SelectItem>
+                  <SelectItem value="price:desc">Cena malejąco</SelectItem>
                 </SelectGroup>
               </SelectContent>
             </Select>

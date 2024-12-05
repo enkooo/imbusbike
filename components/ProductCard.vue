@@ -10,16 +10,18 @@ defineProps<{
 
 <template>
   <div class="rounded-sm border border-gray-100 shadow-sm">
-    <div class="flex flex-col items-center p-7">
-      <NuxtImg
-        :src="imageUrl"
-        :alt="name"
-        width="154"
-        height="88"
-        densities="x1"
-        format="webp"
-        class="mb-4 object-cover"
-      />
+    <div class="flex h-full flex-col items-center p-7">
+      <div class="mb-4 h-[88px] w-[154px] overflow-hidden">
+        <NuxtImg
+          :src="imageUrl"
+          :alt="name"
+          width="154"
+          height="88"
+          densities="x1"
+          format="webp"
+          class="mb-4 h-full w-full object-contain"
+        />
+      </div>
       <span
         class="mb-2 self-start rounded-sm border border-gray-100 px-4 py-2 text-[9px] uppercase text-muted-foreground md:px-2 md:py-1 lg:px-4 lg:py-2"
       >
@@ -29,15 +31,17 @@ defineProps<{
       <h3 class="mb-2 self-start text-base md:text-sm lg:text-base">
         {{ name }}
       </h3>
-      <p
-        v-if="oldPrice"
-        class="self-end text-xs text-muted-foreground line-through"
-      >
-        {{ oldPrice }}
-      </p>
-      <p class="self-end text-xl font-bold md:text-base lg:text-xl">
-        {{ price }}
-      </p>
+      <div class="mt-auto flex w-full flex-col justify-end">
+        <p
+          v-if="oldPrice"
+          class="self-end text-xs text-muted-foreground line-through"
+        >
+          {{ oldPrice }}
+        </p>
+        <p class="self-end text-xl font-bold md:text-base lg:text-xl">
+          {{ price }}
+        </p>
+      </div>
     </div>
   </div>
 </template>
