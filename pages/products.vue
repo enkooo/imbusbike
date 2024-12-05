@@ -16,7 +16,7 @@ const fetchProducts = async (query: LocationQuery) => {
   let queryString = ''
 
   const filterValue = query.filters
-  if (typeof filterValue === 'string') {
+  if (filterValue && typeof filterValue === 'string') {
     const filters = filterValue.split(',').map((filter, index) => {
       return `filters[category][id][$in][${index}]=${filter}`
     })
@@ -82,15 +82,17 @@ const { handleSubmit } = useForm({
   },
 })
 
-const onSubmit = handleSubmit((formValues) => {
+const onSubmit = handleSubmit(async (formValues) => {
   const selectedFilters = formValues.selectedFilters || []
 
-  router.push({
-    query: {
-      ...route.query,
-      filters: selectedFilters.join(','),
-    },
-  })
+  const newQuery = {
+    ...route.query,
+    filters: selectedFilters.join(','),
+  }
+
+  router.push({ query: newQuery })
+
+  await fetchProducts(newQuery)
 })
 
 watch(
@@ -110,7 +112,7 @@ watch(
 </script>
 
 <template>
-  <main class="mx-2 min-h-[calc(100dvh-189px)] sm:container">
+  <main class="mx-2 min-h-[calc(100dvh-213px)] sm:container">
     <div
       class="mt-2 flex h-36 w-full items-center justify-center rounded-sm bg-primary text-secondary sm:mt-6"
     >
