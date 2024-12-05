@@ -1,4 +1,32 @@
 <script setup lang="ts">
+import { toast } from '@/components/ui/toast'
+import { toTypedSchema } from '@vee-validate/zod'
+import { useForm } from 'vee-validate'
+import { h } from 'vue'
+import * as z from 'zod'
+import type { Category, Filter } from '~/types'
+
+const { data: filtersData } = await useIFetch<{ data: Category[] }>(
+  '/categories?populate=*&filters[parent][$notNull]',
+)
+
+const filters = ref<Filter[]>([])
+
+if (filtersData.value) {
+  filters.value = filtersData.value.data.map((category) => {
+    return {
+      id: category.id,
+      name: category.name,
+      children: category.children
+        ? category.children.map((child) => ({
+            id: child.id,
+            name: child.name,
+          }))
+        : [],
+    }
+  })
+}
+
 const products = ref([
   {
     id: 1,
@@ -145,6 +173,30 @@ const products = ref([
     imageUrl: '/img/bike.jpg',
   },
 ])
+
+const formSchema = toTypedSchema(
+  z.object({
+    selectedFilters: z.array(z.number()).optional(),
+  }),
+)
+
+const { handleSubmit } = useForm({
+  validationSchema: formSchema,
+  initialValues: {
+    selectedFilters: [],
+  },
+})
+
+const onSubmit = handleSubmit((formValues) => {
+  toast({
+    title: 'Filters selected:',
+    description: h(
+      'pre',
+      { class: 'mt-2 w-[340px] rounded-md bg-slate-950 p-4' },
+      h('code', { class: 'text-white' }, JSON.stringify(formValues.selectedFilters, null, 2)),
+    ),
+  })
+})
 </script>
 
 <template>
@@ -156,8 +208,20 @@ const products = ref([
     </div>
     <div class="flex w-full">
       <div
-        class="my-20 mr-6 mt-6 hidden min-w-[240px] rounded-sm border border-gray-100 shadow-sm lg:block"
-      ></div>
+        class="my-20 mr-6 mt-6 hidden min-w-[240px] rounded-sm border border-gray-100 p-5 shadow-sm lg:block"
+      >
+        <form @submit="onSubmit">
+          <ProductsFilters :filters="filters" />
+          <div class="mt-4 flex justify-start">
+            <Button
+              type="submit"
+              class="w-full"
+            >
+              Filtruj
+            </Button>
+          </div>
+        </form>
+      </div>
       <div class="w-full">
         <div class="mt-6 flex flex-col gap-2 md:flex-row">
           <div class="relative flex w-full items-center gap-x-2 md:max-w-lg">
@@ -200,32 +264,32 @@ const products = ref([
                   type="submit"
                   class="h-10 w-full sm:w-auto sm:px-12 lg:hidden"
                 >
-                  Filtwoanie
+                  Filtrowanie
                 </Button>
               </DrawerTrigger>
               <DrawerContent>
-                <div class="mx-auto w-full max-w-sm">
-                  <DrawerHeader>
-                    <DrawerTitle>Move Goal</DrawerTitle>
-                    <DrawerDescription>Set your daily activity goal.</DrawerDescription>
-                  </DrawerHeader>
-                  <div class="p-4 pb-0">
-                    <ScrollArea class="h-[200px] w-[350px] p-4">
-                      Jokester began sneaking into the castle in the middle of the night and leaving
-                      jokes all over the place: under the king's pillow, in his soup, even in the
-                      royal toilet. The king was furious, but he couldn't seem to stop Jokester. And
-                      then, one day, the people of the kingdom discovered that the jokes left by
-                      Jokester were so funny that they couldn't help but laugh. And once they
-                      started laughing, they couldn't stop.
-                    </ScrollArea>
+                <form @submit="onSubmit">
+                  <div class="mx-auto w-full max-w-sm">
+                    <DrawerHeader class="sr-only">
+                      <DrawerTitle>Filtry</DrawerTitle>
+                      <DrawerDescription>Wybierz filtry</DrawerDescription>
+                    </DrawerHeader>
+                    <div class="p-4 pb-0">
+                      <ScrollArea class="h-[400px] w-[350px]">
+                        <ProductsFilters
+                          :is-mobile="true"
+                          :filters="filters"
+                        />
+                      </ScrollArea>
+                    </div>
+                    <DrawerFooter>
+                      <Button type="submit"> Filtruj </Button>
+                      <DrawerClose as-child>
+                        <Button variant="outline"> Anuluj </Button>
+                      </DrawerClose>
+                    </DrawerFooter>
                   </div>
-                  <DrawerFooter>
-                    <Button>Submit</Button>
-                    <DrawerClose as-child>
-                      <Button variant="outline"> Cancel </Button>
-                    </DrawerClose>
-                  </DrawerFooter>
-                </div>
+                </form>
               </DrawerContent>
             </Drawer>
           </div>

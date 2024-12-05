@@ -82,4 +82,11 @@ export default defineNuxtConfig({
      */
     componentDir: './components/ui',
   },
+
+  runtimeConfig: {
+    public: {
+      apiBase: process.env.NUXT_API_BASE_URL,
+      accessToken: process.env.NUXT_ACCESS_TOKEN,
+    },
+  },
 })

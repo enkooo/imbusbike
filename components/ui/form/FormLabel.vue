@@ -7,6 +7,7 @@ import { useFormField } from './useFormField'
 
 interface LabelProps extends BaseLabelProps {
   required?: boolean
+  for?: string
 }
 
 const props = defineProps<LabelProps & { class?: HTMLAttributes['class'] }>()
@@ -16,8 +17,8 @@ const { error, formItemId } = useFormField()
 
 <template>
   <Label
+    v-bind-once="{ for: props.for || formItemId }"
     :class="cn(error && 'text-destructive', props.class)"
-    :for="formItemId"
   >
     <slot />
     <span v-if="props.required"> * </span>
