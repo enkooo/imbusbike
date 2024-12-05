@@ -1,62 +1,9 @@
 <script setup lang="ts">
-const products = ref([
-  {
-    id: 1,
-    name: 'Rower Merida Matts 7.30',
-    category: 'ROWERY',
-    price: '2799.00 zł',
-    oldPrice: '3199.00 zł',
-    imageUrl: '/img/bike.jpg',
-  },
-  {
-    id: 2,
-    name: 'Rower Merida Matts 7.30',
-    category: 'ROWERY',
-    price: '2799.00 zł',
-    oldPrice: '3199.00 zł',
-    imageUrl: '/img/bike.jpg',
-  },
-  {
-    id: 3,
-    name: 'Rower Merida Matts 7.30',
-    category: 'ROWERY',
-    price: '2799.00 zł',
-    oldPrice: '3199.00 zł',
-    imageUrl: '/img/bike.jpg',
-  },
-  {
-    id: 4,
-    name: 'Rower Merida Matts 7.30',
-    category: 'ROWERY',
-    price: '2799.00 zł',
-    oldPrice: '3199.00 zł',
-    imageUrl: '/img/bike.jpg',
-  },
-  {
-    id: 5,
-    name: 'Rower Merida Matts 7.30',
-    category: 'ROWERY',
-    price: '2799.00 zł',
-    oldPrice: '3199.00 zł',
-    imageUrl: '/img/bike.jpg',
-  },
-  {
-    id: 6,
-    name: 'Rower Merida Matts 7.30',
-    category: 'ROWERY',
-    price: '2799.00 zł',
-    oldPrice: '3199.00 zł',
-    imageUrl: '/img/bike.jpg',
-  },
-  {
-    id: 7,
-    name: 'Rower Merida Matts 7.30',
-    category: 'ROWERY',
-    price: '2799.00 zł',
-    oldPrice: '3199.00 zł',
-    imageUrl: '/img/bike.jpg',
-  },
-])
+import type { Product } from '~/types'
+
+defineProps<{
+  products: Product[]
+}>()
 </script>
 
 <template>
@@ -79,7 +26,6 @@ const products = ref([
                 :image-url="product.imageUrl"
                 :name="product.name"
                 :category="product.category"
-                :old-price="product.oldPrice"
                 :price="product.price"
               />
             </div>

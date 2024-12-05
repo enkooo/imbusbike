@@ -156,6 +156,7 @@ const news = [
     <CarouselSection
       :title="$t('recommendedProducts.title')"
       :description="$t('recommendedProducts.description')"
+      type="magick"
       class="mb-32 mt-24"
     />
   </main>

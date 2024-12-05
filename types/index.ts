@@ -38,5 +38,6 @@ export interface Product {
   name: string
   category: string
   price: string
+  oldPrice?: string
   imageUrl: string
 }

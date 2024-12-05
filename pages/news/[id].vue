@@ -66,6 +66,7 @@
       <CarouselSection
         :title="$t('recommendedProducts.title')"
         :description="$t('recommendedProducts.description')"
+        type="magick"
         class="mt-32"
       />
     </main>

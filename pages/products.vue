@@ -124,7 +124,7 @@ watch(
       >
         <form @submit="onSubmit">
           <ProductsFilters :filters="filters" />
-          <div class="mt-4 flex justify-start">
+          <div class="mt-6 flex justify-start">
             <Button
               type="submit"
               class="w-full"
