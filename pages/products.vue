@@ -3,7 +3,7 @@ import { toTypedSchema } from '@vee-validate/zod'
 import { useForm } from 'vee-validate'
 import { useRouter, useRoute, type LocationQuery } from 'vue-router'
 import * as z from 'zod'
-import type { Category, Filter, Product, ProductResponse } from '~/types'
+import type { CategoryResponse, Filter, Product, ProductResponse } from '~/types'
 
 const router = useRouter()
 const route = useRoute()
@@ -45,7 +45,7 @@ const fetchProducts = async (query: LocationQuery) => {
 }
 
 const fetchFilters = async () => {
-  const { data: filtersData } = await useIFetch<{ data: Category[] }>(
+  const { data: filtersData } = await useIFetch<{ data: CategoryResponse[] }>(
     '/categories?populate=*&filters[parent][$notNull]',
   )
 
