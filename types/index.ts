@@ -41,3 +41,23 @@ export interface Product {
   oldPrice?: string
   imageUrl: string
 }
+
+export interface NewsItemResponse {
+  id: number
+  title: string
+  description: string
+  publishedAt: string
+  link: string
+  cover: {
+    url: string
+  }[]
+}
+
+export interface NewsItem {
+  id: number
+  title: string
+  description: string
+  date: string
+  link: string
+  imageUrl: string
+}

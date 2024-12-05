@@ -1,42 +1,33 @@
 <script setup lang="ts">
-const news = [
-  {
-    id: 1,
-    title: 'Nowy rower w ofercie!',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...',
-    date: 'wtorek, 20.09.2024',
-    link: '/aktualnosci/1',
-    imageUrl: '/img/news/article1.jpg',
-  },
-  {
-    id: 2,
-    title: 'Nowy rower w ofercie!',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...',
-    date: 'wtorek, 20.09.2024',
-    link: '/aktualnosci/2',
-    imageUrl: '/img/news/article2.jpg',
-  },
-  {
-    id: 3,
-    title: 'Nowy rower w ofercie!',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...',
-    date: 'wtorek, 20.09.2024',
-    link: '/aktualnosci/3',
-    imageUrl: '/img/news/article2.jpg',
-  },
-  {
-    id: 4,
-    title: 'Nowy rower w ofercie!',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...',
-    date: 'wtorek, 20.09.2024',
-    link: '/aktualnosci/4',
-    imageUrl: '/img/news/article1.jpg',
-  },
-]
+import type { NewsItem, NewsItemResponse } from '~/types'
+
+const news = ref<NewsItem[]>([])
+
+const { data: newsData } = await useIFetch<{ data: NewsItemResponse[] }>(
+  `articles?populate=*&pagination[limit]=4&sort=publishedAt:desc`,
+)
+
+if (newsData.value) {
+  const maxDescriptionLength = 100
+
+  news.value = newsData.value.data.map((newsItem) => {
+    const truncatedDescription =
+      newsItem.description.length > maxDescriptionLength
+        ? newsItem.description.slice(0, maxDescriptionLength) + '...'
+        : newsItem.description
+
+    return {
+      id: newsItem.id,
+      title: newsItem.title,
+      description: truncatedDescription,
+      date: newsItem.publishedAt,
+      link: '/aktualnosci/' + newsItem.id,
+      imageUrl: 'https://panel.imbusbike.pl' + newsItem.cover?.[0]?.url,
+    }
+  })
+} else {
+  news.value = []
+}
 </script>
 
 <template>
