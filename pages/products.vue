@@ -1,178 +1,69 @@
 <script setup lang="ts">
-import { toast } from '@/components/ui/toast'
 import { toTypedSchema } from '@vee-validate/zod'
 import { useForm } from 'vee-validate'
-import { h } from 'vue'
+import { useRouter, useRoute, type LocationQuery } from 'vue-router'
 import * as z from 'zod'
-import type { Category, Filter } from '~/types'
+import type { Category, Filter, Product, ProductResponse } from '~/types'
 
-const { data: filtersData } = await useIFetch<{ data: Category[] }>(
-  '/categories?populate=*&filters[parent][$notNull]',
-)
+const router = useRouter()
+const route = useRoute()
 
+const products = ref<Product[]>([])
 const filters = ref<Filter[]>([])
 
-if (filtersData.value) {
-  filters.value = filtersData.value.data.map((category) => {
-    return {
-      id: category.id,
-      name: category.name,
-      children: category.children
-        ? category.children.map((child) => ({
-            id: child.id,
-            name: child.name,
-          }))
-        : [],
-    }
-  })
+const fetchProducts = async (query: LocationQuery) => {
+  let queryString = ''
+
+  const filterValue = query.filters
+  if (typeof filterValue === 'string') {
+    const filters = filterValue.split(',').map((filter, index) => {
+      return `filters[category][id][$in][${index}]=${filter}`
+    })
+    queryString = filters.join('&')
+  }
+
+  const { data: productsData } = await useIFetch<{ data: ProductResponse[] }>(
+    `products?populate=*&filters[active][$eq]=true&${queryString}`,
+  )
+
+  if (productsData.value) {
+    products.value = productsData.value.data.map((product) => {
+      return {
+        id: product.id,
+        name: product.name,
+        category: product.category.name,
+        price: product.price + ' zł',
+        imageUrl: 'https://panel.imbusbike.pl' + product.images?.[0]?.url,
+      }
+    })
+  } else {
+    products.value = []
+  }
 }
 
-const products = ref([
-  {
-    id: 1,
-    name: 'Rower Merida Matts 7.30',
-    category: 'ROWERY',
-    price: '2799.00 zł',
-    oldPrice: '3199.00 zł',
-    imageUrl: '/img/bike.jpg',
-  },
-  {
-    id: 2,
-    name: 'Rower Merida Matts 7.30',
-    category: 'ROWERY',
-    price: '2799.00 zł',
-    oldPrice: '3199.00 zł',
-    imageUrl: '/img/bike.jpg',
-  },
-  {
-    id: 3,
-    name: 'Rower Merida Matts 7.30',
-    category: 'ROWERY',
-    price: '2799.00 zł',
-    oldPrice: '3199.00 zł',
-    imageUrl: '/img/bike.jpg',
-  },
-  {
-    id: 4,
-    name: 'Rower Merida Matts 7.30',
-    category: 'ROWERY',
-    price: '2799.00 zł',
-    oldPrice: '3199.00 zł',
-    imageUrl: '/img/bike.jpg',
-  },
-  {
-    id: 5,
-    name: 'Rower Merida Matts 7.30',
-    category: 'ROWERY',
-    price: '2799.00 zł',
-    oldPrice: '3199.00 zł',
-    imageUrl: '/img/bike.jpg',
-  },
-  {
-    id: 6,
-    name: 'Rower Merida Matts 7.30',
-    category: 'ROWERY',
-    price: '2799.00 zł',
-    oldPrice: '3199.00 zł',
-    imageUrl: '/img/bike.jpg',
-  },
-  {
-    id: 7,
-    name: 'Rower Merida Matts 7.30',
-    category: 'ROWERY',
-    price: '2799.00 zł',
-    oldPrice: '3199.00 zł',
-    imageUrl: '/img/bike.jpg',
-  },
-  {
-    id: 8,
-    name: 'Rower Merida Matts 7.30',
-    category: 'ROWERY',
-    price: '2799.00 zł',
-    oldPrice: '3199.00 zł',
-    imageUrl: '/img/bike.jpg',
-  },
-  {
-    id: 9,
-    name: 'Rower Merida Matts 7.30',
-    category: 'ROWERY',
-    price: '2799.00 zł',
-    oldPrice: '3199.00 zł',
-    imageUrl: '/img/bike.jpg',
-  },
-  {
-    id: 10,
-    name: 'Rower Merida Matts 7.30',
-    category: 'ROWERY',
-    price: '2799.00 zł',
-    oldPrice: '3199.00 zł',
-    imageUrl: '/img/bike.jpg',
-  },
-  {
-    id: 11,
-    name: 'Rower Merida Matts 7.30',
-    category: 'ROWERY',
-    price: '2799.00 zł',
-    oldPrice: '3199.00 zł',
-    imageUrl: '/img/bike.jpg',
-  },
-  {
-    id: 12,
-    name: 'Rower Merida Matts 7.30',
-    category: 'ROWERY',
-    price: '2799.00 zł',
-    oldPrice: '3199.00 zł',
-    imageUrl: '/img/bike.jpg',
-  },
-  {
-    id: 13,
-    name: 'Rower Merida Matts 7.30',
-    category: 'ROWERY',
-    price: '2799.00 zł',
-    oldPrice: '3199.00 zł',
-    imageUrl: '/img/bike.jpg',
-  },
-  {
-    id: 14,
-    name: 'Rower Merida Matts 7.30',
-    category: 'ROWERY',
-    price: '2799.00 zł',
-    oldPrice: '3199.00 zł',
-    imageUrl: '/img/bike.jpg',
-  },
-  {
-    id: 15,
-    name: 'Rower Merida Matts 7.30',
-    category: 'ROWERY',
-    price: '2799.00 zł',
-    oldPrice: '3199.00 zł',
-    imageUrl: '/img/bike.jpg',
-  },
-  {
-    id: 16,
-    name: 'Rower Merida Matts 7.30',
-    category: 'ROWERY',
-    price: '2799.00 zł',
-    oldPrice: '3199.00 zł',
-    imageUrl: '/img/bike.jpg',
-  },
-  {
-    id: 17,
-    name: 'Rower Merida Matts 7.30',
-    category: 'ROWERY',
-    price: '2799.00 zł',
-    oldPrice: '3199.00 zł',
-    imageUrl: '/img/bike.jpg',
-  },
-  {
-    id: 18,
-    name: 'Rower Merida Matts 7.30',
-    category: 'ROWERY',
-    price: '2799.00 zł',
-    oldPrice: '3199.00 zł',
-    imageUrl: '/img/bike.jpg',
-  },
-])
+const fetchFilters = async () => {
+  const { data: filtersData } = await useIFetch<{ data: Category[] }>(
+    '/categories?populate=*&filters[parent][$notNull]',
+  )
+
+  if (filtersData.value) {
+    filters.value = filtersData.value.data.map((category) => {
+      return {
+        id: category.id,
+        name: category.name,
+        children: category.children
+          ? category.children.map((child) => ({
+              id: child.id,
+              name: child.name,
+            }))
+          : [],
+      }
+    })
+  }
+}
+
+await fetchFilters()
+await fetchProducts(route.query)
 
 const formSchema = toTypedSchema(
   z.object({
@@ -183,20 +74,29 @@ const formSchema = toTypedSchema(
 const { handleSubmit } = useForm({
   validationSchema: formSchema,
   initialValues: {
-    selectedFilters: [],
+    selectedFilters:
+      typeof route.query.filters === 'string' ? route.query.filters.split(',').map(Number) : [],
   },
 })
 
 const onSubmit = handleSubmit((formValues) => {
-  toast({
-    title: 'Filters selected:',
-    description: h(
-      'pre',
-      { class: 'mt-2 w-[340px] rounded-md bg-slate-950 p-4' },
-      h('code', { class: 'text-white' }, JSON.stringify(formValues.selectedFilters, null, 2)),
-    ),
+  const selectedFilters = formValues.selectedFilters || []
+
+  router.push({
+    query: {
+      ...route.query,
+      filters: selectedFilters.join(','),
+    },
   })
 })
+
+watch(
+  () => route.query,
+  async (newQuery) => {
+    await fetchProducts(newQuery)
+  },
+  { immediate: true },
+)
 </script>
 
 <template>
@@ -283,7 +183,9 @@ const onSubmit = handleSubmit((formValues) => {
                       </ScrollArea>
                     </div>
                     <DrawerFooter>
-                      <Button type="submit"> Filtruj </Button>
+                      <DrawerClose as-child>
+                        <Button type="submit"> Filtruj </Button>
+                      </DrawerClose>
                       <DrawerClose as-child>
                         <Button variant="outline"> Anuluj </Button>
                       </DrawerClose>
@@ -301,7 +203,6 @@ const onSubmit = handleSubmit((formValues) => {
             :image-url="product.imageUrl"
             :name="product.name"
             :category="product.category"
-            :old-price="product.oldPrice"
             :price="product.price"
           />
         </div>

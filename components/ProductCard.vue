@@ -3,7 +3,7 @@ defineProps<{
   imageUrl: string
   name: string
   category: string
-  oldPrice: string
+  oldPrice?: string
   price: string
 }>()
 </script>
@@ -17,6 +17,7 @@ defineProps<{
         width="154"
         height="88"
         densities="x1"
+        format="webp"
         class="mb-4 object-cover"
       />
       <span
@@ -28,7 +29,10 @@ defineProps<{
       <h3 class="mb-2 self-start text-base md:text-sm lg:text-base">
         {{ name }}
       </h3>
-      <p class="self-end text-xs text-muted-foreground line-through">
+      <p
+        v-if="oldPrice"
+        class="self-end text-xs text-muted-foreground line-through"
+      >
         {{ oldPrice }}
       </p>
       <p class="self-end text-xl font-bold md:text-base lg:text-xl">
