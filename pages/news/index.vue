@@ -2,32 +2,44 @@
 import type { NewsItem, NewsItemResponse } from '~/types'
 
 const news = ref<NewsItem[]>([])
+const searchQuery = ref('')
 
-const { data: newsData } = await useIFetch<{ data: NewsItemResponse[] }>(
-  `articles?populate=*&sort=publishedAt:desc`,
-)
+const fetchNews = async (params: string = '') => {
+  const { data } = await useIFetch<{ data: NewsItemResponse[] }>(
+    `articles?populate=*&sort=publishedAt:desc${params}`,
+  )
 
-if (newsData.value) {
-  const maxDescriptionLength = 100
+  if (data.value) {
+    const maxDescriptionLength = 100
 
-  news.value = newsData.value.data.map((newsItem) => {
-    const truncatedDescription =
-      newsItem.description.length > maxDescriptionLength
-        ? newsItem.description.slice(0, maxDescriptionLength) + '...'
-        : newsItem.description
+    news.value = data.value.data.map((newsItem) => {
+      const truncatedDescription =
+        newsItem.description.length > maxDescriptionLength
+          ? newsItem.description.slice(0, maxDescriptionLength) + '...'
+          : newsItem.description
 
-    return {
-      id: newsItem.id,
-      title: newsItem.title,
-      description: truncatedDescription,
-      date: newsItem.publishedAt,
-      link: '/aktualnosci/' + newsItem.id,
-      imageUrl: 'https://panel.imbusbike.pl' + newsItem.cover?.url,
-    }
-  })
-} else {
-  news.value = []
+      return {
+        id: newsItem.id,
+        title: newsItem.title,
+        description: truncatedDescription,
+        date: newsItem.publishedAt,
+        link: '/aktualnosci/' + newsItem.id,
+        imageUrl: 'https://panel.imbusbike.pl' + newsItem.cover?.url,
+      }
+    })
+  } else {
+    news.value = []
+  }
 }
+
+const handleSearch = async () => {
+  const params = searchQuery.value
+    ? `&filters[title][$contains]=${encodeURIComponent(searchQuery.value)}`
+    : ''
+  await fetchNews(params)
+}
+
+await fetchNews()
 </script>
 
 <template>
@@ -37,12 +49,15 @@ if (newsData.value) {
     >
       <h1 class="text-3xl font-bold">{{ $t('news.title') }}</h1>
     </div>
+
     <div class="relative mt-6 flex w-full max-w-lg items-center gap-x-2">
       <Input
         id="search"
+        v-model="searchQuery"
         type="text"
         :placeholder="$t('news.searchInput.placeholder')"
         class="pl-10"
+        @keyup.enter="handleSearch"
       />
       <span class="absolute inset-y-0 start-0 flex items-center justify-center px-2">
         <Icon
@@ -54,24 +69,30 @@ if (newsData.value) {
       <Button
         type="submit"
         class="h-10 px-12"
+        @click="handleSearch"
       >
         {{ $t('news.searchInput.label') }}
       </Button>
     </div>
+
     <div class="mb-20 mt-6 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
-      <NuxtLinkLocale
-        v-for="newsItem in news"
-        :key="newsItem.id"
-        :to="newsItem.link"
-      >
-        <NewsCard
-          :title="newsItem.title"
-          :description="newsItem.description"
-          :image-url="newsItem.imageUrl"
-          :date="newsItem.date"
-        />
-      </NuxtLinkLocale>
+      <template v-if="news.length">
+        <NuxtLinkLocale
+          v-for="newsItem in news"
+          :key="newsItem.id"
+          :to="newsItem.link"
+        >
+          <NewsCard
+            :title="newsItem.title"
+            :description="newsItem.description"
+            :image-url="newsItem.imageUrl"
+            :date="newsItem.date"
+          />
+        </NuxtLinkLocale>
+      </template>
+      <div v-else>Brak artykułów</div>
     </div>
+
     <CarouselSection
       :title="$t('recommendedProducts.title')"
       :description="$t('recommendedProducts.description')"
