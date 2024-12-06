@@ -2,11 +2,21 @@
 import { Checkbox } from '@/components/ui/checkbox'
 import { FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form'
 import type { Filter } from '~/types'
+import { useFormContext } from 'vee-validate'
 
 const { filters } = defineProps<{
   filters: Filter[]
   isMobile?: boolean
 }>()
+
+const { setFieldValue } = useFormContext()
+const route = useRoute()
+
+onMounted(() => {
+  const filters = route.query.filters
+  const initialFilters = typeof filters === 'string' ? filters.split(',').map(Number) : []
+  setFieldValue('selectedFilters', initialFilters)
+})
 </script>
 
 <template>
