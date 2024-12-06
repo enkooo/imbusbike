@@ -4,7 +4,7 @@ const { t } = useI18n()
 const OFFER_SECTION_ITEMS = computed(() => [
   {
     id: 1,
-    iconUrl: '/img/mvp-offer-icon.svg',
+    iconUrl: '/img/repair.svg',
     title: t('offer.items.mvp.title'),
     description: t('offer.items.mvp.description'),
     benefits: [
@@ -17,7 +17,7 @@ const OFFER_SECTION_ITEMS = computed(() => [
   },
   {
     id: 2,
-    iconUrl: '/img/custom-offer-icon.svg',
+    iconUrl: '/img/electric.svg',
     title: t('offer.items.custom.title'),
     description: t('offer.items.custom.description'),
     benefits: [
@@ -30,14 +30,14 @@ const OFFER_SECTION_ITEMS = computed(() => [
   },
   {
     id: 3,
-    iconUrl: '/img/digitalization-offer-icon.svg',
+    iconUrl: '/img/door.svg',
     title: t('offer.items.digitalization.title'),
     description: t('offer.items.digitalization.description'),
     benefits: [
       t('offer.items.digitalization.benefits.0'),
       t('offer.items.digitalization.benefits.1'),
-      t('offer.items.digitalization.benefits.2'),
-      t('offer.items.digitalization.benefits.3'),
+      // t('offer.items.digitalization.benefits.2'),
+      // t('offer.items.digitalization.benefits.3'),
     ],
     summary: t('offer.items.digitalization.summary'),
   },

@@ -1,6 +1,7 @@
 # Etap 1: Budowanie aplikacji
 FROM node:20-alpine AS build-stage
 # Set build-time variables
+ARG NUXT_API_BASE_URL
 ARG NUXT_MAIL_SMTP
 ARG NUXT_MAIL_PORT
 ARG NUXT_MAIL_USERNAME
@@ -13,6 +14,7 @@ ENV NUXT_MAIL_PORT=${NUXT_MAIL_PORT}
 ENV NUXT_MAIL_USERNAME=${NUXT_MAIL_USERNAME}
 ENV NUXT_MAIL_PASSWORD=${NUXT_MAIL_PASSWORD}
 ENV NUXT_MAIL_TARGET=${NUXT_MAIL_TARGET}
+ENV NUXT_API_BASE_URL=${NUXT_API_BASE_URL}
 # Ustawienie katalogu roboczego
 WORKDIR /app
 # Skopiowanie plików package.json i package-lock.json
@@ -26,6 +28,7 @@ RUN npm run build
 # Etap 2: Serwowanie aplikacji
 FROM node:20-alpine AS production-stage
 # Re-declare the ARGs
+ARG NUXT_API_BASE_URL
 ARG NUXT_MAIL_SMTP
 ARG NUXT_MAIL_PORT
 ARG NUXT_MAIL_USERNAME
@@ -38,6 +41,8 @@ ENV NUXT_MAIL_PORT=${NUXT_MAIL_PORT}
 ENV NUXT_MAIL_USERNAME=${NUXT_MAIL_USERNAME}
 ENV NUXT_MAIL_PASSWORD=${NUXT_MAIL_PASSWORD}
 ENV NUXT_MAIL_TARGET=${NUXT_MAIL_TARGET}
+ENV NUXT_MAIL_TARGET=${NUXT_MAIL_TARGET}
+ENV NUXT_API_BASE_URL=${NUXT_API_BASE_URL}
 # Ustawienie katalogu roboczego
 WORKDIR /app
 # Skopiowanie tylko niezbędnych plików z pierwszego etapu

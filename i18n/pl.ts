@@ -35,9 +35,9 @@ export default {
     },
   },
   hero: {
-    title: 'Z pasją do rowerów',
+    title: 'Rower to coś więcej...',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      'Imbusbike to renomowana pracownia specjalizująca się w serwisie rowerów klasycznych oraz elektrycznych renomowanych marek takich jak Bosch, Brose oraz Shimano. Jeśli szukasz profesjonalnej obsługi i kompleksowej naprawy swojego roweru to trafiłeś w idealne miejsce.',
     buttons: {
       offer: 'Oferta',
       contact: 'Kontakt',
@@ -47,17 +47,17 @@ export default {
   bestsellers: {
     title: 'Bestsellery',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      'Odkryj nasze topowe produkty, które pokochało już tysiące rowerzystów! Niezawodne akcesoria, części i narzędzia, które ułatwią każdą jazdę. Sprawdź, co wybierają inni i dołącz do grona zadowolonych klientów.',
   },
   recommendedProducts: {
     title: 'Polecane produkty',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      'Poznaj Magick – naszą wyjątkową linię chemii rowerowej, stworzoną z myślą o Twoim rowerze. Środki czyszczące, smary i oleje, które zapewnią Twojemu sprzętowi idealną kondycję w każdych warunkach. Postaw na jakość i skuteczność prosto od ekspertów!',
   },
   news: {
     title: 'Aktualności',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      'Bądź na bieżąco z naszymi najnowszymi ofertami, wydarzeniami i poradami dla rowerzystów! Dowiedz się o najnowszych trendach w świecie rowerów, promocjach na nasze produkty i nadchodzących eventach.',
     link: {
       label1: 'Kliknij tu',
       label2: 'by zobaczyć więcej aktualności',
@@ -79,88 +79,83 @@ export default {
   offer: {
     title: 'Oferta',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      'Oferujemy kompleksowe usługi dla miłośników rowerów, które spełnią oczekiwania zarówno amatorów, jak i profesjonalistów. Sprawdź, co możemy dla Ciebie zrobić, aby Twój rower zawsze był gotowy do drogi!',
     benefits: 'Korzyści',
     learnMore: 'Dowiedz się więcej',
     items: {
       mvp: {
-        title: 'Aplikacje Minimum Viable Product (MVP)',
+        title: 'Profesjonalny serwis rowerowy',
         description:
-          'Nasze usługi tworzenia MVP są idealne dla startupów i firm, które chcą szybko zweryfikować swoje pomysły.',
+          'Dodaj swojemu rowerowi moc! Oferujemy profesjonalną konwersję na elektryczne rozwiązania, które odmienią Twoją jazdę.',
         benefits: {
-          0: 'Szybkie wdrożenie podstawowych funkcji',
-          1: 'Zmniejszenie kosztów produkcji',
-          2: 'Skoncentrowane na doświadczeniu użytkownika',
-          3: 'Efektywne cykle zbierania opinii',
+          0: 'Przeglądy techniczne',
+          1: 'Diagnostyka problemów',
+          2: 'Skuteczna i szybka naprawa',
+          3: 'Możliwość zakupu nowego sprzętu',
         },
-        summary:
-          'Pozwól nam stworzyć aplikację, która spełni kluczowe potrzeby Twojego biznesu, pozwalając na szybkie wejście na rynek z minimalnymi kosztami.',
+        summary: 'Zadbaj o swój rower, powierzając go w ręce specjalistów!',
       },
       custom: {
-        title: 'Dedykowane aplikacje dla biznesu',
+        title: 'Konwersja rowerów zwykłych na elektryczne.',
         description:
-          'Specjalizujemy się w tworzeniu aplikacji dostosowanych do potrzeb Twojej firmy.',
+          'Dodaj swojemu rowerowi moc! Oferujemy profesjonalną konwersję na elektryczne rozwiązania, które odmienią Twoją jazdę.',
         benefits: {
-          0: 'W pełni dostosowane rozwiązania',
-          1: 'Integracja z istniejącymi systemami',
-          2: 'Skalowalna architektura',
-          3: 'Zwiększona wygoda użytkowania',
+          0: 'Montaż wysokiej jakości silników i baterii',
+          1: 'Indywidualne dostosowanie do potrzeb użytkownika',
+          2: 'Wykalifikowani pracownicy',
+          3: 'Seriws i naprawa rowerów elektrycznych',
         },
-        summary:
-          'Zaprojektujemy aplikację specjalnie dostosowaną do Twoich wymagań i celów biznesowych, aby wspierać Twój rozwój i efektywność.',
+        summary: 'Ciesz się większą wygodą i możliwościami na trasie!',
       },
       digitalization: {
-        title: 'Aplikacje do digitalizacji',
+        title: 'Serwis door-to-door',
         description:
-          'Zdigitalizuj swoje procesy biznesowe za pomocą zaawansowanych aplikacji zaprojektowanych w celu poprawy efektywności.',
+          'Nie masz czasu na wizytę w serwisie? Przyjedziemy po twój rower! Oferujemy wygodne rozwiązanie dla zapracowanych.',
         benefits: {
-          0: 'Usprawnione operacje',
-          1: 'Zwiększona dokładność i spójność',
-          2: 'Lepsze decyzje oparte na danych',
-          3: 'Oszczędności dzięki redukcji pracy ręcznej',
+          0: 'Naprawy bez wychodzenia z domu',
+          1: 'Wstępna wycena na podstawie zdjęć',
         },
-        summary:
-          'Ułatw sobie zarządzanie firmą dzięki rozwiązaniom, które automatyzują i digitalizują kluczowe procesy, zwiększając wydajność i redukując koszty.',
+        summary: 'Oszczędzaj czas i ciesz się sprawnym rowerem bez wychodzenia z domu!',
       },
     },
   },
   callToAction: {
     title: 'Wybierz rower idealny dla siebie!',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    buttonLabel: 'Sprawdź nasz sklep',
+      'Oferujemy szeroki wybór rowerów dopasowanych do różnych potrzeb – od miejskich, przez górskie, po elektryczne. Niezależnie od tego, czy jeździsz na co dzień, czy rekreacyjnie, znajdziesz u nas idealny model. Sprawdź nasz sklep i wybierz rower na miarę swoich oczekiwań!',
+    buttonLabel: 'Sprawdź naszą ofertę',
   },
   about: {
     title: 'O Nas',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      'Imbusbike to doświadczona pracownia specjalizująca się w serwisie rowerów klasycznych i elektrycznych renomowanych marek, takich jak Bosch, Brose czy Shimano. Oferujemy kompleksową obsługę na najwyższym poziomie. Wyróżnia nas możliwość profesjonalnej konwersji rowerów na elektryczne, zapewniającej niezawodność i wsparcie gwarancyjne.',
     values: {
       experience: {
         title: 'Doświadczenie',
         description:
-          'Nasze doświadczenie pozwala nam na realizację projektów na najwyższym poziomie. Stawiamy na skuteczne rozwiązania, które przynoszą wymierne efekty naszym klientom.',
+          'Wieloletnia praktyka w serwisowaniu rowerów klasycznych i elektrycznych pozwala nam na świadczenie usług na najwyższym poziomie.',
       },
       teamwork: {
-        title: 'Praca zespołowa',
+        title: 'Jakość usług',
         description:
-          'Współpraca w zespole to podstawa naszego sukcesu. Każdy projekt jest wynikiem wspólnych wysiłków ekspertów z różnych dziedzin, co pozwala na dostarczenie wszechstronnych i optymalnych rozwiązań.',
+          'Stawiamy na precyzję, korzystamy z wysokiej jakości części i narzędzi, by zapewnić niezawodność każdego roweru',
       },
       clientUnderstanding: {
         title: 'Zrozumienie potrzeb klienta',
         description:
-          'Dbamy o to, aby zrozumieć unikalne potrzeby naszych klientów. Każde rozwiązanie jest dostosowane indywidualnie, by sprostać specyficznym wymaganiom oraz oczekiwaniom klienta.',
+          'Indywidualne podejście do każdego rowerzysty gwarantuje dopasowanie usług do konkretnych wymagań i oczekiwań.',
       },
       businessIt: {
-        title: 'Połączenie biznesu oraz IT',
+        title: 'Innowacyjność',
         description:
-          'Łączymy wiedzę z zakresu IT z praktycznym podejściem biznesowym, dzięki czemu nasze produkty są nie tylko nowoczesne technologicznie, ale także użyteczne i wartościowe dla biznesu.',
+          'Specjalizujemy się w nowoczesnych rozwiązaniach, takich jak konwersja rowerów na elektryczne, by sprostać aktualnym trendom i potrzebom rynku.',
       },
     },
   },
   contactForm: {
     heading: 'Kontakt',
     subheading:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      'Jeżeli chcesz umówić się na naprawę skorzystaj z zakładki serwis gdzie możesz załączyć zdjęcie do wiadomości. Jeżeli nie znalazłeś odpowiedzi na twoje pytania w zakładce FAQ możesz skorzystać z poniższego formularza w celu uzyskania odpowiedzi.',
     fields: {
       name: 'Imię i nazwisko',
       email: 'Adres e-mail',
@@ -208,7 +203,8 @@ export default {
   serviceForm: {
     heading: 'Umów termin serwis',
     subheading:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      'Zgłoś swój rower do serwisu i pozwól nam zadbać o jego perfekcyjny stan! Podaj proponowaną datę wizyty, a my skontaktujemy się z Tobą, aby potwierdzić dostępność i szczegóły.' +
+      'Proszę pamiętać: Wybrana data jest terminem wstępnym i nie gwarantuje realizacji serwisu w tym dniu. Dołożymy wszelkich starań, aby znaleźć najdogodniejszy termin.',
     fields: {
       name: 'Imię i nazwisko',
       email: 'Adres e-mail',
