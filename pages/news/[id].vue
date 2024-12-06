@@ -1,3 +1,5 @@
+<script setup lang="ts"></script>
+
 <template>
   <div class="min-h-screen bg-white">
     <main class="container mx-auto px-4 pb-24 pt-8">
@@ -17,15 +19,35 @@
         </div>
       </div>
 
-      <div class="relative mb-8 h-[300px] overflow-hidden rounded-lg md:h-[400px] lg:h-[500px]">
-        <NuxtImg
-          src="/img/hero.webp"
-          sizes="365px sm:640px md:320px md:800px lg:1024px xl:1280px 2xl:1536px"
-          densities="x1"
-          quality="80"
-          alt="Innowacyjny rower elektryczny"
-          class="absolute inset-0 h-full w-full object-cover"
-        />
+      <div class="container relative mb-8 overflow-hidden rounded-lg px-14">
+        <Carousel
+          v-slot="{ canScrollNext }"
+          class="relative w-full"
+        >
+          <CarouselContent>
+            <CarouselItem
+              v-for="(_, index) in 5"
+              :key="index"
+            >
+              <div class="relative h-full w-full overflow-hidden rounded-lg">
+                <div
+                  class="h-full min-h-[300px] w-full overflow-hidden rounded-lg md:min-h-[400px] lg:min-h-[500px]"
+                >
+                  <NuxtImg
+                    src="/img/hero.webp"
+                    sizes="365px sm:640px md:320px md:800px lg:1024px xl:1280px 2xl:1536px"
+                    densities="x1"
+                    quality="80"
+                    alt="Innowacyjny rower elektryczny"
+                    class="absolute inset-0 h-full w-full object-cover"
+                  />
+                </div>
+              </div>
+            </CarouselItem>
+          </CarouselContent>
+          <CarouselPrevious />
+          <CarouselNext v-if="canScrollNext" />
+        </Carousel>
       </div>
 
       <div class="prose prose-gray mx-auto max-w-3xl">
