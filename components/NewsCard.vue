@@ -21,7 +21,7 @@ const formattedDate = formatPolishDate(date)
         class="max-h-40 w-full min-w-36 rounded-l-sm object-cover sm:max-h-48"
       />
       <div class="flex min-w-0 flex-col gap-y-2 p-6">
-        <h3 class="truncate font-semibold">
+        <h3 class="relative truncate font-semibold">
           <TooltipProvider>
             <Tooltip>
               <TooltipTrigger as-child>
