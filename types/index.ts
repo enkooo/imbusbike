@@ -50,7 +50,7 @@ export interface NewsItemResponse {
   link: string
   cover: {
     url: string
-  }[]
+  }
 }
 
 export interface NewsItem {

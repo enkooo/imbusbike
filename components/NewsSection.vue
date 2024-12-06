@@ -7,6 +7,8 @@ const { data: newsData } = await useIFetch<{ data: NewsItemResponse[] }>(
   `articles?populate=*&pagination[limit]=4&sort=publishedAt:desc`,
 )
 
+console.log('newsData', newsData)
+
 if (newsData.value) {
   const maxDescriptionLength = 100
 
@@ -16,13 +18,15 @@ if (newsData.value) {
         ? newsItem.description.slice(0, maxDescriptionLength) + '...'
         : newsItem.description
 
+    console.log('newsItem.cover', newsItem.cover)
+
     return {
       id: newsItem.id,
       title: newsItem.title,
       description: truncatedDescription,
       date: newsItem.publishedAt,
       link: '/aktualnosci/' + newsItem.id,
-      imageUrl: 'https://panel.imbusbike.pl' + newsItem.cover?.[0]?.url,
+      imageUrl: 'https://panel.imbusbike.pl' + newsItem.cover?.url,
     }
   })
 } else {
