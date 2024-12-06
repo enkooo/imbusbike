@@ -7,8 +7,6 @@ const { data: newsData } = await useIFetch<{ data: NewsItemResponse[] }>(
   `articles?populate=*&pagination[limit]=4&sort=publishedAt:desc`,
 )
 
-console.log('newsData', newsData)
-
 if (newsData.value) {
   const maxDescriptionLength = 100
 
@@ -17,8 +15,6 @@ if (newsData.value) {
       newsItem.description.length > maxDescriptionLength
         ? newsItem.description.slice(0, maxDescriptionLength) + '...'
         : newsItem.description
-
-    console.log('newsItem.cover', newsItem.cover)
 
     return {
       id: newsItem.id,

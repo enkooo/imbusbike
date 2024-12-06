@@ -9,9 +9,9 @@ defineProps<{
 </script>
 
 <template>
-  <div class="rounded-sm border border-gray-100 shadow-sm">
+  <div class="truncate rounded-sm border border-gray-100 shadow-sm">
     <div class="flex h-full flex-col items-center p-7">
-      <div class="mb-4 h-[88px] w-[154px] overflow-hidden">
+      <div class="mb-4 h-full max-h-[88px] overflow-hidden">
         <NuxtImg
           :src="imageUrl"
           :alt="name"
@@ -19,7 +19,7 @@ defineProps<{
           height="88"
           densities="x1"
           format="webp"
-          class="mb-4 h-full w-full object-contain"
+          class="mb-4 h-[88px] w-full object-contain"
         />
       </div>
       <span
@@ -28,9 +28,21 @@ defineProps<{
         {{ category }}
       </span>
 
-      <h3 class="mb-2 self-start text-base md:text-sm lg:text-base">
-        {{ name }}
-      </h3>
+      <div class="flex w-full truncate">
+        <h3 class="relative mb-2 self-start truncate text-base md:text-sm lg:text-base">
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger as-child>
+                <p class="absolute w-full opacity-0">&nbsp;</p>
+                {{ name }}
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>{{ name }}</p>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
+        </h3>
+      </div>
       <div class="mt-auto flex w-full flex-col justify-end">
         <p
           v-if="oldPrice"
