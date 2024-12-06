@@ -11,6 +11,7 @@ const route = useRoute()
 const products = ref<Product[]>([])
 const filters = ref<Filter[]>([])
 const selectedSort = ref<string>(typeof route.query.sort === 'string' ? route.query.sort : '')
+const searchQuery = ref<string>(typeof route.query.search === 'string' ? route.query.search : '')
 
 const fetchProducts = async (query: LocationQuery) => {
   let queryString = ''
@@ -25,6 +26,11 @@ const fetchProducts = async (query: LocationQuery) => {
 
   if (query.sort && query.sort !== 'default') {
     queryString += (queryString ? '&' : '') + `sort[0]=${query.sort}`
+  }
+
+  if (query.search && typeof query.search === 'string') {
+    queryString +=
+      (queryString ? '&' : '') + `filters[name][$contains]=${encodeURIComponent(query.search)}`
   }
 
   const { data: productsData } = await useIFetch<{ data: ProductResponse[] }>(
@@ -95,6 +101,17 @@ const onSubmit = handleSubmit(async (formValues) => {
   await fetchProducts(newQuery)
 })
 
+const handleSearch = async () => {
+  const newQuery = {
+    ...route.query,
+    search: searchQuery.value || null,
+  }
+
+  router.push({ query: newQuery })
+
+  await fetchProducts(newQuery)
+}
+
 watch(
   selectedSort,
   async (newSort) => {
@@ -139,9 +156,11 @@ watch(
           <div class="relative flex w-full items-center gap-x-2 md:max-w-lg">
             <Input
               id="search"
+              v-model="searchQuery"
               type="text"
               :placeholder="$t('products.searchInput.placeholder')"
               class="pl-10"
+              @keyup.enter="handleSearch"
             />
             <span class="absolute inset-y-0 start-0 flex items-center justify-center px-2">
               <Icon
@@ -153,6 +172,7 @@ watch(
             <Button
               type="submit"
               class="h-10 px-12"
+              @click="handleSearch"
             >
               {{ $t('products.searchInput.label') }}
             </Button>
