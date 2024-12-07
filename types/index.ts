@@ -44,20 +44,24 @@ export interface Product {
 
 export interface NewsItemResponse {
   id: number
+  documentId: string
   title: string
   description: string
   publishedAt: string
-  link: string
+  link?: string
   cover: {
     url: string
   }
+  images?: Images[]
 }
 
 export interface NewsItem {
   id: number
+  documentId: string
   title: string
   description: string
   date: string
-  link: string
-  imageUrl: string
+  link?: string
+  imageUrl?: string
+  images?: Images[]
 }

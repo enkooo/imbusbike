@@ -1,11 +1,40 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import type { NewsItemResponse, NewsItem } from '~/types'
+
+const route = useRoute()
+const articleId = route.params.id as string
+
+const article = ref<NewsItem | null>(null)
+
+const { data: articleData } = await useIFetch<{ data: NewsItemResponse }>(
+  `articles/${articleId}?populate=*`,
+)
+
+if (articleData.value) {
+  article.value = {
+    id: articleData.value.data.id,
+    documentId: articleData.value.data.documentId,
+    title: articleData.value.data.title,
+    description: articleData.value.data.description,
+    imageUrl: articleData.value.data.cover.url,
+    images: articleData.value.data.images,
+    date: articleData.value.data.publishedAt,
+    link: articleData.value.data.link,
+  }
+} else {
+  article.value = null
+}
+
+const { formatPolishDate } = useDateFormatter()
+const formattedDate = formatPolishDate(article.value?.date || '')
+</script>
 
 <template>
   <div class="min-h-screen bg-white">
     <main class="container mx-auto px-4 pb-24 pt-8">
       <div class="mb-8 space-y-4">
         <h1 class="text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl">
-          Lorem ipsum solor der amet sol: Innowacyjne rozwiązania w branży rowerowej
+          {{ article?.title }}
         </h1>
         <div class="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
           <div class="flex items-center gap-2">
@@ -14,7 +43,7 @@
               size="18"
               class="text-muted-foreground"
             />
-            <time datetime="2024-01-20">20.01.2024</time>
+            <span>{{ formattedDate }}</span>
           </div>
         </div>
       </div>
@@ -51,39 +80,10 @@
       </div>
 
       <div class="prose prose-gray mx-auto max-w-3xl">
-        <p class="text-xl">
-          W świecie, gdzie zrównoważony transport staje się coraz ważniejszy, branża rowerowa nie
-          pozostaje w tyle. Najnowsze innowacje nie tylko poprawiają komfort jazdy, ale także
-          przyczyniają się do ochrony środowiska.
-        </p>
-
-        <h2 class="mb-4 mt-8 text-2xl font-semibold">Rewolucja w napędach elektrycznych</h2>
-        <p class="mb-4">
-          Nowa generacja silników elektrycznych do rowerów oferuje niespotykaną dotąd wydajność.
-          Dzięki zastosowaniu zaawansowanych algorytmów i lekkich materiałów, udało się stworzyć
-          napędy, które są nie tylko mocniejsze, ale i znacznie lżejsze od swoich poprzedników.
-        </p>
-
-        <h2 class="mb-4 mt-8 text-2xl font-semibold">Inteligentne systemy bezpieczeństwa</h2>
-        <p class="mb-4">
-          Bezpieczeństwo rowerzystów jest priorytetem dla producentów. Najnowsze modele rowerów
-          wyposażone są w inteligentne systemy wykrywania przeszkód i automatycznego hamowania, co
-          znacząco zmniejsza ryzyko kolizji.
-        </p>
-
-        <h2 class="mb-4 mt-8 text-2xl font-semibold">Ekologiczne materiały przyszłości</h2>
-        <p class="mb-4">
-          Producenci rowerów coraz częściej sięgają po materiały biodegradowalne i pochodzące z
-          recyklingu. Ramy z włókien bambusowych czy opony z odzyskanej gumy to tylko niektóre z
-          przykładów, jak branża rowerowa staje się coraz bardziej przyjazna dla środowiska.
-        </p>
-
-        <h2 class="mb-4 mt-8 text-2xl font-semibold">Podsumowanie</h2>
-        <p class="mb-4">
-          Innowacje w branży rowerowej nie tylko poprawiają jakość jazdy, ale także przyczyniają się
-          do tworzenia bardziej zrównoważonego transportu miejskiego. Z niecierpliwością czekamy na
-          kolejne przełomowe rozwiązania, które zmienią sposób, w jaki poruszamy się po miastach.
-        </p>
+        <div
+          class="mb-4"
+          v-html="article?.description"
+        />
       </div>
       <CarouselSection
         :title="$t('recommendedProducts.title')"

@@ -18,10 +18,11 @@ if (newsData.value) {
 
     return {
       id: newsItem.id,
+      documentId: newsItem.documentId,
       title: newsItem.title,
       description: truncatedDescription,
       date: newsItem.publishedAt,
-      link: '/aktualnosci/' + newsItem.id,
+      link: '/aktualnosci/' + newsItem.documentId,
       imageUrl: 'https://panel.imbusbike.pl' + newsItem.cover?.url,
     }
   })
@@ -47,7 +48,7 @@ if (newsData.value) {
             <NewsCard
               :title="newsItem.title"
               :description="newsItem.description"
-              :image-url="newsItem.imageUrl"
+              :image-url="newsItem.imageUrl ?? '/img/news/article1.jpg'"
               :date="newsItem.date"
             />
           </NuxtLinkLocale>
