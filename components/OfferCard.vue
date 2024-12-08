@@ -5,7 +5,9 @@ defineProps<{
   description: string
   benefits: string[]
   summary: string
+  button: string
 }>()
+
 </script>
 
 <template>
@@ -14,10 +16,12 @@ defineProps<{
       <div
         class="relative z-10 flex h-full flex-col gap-8 overflow-hidden rounded-sm p-8 text-muted-foreground shadow-[0px_16px_25px_0px_rgba(0,0,0,0.06)]"
       >
-        <h3 class="text-balance text-2xl font-bold text-primary">{{ title }}</h3>
-        <p>{{ description }}</p>
+        <h3 class="offer-title text-balance text-2xl font-bold text-primary">{{ title }}</h3>
+        <p class="line-clamp-2 text-muted-foreground sm:line-clamp-3 lg:line-clamp-4">
+          {{ description }}
+        </p>
         <div>
-          <ul class="mt-2 list-disc pl-4">
+          <ul class="mt-1 list-disc pl-4">
             <li
               v-for="benefit in benefits"
               :key="benefit"
@@ -35,10 +39,37 @@ defineProps<{
             size="lg"
             class="w-full"
           >
-            {{ $t('offer.items.button') }}
+            {{ button }}
           </Button>
         </NuxtLinkLocale>
       </div>
     </div>
   </div>
 </template>
+<style>
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: calc(1.5em * 2); /* 1.5 to wysokość linii (line-height) */
+  line-height: 1.5; /* Dopasowanie odstępów */
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: calc(1.5em * 3); /* 1.5 to wysokość linii (line-height) */
+  line-height: 1.5; /* Dopasowanie odstępów */
+}
+.line-clamp-4 {
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* Wymusza 5 linii */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: calc(1.5em * 4); /* 1.5 to wysokość linii (line-height), dla 5 linii */
+  line-height: 1.5; /* Dopasowanie odstępów */
+}
+</style>

@@ -100,13 +100,15 @@ export default {
       mvp: {
         title: 'Serwis rowerów tradycyjnych',
         description:
-          'Zapewniamy dokładną diagnostykę i skuteczne usuwanie usterek. Od podstawowych napraw po zaawansowane modyfikacje.',
+          'Specjalistyczny serwis gwarantuje dokładną diagnostykę i skuteczne usuwanie wszelakich usterek.',
         benefits: {
-          0: 'Indywidualne podejście do potrzeb',
-          1: 'Szeroki zakres usług',
-          2: 'Wysoka jakość wykonania',
+          0: 'Szeroka gama usług',
+          1: 'Przeglądy standardowe oraz rozszerzone',
+          2: 'Indywidualne podejście do powierzonego sprzętu',
+          3: 'Priorytet to wysoka jakość usług',
         },
         summary: 'Postaw na profesjonalizm i precyzję.',
+        button: 'Umów serwis',
       },
       custom: {
         title: 'Serwis rowerów elektrycznych',
@@ -118,6 +120,7 @@ export default {
           2: 'Elastyczność i doświadczenie',
         },
         summary: 'Twoje e-bike w najlepszych rękach.',
+        button: 'Umów serwis',
       },
       electric: {
         title: 'Konwersja roweru na elektryczny',
@@ -129,6 +132,7 @@ export default {
           2: 'Wsparcie gwarancyjne i pogwarancyjne',
         },
         summary: 'Odkryj nowe możliwości jazdy.',
+        button: 'Umów termin',
       },
       digitalization: {
         title: 'Serwis door-to-door',
@@ -140,6 +144,7 @@ export default {
           2: 'Profesjonalny serwis w Twoim domu',
         },
         summary: 'Serwis rowerowy na wyciągnięcie ręki.',
+        button: 'Skontaktuj się',
       },
     },
   },

@@ -46,6 +46,7 @@
   },
   "devDependencies": {
     "@iconify-json/mdi": "^1.2.1",
+    "@nuxtjs/seo": "^2.0.2",
     "eslint": "^9.13.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-nuxt": "^4.0.0",

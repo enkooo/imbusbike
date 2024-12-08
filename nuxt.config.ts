@@ -1,4 +1,3 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
@@ -30,6 +29,7 @@ export default defineNuxtConfig({
         },
       },
     ],
+    '@nuxtjs/seo',
   ],
 
   delayHydration: {
@@ -75,14 +75,7 @@ export default defineNuxtConfig({
   },
 
   shadcn: {
-    /**
-     * Prefix for all the imported component
-     */
     prefix: '',
-    /**
-     * Directory that the component lives in.
-     * @default "./components/ui"
-     */
     componentDir: './components/ui',
   },
 
@@ -92,4 +85,20 @@ export default defineNuxtConfig({
       baseUrl: process.env.NUXT_BASE_URL,
     },
   },
+
+  // seo: {
+  //   description:
+  //     'Zapewniamy kompleksowe usługi serwisu rowerowego, od tradycyjnych napraw po zaawansowane modyfikacje i konwersje rowerów elektrycznych. Certyfikowany serwis Bosch i Brose. Sprawdź naszą ofertę!',
+  //   keywords:
+  //     'serwis rowerowy, rowery elektryczne, konwersja rowerów, naprawa rowerów, Bosch, Brose, Shimano Steps, Bolt, serwis door-to-door, rowery',
+  //   openGraph: {
+  //     title: 'Imbusbike | Pracownia i Serwis Rowerów',
+  //     description:
+  //       'Zapewniamy kompleksowe usługi serwisu rowerowego, od tradycyjnych napraw po zaawansowane modyfikacje i konwersje rowerów elektrycznych. Certyfikowany serwis Bosch i Brose. Sprawdź naszą ofertę!',
+  //     url: 'https://imbusbike.pl',
+  //     image: 'https://imbusbike.pl/_ipx/s_60x60/img/logo.svg',
+  //     type: 'website',
+  //     locale: 'pl_PL',
+  //   },
+  // },
 })

@@ -11,8 +11,10 @@ const OFFER_SECTION_ITEMS = computed(() => [
       t('offer.items.mvp.benefits.0'),
       t('offer.items.mvp.benefits.1'),
       t('offer.items.mvp.benefits.2'),
+      t('offer.items.mvp.benefits.3'),
     ],
     summary: t('offer.items.mvp.summary'),
+    button: t('offer.items.mvp.button'),
   },
   {
     id: 2,
@@ -25,21 +27,10 @@ const OFFER_SECTION_ITEMS = computed(() => [
       t('offer.items.custom.benefits.2'),
     ],
     summary: t('offer.items.custom.summary'),
+    button: t('offer.items.custom.button'),
   },
   {
     id: 3,
-    iconUrl: '/img/door.svg',
-    title: t('offer.items.digitalization.title'),
-    description: t('offer.items.digitalization.description'),
-    benefits: [
-      t('offer.items.digitalization.benefits.0'),
-      t('offer.items.digitalization.benefits.1'),
-      t('offer.items.digitalization.benefits.2'),
-    ],
-    summary: t('offer.items.digitalization.summary'),
-  },
-  {
-    id: 4,
     iconUrl: '/img/door.svg',
     title: t('offer.items.electric.title'),
     description: t('offer.items.electric.description'),
@@ -49,6 +40,20 @@ const OFFER_SECTION_ITEMS = computed(() => [
       t('offer.items.electric.benefits.2'),
     ],
     summary: t('offer.items.electric.summary'),
+    button: t('offer.items.electric.button'),
+  },
+  {
+    id: 4,
+    iconUrl: '/img/door.svg',
+    title: t('offer.items.digitalization.title'),
+    description: t('offer.items.digitalization.description'),
+    benefits: [
+      t('offer.items.digitalization.benefits.0'),
+      t('offer.items.digitalization.benefits.1'),
+      t('offer.items.digitalization.benefits.2'),
+    ],
+    summary: t('offer.items.digitalization.summary'),
+    button: t('offer.items.digitalization.button'),
   },
 ])
 </script>
@@ -69,6 +74,7 @@ const OFFER_SECTION_ITEMS = computed(() => [
         :description="offer.description"
         :icon-url="offer.iconUrl"
         :summary="offer.summary"
+        :button="offer.button"
         :title="offer.title"
       />
     </div>
