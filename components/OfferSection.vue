@@ -59,17 +59,17 @@ const OFFER_SECTION_ITEMS = computed(() => [
       <h2 class="text-3xl font-bold">{{ $t('offer.title') }}</h2>
       <p class="mx-auto mt-7 max-w-5xl text-muted-foreground">{{ $t('offer.description') }}</p>
     </section>
-    <div class="mt-14 grid justify-center gap-5 gap-y-10 md:grid-cols-4 lg:grid-cols-6 lg:gap-10">
+    <div
+      class="mt-14 grid place-content-center items-center justify-center gap-5 gap-y-10 md:grid-cols-2 xl:grid-cols-4"
+    >
       <OfferCard
-        v-for="(offer, index) in OFFER_SECTION_ITEMS"
+        v-for="offer in OFFER_SECTION_ITEMS"
         :key="offer.id"
         :benefits="offer.benefits"
         :description="offer.description"
         :icon-url="offer.iconUrl"
         :summary="offer.summary"
         :title="offer.title"
-        class="col-span-2"
-        :class="{ 'md:col-start-2 lg:col-start-auto': index === OFFER_SECTION_ITEMS.length - 1 }"
       />
     </div>
   </div>
