@@ -5,6 +5,9 @@ import { useRouter, useRoute, type LocationQuery } from 'vue-router'
 import * as z from 'zod'
 import type { CategoryResponse, Filter, Product, ProductResponse } from '~/types'
 
+const config = useRuntimeConfig()
+const baseUrl = config.public.baseUrl
+const { t } = useI18n()
 const router = useRouter()
 const route = useRoute()
 
@@ -42,8 +45,12 @@ const fetchProducts = async (query: LocationQuery) => {
       id: product.id,
       name: product.name,
       category: product.category.name,
-      price: product.price + ' zł',
-      imageUrl: 'https://panel.imbusbike.pl' + product.images?.[0]?.url,
+      description: product.description,
+      attributes: product.attributes,
+      url: product.url,
+      price: `${product.price} zł`,
+      imageUrl: `${baseUrl}${product.images?.[0]?.url}`,
+      link: `${t('menu.products.link')}/${product.documentId}`,
     }))
   } else {
     products.value = []
@@ -146,7 +153,7 @@ watch(
               type="submit"
               class="w-full"
             >
-              Filtruj
+              {{ $t('products.filters.label') }}
             </Button>
           </div>
         </form>
@@ -184,9 +191,9 @@ watch(
               </SelectTrigger>
               <SelectContent>
                 <SelectGroup>
-                  <SelectItem value="default">Domyślnie</SelectItem>
-                  <SelectItem value="price:asc">Cena rosnąco</SelectItem>
-                  <SelectItem value="price:desc">Cena malejąco</SelectItem>
+                  <SelectItem value="default"> {{ $t('products.filters.default') }} </SelectItem>
+                  <SelectItem value="price:asc">{{ $t('products.filters.priceAsc') }}</SelectItem>
+                  <SelectItem value="price:desc">{{ $t('products.filters.priceDesc') }}</SelectItem>
                 </SelectGroup>
               </SelectContent>
             </Select>
@@ -196,15 +203,17 @@ watch(
                   type="submit"
                   class="h-10 w-full sm:w-auto sm:px-12 lg:hidden"
                 >
-                  Filtrowanie
+                  {{ $t('products.filters.filtering') }}
                 </Button>
               </DrawerTrigger>
               <DrawerContent>
                 <form @submit="onSubmit">
                   <div class="mx-auto w-full max-w-sm">
                     <DrawerHeader class="sr-only">
-                      <DrawerTitle>Filtry</DrawerTitle>
-                      <DrawerDescription>Wybierz filtry</DrawerDescription>
+                      <DrawerTitle>{{ $t('products.filters.filters') }}</DrawerTitle>
+                      <DrawerDescription>{{
+                        $t('products.filters.choseFilters')
+                      }}</DrawerDescription>
                     </DrawerHeader>
                     <div class="p-4 pb-0">
                       <ScrollArea class="h-[400px] w-[350px]">
@@ -216,10 +225,10 @@ watch(
                     </div>
                     <DrawerFooter>
                       <DrawerClose as-child>
-                        <Button type="submit"> Filtruj </Button>
+                        <Button type="submit"> {{ $t('products.filters.label') }} </Button>
                       </DrawerClose>
                       <DrawerClose as-child>
-                        <Button variant="outline"> Anuluj </Button>
+                        <Button variant="outline"> {{ $t('products.filters.cancel') }} </Button>
                       </DrawerClose>
                     </DrawerFooter>
                   </div>
@@ -229,14 +238,18 @@ watch(
           </div>
         </div>
         <div class="mb-20 mt-6 grid grid-cols-2 gap-2 sm:grid-cols-3 md:gap-6 xl:grid-cols-4">
-          <ProductCard
+          <NuxtLinkLocale
             v-for="product in products"
             :key="product.id"
-            :image-url="product.imageUrl"
-            :name="product.name"
-            :category="product.category"
-            :price="product.price"
-          />
+            :to="product.link"
+          >
+            <ProductCard
+              :image-url="product.imageUrl"
+              :name="product.name"
+              :category="product.category"
+              :price="product.price"
+            />
+          </NuxtLinkLocale>
         </div>
       </div>
     </div>

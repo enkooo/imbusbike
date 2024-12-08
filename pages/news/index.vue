@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import type { NewsItem, NewsItemResponse } from '~/types'
 
+const config = useRuntimeConfig()
+const baseUrl = config.public.baseUrl
+const { t } = useI18n()
 const news = ref<NewsItem[]>([])
 const searchQuery = ref('')
 
@@ -24,8 +27,8 @@ const fetchNews = async (params: string = '') => {
         title: newsItem.title,
         description: truncatedDescription,
         date: newsItem.publishedAt,
-        link: '/aktualnosci/' + newsItem.documentId,
-        imageUrl: 'https://panel.imbusbike.pl' + newsItem.cover?.url,
+        link: `${t('menu.news.link')}/${newsItem.documentId}`,
+        imageUrl: `${baseUrl}${newsItem.cover?.url}`,
       }
     })
   } else {
@@ -91,7 +94,7 @@ await fetchNews()
           />
         </NuxtLinkLocale>
       </template>
-      <div v-else>Brak artykułow</div>
+      <div v-else>{{ $t('news.empty') }}</div>
     </div>
 
     <CarouselSection

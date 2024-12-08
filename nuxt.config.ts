@@ -62,8 +62,11 @@ export default defineNuxtConfig({
       'news/[id]': {
         pl: '/aktualnosci/[id]',
       },
-      products: {
+      'products/index': {
         pl: '/produkty',
+      },
+      'products/[id]': {
+        pl: '/produkty/[id]',
       },
       offer: {
         pl: '/oferta',
@@ -86,7 +89,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       apiBase: process.env.NUXT_API_BASE_URL,
-      accessToken: process.env.NUXT_ACCESS_TOKEN,
+      baseUrl: process.env.NUXT_BASE_URL,
     },
   },
 })

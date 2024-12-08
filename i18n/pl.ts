@@ -68,6 +68,7 @@ export default {
       label: 'Szukaj',
       placeholder: 'Szukaj...',
     },
+    empty: 'Brak artykułów',
   },
   products: {
     title: 'Produkty',
@@ -75,6 +76,19 @@ export default {
       label: 'Szukaj',
       placeholder: 'Szukaj...',
     },
+    filters: {
+      label: 'Filtruj',
+      default: 'Domyślne',
+      priceAsc: 'Cena rosnąco',
+      priceDesc: 'Cena malejąco',
+      filtering: 'Filtrowanie',
+      choseFilters: 'Wybierz filtry',
+      filters: 'Filtry',
+      cancel: 'Anuluj',
+    },
+    productDescription: 'Opis produktu',
+    specifications: 'Specyfikacja',
+    moveToPurchase: 'Przejdź do zakupu',
   },
   offer: {
     title: 'Oferta',

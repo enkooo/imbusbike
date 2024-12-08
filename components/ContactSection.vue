@@ -117,7 +117,7 @@ async function onSubmit(values: FormValues) {
   <div class="container">
     <section class="text-center">
       <h2 class="text-3xl font-bold">{{ $t('contactForm.heading') }}</h2>
-      <p class="mx-auto mt-7 max-w-5xl text-typography-gray">{{ $t('contactForm.subheading') }}</p>
+      <p class="mx-auto mt-7 max-w-5xl text-muted-foreground">{{ $t('contactForm.subheading') }}</p>
     </section>
     <div class="mt-10">
       <AutoForm

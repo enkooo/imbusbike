@@ -48,7 +48,7 @@ const OFFER_SECTION_ITEMS = computed(() => [
   <div class="container flex flex-col gap-6">
     <section class="text-center">
       <h2 class="text-3xl font-bold">{{ $t('offer.title') }}</h2>
-      <p class="mx-auto mt-7 max-w-5xl text-typography-gray">{{ $t('offer.description') }}</p>
+      <p class="mx-auto mt-7 max-w-5xl text-muted-foreground">{{ $t('offer.description') }}</p>
     </section>
     <div class="mt-14 grid justify-center gap-5 gap-y-10 md:grid-cols-4 lg:grid-cols-6 lg:gap-10">
       <OfferCard

@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import type { Product, ProductResponse } from '~/types'
 
+const config = useRuntimeConfig()
+const baseUrl = config.public.baseUrl
+const { t } = useI18n()
+
 const { title, description, type } = defineProps<{
   title: string
   description: string
@@ -19,8 +23,12 @@ const fetchProducts = async () => {
       id: product.id,
       name: product.name,
       category: product.category.name,
-      price: product.price + ' zł',
-      imageUrl: 'https://panel.imbusbike.pl' + product.images?.[0]?.url,
+      description: product.description,
+      attributes: product.attributes,
+      url: product.url,
+      price: `${product.price} zł`,
+      imageUrl: `${baseUrl}${product.images?.[0]?.url}`,
+      link: `${t('menu.products.link')}/${product.documentId}`,
     }))
   } else {
     products.value = []
@@ -34,7 +42,7 @@ await fetchProducts()
   <div class="container">
     <section class="text-center">
       <h2 class="text-3xl font-bold">{{ title }}</h2>
-      <p class="mx-auto mt-7 max-w-5xl text-typography-gray">{{ description }}</p>
+      <p class="mx-auto mt-7 max-w-5xl text-muted-foreground">{{ description }}</p>
     </section>
     <div class="mt-10">
       <BaseCarousel :products="products" />

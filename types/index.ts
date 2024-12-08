@@ -25,11 +25,21 @@ export interface Images {
   url: string
 }
 
+export interface Attribute {
+  id: number
+  key: string
+  value: string
+}
+
 export interface ProductResponse {
   id: number
+  documentId: string
   name: string
   category: Category
   price: string
+  description: string
+  attributes: Attribute[]
+  url: string
   images?: Images[]
 }
 
@@ -38,8 +48,12 @@ export interface Product {
   name: string
   category: string
   price: string
+  description: string
+  attributes: Attribute[]
+  url: string
   oldPrice?: string
   imageUrl: string
+  link: string
 }
 
 export interface NewsItemResponse {

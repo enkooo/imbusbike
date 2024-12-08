@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import type { NewsItem, NewsItemResponse } from '~/types'
 
+const config = useRuntimeConfig()
+const baseUrl = config.public.baseUrl
+const { t } = useI18n()
 const news = ref<NewsItem[]>([])
 
 const { data: newsData } = await useIFetch<{ data: NewsItemResponse[] }>(
@@ -22,8 +25,8 @@ if (newsData.value) {
       title: newsItem.title,
       description: truncatedDescription,
       date: newsItem.publishedAt,
-      link: '/aktualnosci/' + newsItem.documentId,
-      imageUrl: 'https://panel.imbusbike.pl' + newsItem.cover?.url,
+      link: `${t('menu.news.link')}/${newsItem.documentId}`,
+      imageUrl: `${baseUrl}${newsItem.cover?.url}`,
     }
   })
 } else {
@@ -35,7 +38,7 @@ if (newsData.value) {
   <div class="container">
     <section class="text-center">
       <h2 class="text-3xl font-bold">{{ $t('news.title') }}</h2>
-      <p class="mx-auto mt-7 max-w-5xl text-typography-gray">{{ $t('news.description') }}</p>
+      <p class="mx-auto mt-7 max-w-5xl text-muted-foreground">{{ $t('news.description') }}</p>
     </section>
     <div class="mt-10">
       <div class="flex gap-x-6">

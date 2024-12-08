@@ -148,7 +148,7 @@ const serviceDateValue = computed({
   <div class="container">
     <section class="text-center">
       <h2 class="text-3xl font-bold">{{ $t('serviceForm.heading') }}</h2>
-      <p class="mx-auto mt-7 max-w-5xl text-typography-gray">{{ $t('serviceForm.subheading') }}</p>
+      <p class="mx-auto mt-7 max-w-5xl text-muted-foreground">{{ $t('serviceForm.subheading') }}</p>
     </section>
     <form
       class="mx-auto mt-10 max-w-5xl space-y-6 md:grid md:w-full md:grid-cols-3 md:gap-6 md:space-y-0"

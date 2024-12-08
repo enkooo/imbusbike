@@ -1,0 +1,109 @@
+<script setup lang="ts">
+import { CarouselNext, CarouselPrevious } from '@/components/ui/carousel'
+import type { ProductResponse, Product } from '~/types'
+
+const route = useRoute()
+const productId = route.params.id as string
+
+const product = ref<Product | null>(null)
+
+const { data: productData } = await useIFetch<{ data: ProductResponse }>(
+  `products/${productId}?populate=*`,
+)
+
+if (productData.value) {
+  product.value = {
+    id: productData.value.data.id,
+    name: productData.value.data.name,
+    category: productData.value.data.category.name,
+    description: productData.value.data.description,
+    attributes: productData.value.data.attributes,
+    url: productData.value.data.url,
+    price: productData.value.data.price + ' zł',
+    imageUrl: 'https://panel.imbusbike.pl' + productData.value.data.images?.[0]?.url,
+    link: '/produkty/' + productData.value.data.documentId,
+  }
+} else {
+  product.value = null
+}
+</script>
+
+<template>
+  <div class="min-h-screen bg-white">
+    <main class="container mx-auto px-4 pb-24 pt-8">
+      <div class="grid gap-8 md:grid-cols-2">
+        <div class="space-y-4">
+          <div class="relative aspect-square">
+            <Carousel
+              v-slot="{ canScrollNext }"
+              class="relative w-full"
+            >
+              <CarouselContent>
+                <CarouselItem
+                  v-for="(_, index) in 5"
+                  :key="index"
+                >
+                  <div class="flex aspect-square items-center justify-center">
+                    <NuxtImg
+                      :src="product?.imageUrl"
+                      sizes="365px sm:640px md:320px md:800px lg:1024px xl:1280px 2xl:1536px"
+                      densities="x1"
+                      quality="80"
+                      alt="Innowacyjny rower elektryczny"
+                      class="h-full w-full overflow-hidden rounded-lg object-cover"
+                    />
+                  </div>
+                </CarouselItem>
+              </CarouselContent>
+              <CarouselPrevious class="left-4" />
+              <CarouselNext
+                v-if="canScrollNext"
+                class="right-4"
+              />
+            </Carousel>
+          </div>
+        </div>
+
+        <div class="space-y-6">
+          <div>
+            <h1 class="text-3xl font-bold">{{ product?.name }}</h1>
+            <p class="mt-2 text-xl font-semibold">{{ product?.price }}</p>
+          </div>
+
+          <div class="space-y-2">
+            <h2 class="text-lg font-semibold">{{ $t('products.productDescription') }}</h2>
+            <p class="text-gray-600">
+              {{ product?.description }}
+            </p>
+          </div>
+
+          <div class="space-y-2">
+            <h2 class="text-lg font-semibold">{{ $t('products.specifications') }}</h2>
+            <ul class="list-inside list-disc text-gray-600">
+              <li
+                v-for="attribute in product?.attributes"
+                :key="attribute.id"
+              >
+                <span class="font-semibold">{{ attribute.key }}:</span> {{ attribute.value }}
+              </li>
+            </ul>
+          </div>
+
+          <a
+            :href="product?.url"
+            target="_blank"
+          >
+            <Button class="mt-10 w-full py-6 text-lg">{{ $t('products.moveToPurchase') }}</Button>
+          </a>
+        </div>
+      </div>
+
+      <CarouselSection
+        :title="$t('recommendedProducts.title')"
+        :description="$t('recommendedProducts.description')"
+        type="magick"
+        class="mb-32 mt-24"
+      />
+    </main>
+  </div>
+</template>
