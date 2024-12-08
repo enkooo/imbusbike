@@ -4,6 +4,9 @@ import type { ProductResponse, Product } from '~/types'
 
 const route = useRoute()
 const productId = route.params.id as string
+const config = useRuntimeConfig()
+const baseUrl = config.public.baseUrl
+const { t } = useI18n()
 
 const product = ref<Product | null>(null)
 
@@ -20,8 +23,9 @@ if (productData.value) {
     attributes: productData.value.data.attributes,
     url: productData.value.data.url,
     price: productData.value.data.price + ' zł',
-    imageUrl: 'https://panel.imbusbike.pl' + productData.value.data.images?.[0]?.url,
-    link: '/produkty/' + productData.value.data.documentId,
+    imageUrl: `${baseUrl}${productData.value.data.images?.[0]?.url}`,
+    images: productData.value.data.images,
+    link: `${t('menu.products.link')}/${productData.value.data.documentId}`,
   }
 } else {
   product.value = null
@@ -34,32 +38,26 @@ if (productData.value) {
       <div class="grid gap-8 md:grid-cols-2">
         <div class="space-y-4">
           <div class="relative aspect-square">
-            <Carousel
-              v-slot="{ canScrollNext }"
-              class="relative w-full"
-            >
+            <Carousel class="relative w-full">
               <CarouselContent>
                 <CarouselItem
-                  v-for="(_, index) in 5"
+                  v-for="(image, index) in product?.images"
                   :key="index"
                 >
                   <div class="flex aspect-square items-center justify-center">
                     <NuxtImg
-                      :src="product?.imageUrl"
+                      :src="baseUrl + image?.url"
                       sizes="365px sm:640px md:320px md:800px lg:1024px xl:1280px 2xl:1536px"
                       densities="x1"
                       quality="80"
-                      alt="Innowacyjny rower elektryczny"
+                      alt=""
                       class="h-full w-full overflow-hidden rounded-lg object-cover"
                     />
                   </div>
                 </CarouselItem>
               </CarouselContent>
               <CarouselPrevious class="left-4" />
-              <CarouselNext
-                v-if="canScrollNext"
-                class="right-4"
-              />
+              <CarouselNext class="right-4" />
             </Carousel>
           </div>
         </div>

@@ -53,6 +53,7 @@ export interface Product {
   url: string
   oldPrice?: string
   imageUrl: string
+  images?: Images[]
   link: string
 }
 
