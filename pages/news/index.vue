@@ -29,6 +29,7 @@ const fetchNews = async (params: string = '') => {
         date: newsItem.publishedAt,
         link: `${t('menu.news.link')}/${newsItem.documentId}`,
         imageUrl: `${baseUrl}${newsItem.cover?.url}`,
+        text: newsItem.text,
       }
     })
   } else {

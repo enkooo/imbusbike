@@ -56,6 +56,24 @@ export interface Product {
   link: string
 }
 
+export type TextChild = {
+  text: string
+  type: 'text'
+}
+
+export type HeadingBlock = {
+  type: 'heading'
+  level: number
+  children: TextChild[]
+}
+
+export type ParagraphBlock = {
+  type: 'paragraph'
+  children: TextChild[]
+}
+
+export type Block = HeadingBlock | ParagraphBlock
+
 export interface NewsItemResponse {
   id: number
   documentId: string
@@ -67,6 +85,7 @@ export interface NewsItemResponse {
     url: string
   }
   images?: Images[]
+  text: Block[]
 }
 
 export interface NewsItem {
@@ -78,4 +97,5 @@ export interface NewsItem {
   link?: string
   imageUrl?: string
   images?: Images[]
+  text: Block[]
 }

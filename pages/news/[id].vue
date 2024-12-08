@@ -10,6 +10,8 @@ const { data: articleData } = await useIFetch<{ data: NewsItemResponse }>(
   `articles/${articleId}?populate=*`,
 )
 
+console.log('articleData', articleData)
+
 if (articleData.value) {
   article.value = {
     id: articleData.value.data.id,
@@ -20,6 +22,7 @@ if (articleData.value) {
     images: articleData.value.data.images,
     date: articleData.value.data.publishedAt,
     link: articleData.value.data.link,
+    text: articleData.value.data.text,
   }
 } else {
   article.value = null
@@ -80,10 +83,7 @@ const formattedDate = formatPolishDate(article.value?.date || '')
       </div>
 
       <div class="prose prose-gray mx-auto max-w-3xl">
-        <div
-          class="mb-4"
-          v-html="article?.description"
-        />
+        <DynamicContent :blocks="article?.text || []" />
       </div>
       <CarouselSection
         :title="$t('recommendedProducts.title')"

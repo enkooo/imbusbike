@@ -27,6 +27,7 @@ if (newsData.value) {
       date: newsItem.publishedAt,
       link: `${t('menu.news.link')}/${newsItem.documentId}`,
       imageUrl: `${baseUrl}${newsItem.cover?.url}`,
+      text: newsItem.text,
     }
   })
 } else {
