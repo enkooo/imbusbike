@@ -47,7 +47,7 @@ if (productData.value) {
                   <div class="flex aspect-square items-center justify-center">
                     <NuxtImg
                       :src="baseUrl + image?.url"
-                      sizes="365px sm:640px md:320px md:800px lg:1024px xl:1280px 2xl:1536px"
+                      sizes="320px sm:640px md:320px lg:480px xl:640px"
                       densities="x1"
                       quality="80"
                       alt=""

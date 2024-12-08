@@ -16,6 +16,7 @@ defineProps<{
           :src="imageUrl"
           :alt="name"
           densities="x1"
+          sizes="154px"
           format="webp"
           class="mb-4 h-[88px] w-full object-contain"
         />
