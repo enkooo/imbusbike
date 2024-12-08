@@ -1,7 +1,7 @@
 <template>
   <div class="relative">
-    <section class="relative w-full p-8 sm:h-[calc(100dvh-101px)]">
-      <div class="relative h-3/4 w-full overflow-hidden rounded-sm bg-primary py-10 sm:py-0">
+    <section class="relative w-full p-8">
+      <div class="relative h-[70dvh] w-full overflow-hidden rounded-sm bg-primary py-10 sm:py-0">
         <NuxtImg
           src="/img/hero.webp"
           class="absolute left-0 top-0 z-0 h-full w-full object-cover opacity-10"
@@ -48,10 +48,12 @@
           </div>
         </div>
       </div>
-      <div class="flex h-1/3 w-full flex-col justify-center gap-10 md:h-1/4">
-        <p class="pt-10 text-center text-muted-foreground md:pt-0">{{ $t('hero.partners') }}</p>
+      <div class="my-14 flex h-1/3 w-full flex-col justify-center gap-10 md:h-1/4">
+        <p class="text-center text-muted-foreground">
+          {{ $t('hero.partners') }}
+        </p>
         <div
-          class="container flex w-full max-w-[500px] flex-wrap justify-center gap-10 lg:max-w-full lg:gap-20"
+          class="container flex w-full max-w-[500px] flex-wrap justify-center gap-10 lg:max-w-full xl:gap-20"
         >
           <NuxtImg
             src="/img/bosch-logo.svg"
@@ -71,8 +73,8 @@
             src="/img/bolt-logo.jpg"
             alt="Bolt Logo"
             format="webp"
-            width="150"
-            height="50"
+            width="165"
+            height="65"
             densities="x1"
           />
 
@@ -88,7 +90,15 @@
             format="webp"
             alt="Oko Logo"
             width="90"
-            height="50"
+            height="65"
+            densities="x1"
+          />
+          <NuxtImg
+            src="/img/magick.png"
+            format="webp"
+            alt="Magick Logo"
+            width="65"
+            height="65"
             densities="x1"
           />
         </div>
