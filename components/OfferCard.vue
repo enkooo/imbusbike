@@ -16,7 +16,9 @@ defineProps<{
           class="relative z-10 flex h-full flex-col gap-8 overflow-hidden rounded-sm p-8 text-muted-foreground shadow-[0px_16px_25px_0px_rgba(0,0,0,0.06)]"
         >
           <div class="flex gap-x-6">
-            <div class="relative flex size-16 items-center justify-center rounded-sm shadow-lg">
+            <div
+              class="relative flex aspect-square size-16 h-[60px] w-[60px] items-center justify-center rounded-sm shadow-lg"
+            >
               <NuxtImg
                 :src="iconUrl"
                 alt=""
