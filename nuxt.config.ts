@@ -32,6 +32,10 @@ export default defineNuxtConfig({
     '@nuxtjs/seo',
   ],
 
+  image: {
+    domains: ['panel.imbusbike.pl'],
+  },
+
   delayHydration: {
     mode: 'init',
   },

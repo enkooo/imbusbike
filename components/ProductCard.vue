@@ -15,8 +15,6 @@ defineProps<{
         <NuxtImg
           :src="imageUrl"
           :alt="name"
-          width="154"
-          height="88"
           densities="x1"
           format="webp"
           class="mb-4 h-[88px] w-full object-contain"
