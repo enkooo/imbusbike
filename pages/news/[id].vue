@@ -3,14 +3,14 @@ import type { NewsItemResponse, NewsItem } from '~/types'
 
 const route = useRoute()
 const articleId = route.params.id as string
+const config = useRuntimeConfig()
+const baseUrl = config.public.baseUrl
 
 const article = ref<NewsItem | null>(null)
 
 const { data: articleData } = await useIFetch<{ data: NewsItemResponse }>(
   `articles/${articleId}?populate=*`,
 )
-
-console.log('articleData', articleData)
 
 if (articleData.value) {
   article.value = {
@@ -52,13 +52,10 @@ const formattedDate = formatPolishDate(article.value?.date || '')
       </div>
 
       <div class="container relative mb-8 overflow-hidden rounded-lg px-14">
-        <Carousel
-          v-slot="{ canScrollNext }"
-          class="relative w-full"
-        >
+        <Carousel class="relative w-full">
           <CarouselContent>
             <CarouselItem
-              v-for="(_, index) in 5"
+              v-for="(image, index) in article?.images || []"
               :key="index"
             >
               <div class="relative h-full w-full overflow-hidden rounded-lg">
@@ -66,11 +63,11 @@ const formattedDate = formatPolishDate(article.value?.date || '')
                   class="h-full min-h-[300px] w-full overflow-hidden rounded-lg md:min-h-[400px] lg:min-h-[500px]"
                 >
                   <NuxtImg
-                    src="/img/hero.webp"
+                    :src="baseUrl + image?.url"
                     sizes="365px sm:640px md:320px md:800px lg:1024px xl:1280px 2xl:1536px"
                     densities="x1"
                     quality="80"
-                    alt="Innowacyjny rower elektryczny"
+                    alt=""
                     class="absolute inset-0 h-full w-full object-cover"
                   />
                 </div>
@@ -78,7 +75,7 @@ const formattedDate = formatPolishDate(article.value?.date || '')
             </CarouselItem>
           </CarouselContent>
           <CarouselPrevious />
-          <CarouselNext v-if="canScrollNext" />
+          <CarouselNext />
         </Carousel>
       </div>
 
