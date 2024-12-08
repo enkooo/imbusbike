@@ -7,7 +7,6 @@ defineProps<{
   summary: string
   button: string
 }>()
-
 </script>
 
 <template>
