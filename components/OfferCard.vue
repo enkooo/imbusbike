@@ -32,7 +32,6 @@ defineProps<{
           </div>
           <p>{{ description }}</p>
           <div>
-            <p>{{ $t('offer.benefits') }}:</p>
             <ul class="mt-2 list-disc pl-4">
               <li
                 v-for="benefit in benefits"
