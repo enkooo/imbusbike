@@ -89,7 +89,6 @@ export default defineNuxtConfig({
       baseUrl: process.env.NUXT_BASE_URL,
     },
   },
-
   // seo: {
   //   description:
   //     'Zapewniamy kompleksowe usługi serwisu rowerowego, od tradycyjnych napraw po zaawansowane modyfikacje i konwersje rowerów elektrycznych. Certyfikowany serwis Bosch i Brose. Sprawdź naszą ofertę!',
