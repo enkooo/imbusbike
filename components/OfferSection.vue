@@ -11,7 +11,6 @@ const OFFER_SECTION_ITEMS = computed(() => [
       t('offer.items.mvp.benefits.0'),
       t('offer.items.mvp.benefits.1'),
       t('offer.items.mvp.benefits.2'),
-      t('offer.items.mvp.benefits.3'),
     ],
     summary: t('offer.items.mvp.summary'),
   },
@@ -24,7 +23,6 @@ const OFFER_SECTION_ITEMS = computed(() => [
       t('offer.items.custom.benefits.0'),
       t('offer.items.custom.benefits.1'),
       t('offer.items.custom.benefits.2'),
-      t('offer.items.custom.benefits.3'),
     ],
     summary: t('offer.items.custom.summary'),
   },
@@ -36,10 +34,21 @@ const OFFER_SECTION_ITEMS = computed(() => [
     benefits: [
       t('offer.items.digitalization.benefits.0'),
       t('offer.items.digitalization.benefits.1'),
-      // t('offer.items.digitalization.benefits.2'),
-      // t('offer.items.digitalization.benefits.3'),
+      t('offer.items.digitalization.benefits.2'),
     ],
     summary: t('offer.items.digitalization.summary'),
+  },
+  {
+    id: 4,
+    iconUrl: '/img/door.svg',
+    title: t('offer.items.electric.title'),
+    description: t('offer.items.electric.description'),
+    benefits: [
+      t('offer.items.electric.benefits.0'),
+      t('offer.items.electric.benefits.1'),
+      t('offer.items.electric.benefits.2'),
+    ],
+    summary: t('offer.items.electric.summary'),
   },
 ])
 </script>

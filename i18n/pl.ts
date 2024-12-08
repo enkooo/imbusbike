@@ -98,38 +98,48 @@ export default {
     learnMore: 'Dowiedz się więcej',
     items: {
       mvp: {
-        title: 'Profesjonalny serwis rowerowy',
+        title: 'Serwis rowerów tradycyjnych',
         description:
-          'Dodaj swojemu rowerowi moc! Oferujemy profesjonalną konwersję na elektryczne rozwiązania, które odmienią Twoją jazdę.',
+          'Zapewniamy dokładną diagnostykę i skuteczne usuwanie usterek. Od podstawowych napraw po zaawansowane modyfikacje.',
         benefits: {
-          0: 'Przeglądy techniczne',
-          1: 'Diagnostyka problemów',
-          2: 'Skuteczna i szybka naprawa',
-          3: 'Możliwość zakupu nowego sprzętu',
+          0: 'Indywidualne podejście do potrzeb',
+          1: 'Szeroki zakres usług',
+          2: 'Wysoka jakość wykonania',
         },
-        summary: 'Zadbaj o swój rower, powierzając go w ręce specjalistów!',
+        summary: 'Postaw na profesjonalizm i precyzję.',
       },
       custom: {
-        title: 'Konwersja rowerów zwykłych na elektryczne.',
+        title: 'Serwis rowerów elektrycznych',
         description:
-          'Dodaj swojemu rowerowi moc! Oferujemy profesjonalną konwersję na elektryczne rozwiązania, które odmienią Twoją jazdę.',
+          'Certyfikowany serwis systemów Bosch, Brose, Shimano Steps i Bolt. Podejmujemy każde wyzwanie.',
         benefits: {
-          0: 'Montaż wysokiej jakości silników i baterii',
-          1: 'Indywidualne dostosowanie do potrzeb użytkownika',
-          2: 'Wykalifikowani pracownicy',
-          3: 'Seriws i naprawa rowerów elektrycznych',
+          0: 'Aktualizacja systemów',
+          1: 'Profesjonalne przypisanie podzespołów',
+          2: 'Elastyczność i doświadczenie',
         },
-        summary: 'Ciesz się większą wygodą i możliwościami na trasie!',
+        summary: 'Twoje e-bike w najlepszych rękach.',
+      },
+      electric: {
+        title: 'Konwersja roweru na elektryczny',
+        description:
+          'Dodaj mocy swojemu rowerowi dzięki profesjonalnym zestawom do konwersji. Komfort i bezpieczeństwo gwarantowane.',
+        benefits: {
+          0: 'Montaż wysokiej jakości komponentów',
+          1: 'Indywidualne dostosowanie zestawów',
+          2: 'Wsparcie gwarancyjne i pogwarancyjne',
+        },
+        summary: 'Odkryj nowe możliwości jazdy.',
       },
       digitalization: {
         title: 'Serwis door-to-door',
         description:
-          'Nie masz czasu na wizytę w serwisie? Przyjedziemy po twój rower! Oferujemy wygodne rozwiązanie dla zapracowanych.',
+          'Nie masz czasu? Przyjedziemy po Twój rower i wykonamy naprawę bez wychodzenia z domu.',
         benefits: {
-          0: 'Naprawy bez wychodzenia z domu',
+          0: 'Wygoda i oszczędność czasu',
           1: 'Wstępna wycena na podstawie zdjęć',
+          2: 'Profesjonalny serwis w Twoim domu',
         },
-        summary: 'Oszczędzaj czas i ciesz się sprawnym rowerem bez wychodzenia z domu!',
+        summary: 'Serwis rowerowy na wyciągnięcie ręki.',
       },
     },
   },
