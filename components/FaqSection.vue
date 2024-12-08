@@ -29,17 +29,12 @@ const faqSections = [
       {
         id: 4,
         question: 'Czy muszę umawiać wizytę na serwis?',
-        answer: 'Brak odpowiedzi',
+        answer: 'Z uwagi na duże obłożenie serwisu wskazany jest kontakt telefoniczny',
       },
       {
         id: 5,
         question: 'Czy oferujecie naprawy na miejscu, od ręki?',
-        answer: 'Brak odpowiedzi',
-      },
-      {
-        id: 6,
-        question: 'Czy akceptujecie płatności kartą?',
-        answer: 'Brak odpowiedzi',
+        answer: 'Drobne usterki usuwamy od ręki.',
       },
     ],
   },
@@ -72,7 +67,7 @@ const faqSections = [
       {
         id: 5,
         question: 'Czy udzielacie gwarancji na przerobiony rower?',
-        answer: 'Brak odpowiedzi.',
+        answer: 'Tak, zapewniamy wsparcie gwarancyjne i pogwarancyjne.',
       },
     ],
   },
@@ -83,16 +78,6 @@ const faqSections = [
         id: 1,
         question: 'Jaki jest koszt przeglądu?',
         answer: 'Przegląd podstawowy 100-150zł. Przegląd rozszerzony 250-300zł',
-      },
-      {
-        id: 2,
-        question: 'Co zawiera przegląd podstawowy?',
-        answer: 'Brak odpowiedzi',
-      },
-      {
-        id: 3,
-        question: 'Co zawiera przegląd rozszerzony?',
-        answer: 'Brak odpowiedzi',
       },
       {
         id: 4,
@@ -107,24 +92,14 @@ const faqSections = [
           'Koszt centrowania koła od 30-50zł. W przypadku kół karbonowych oraz zaplatanych na płaskich szprychach koszt może być wyższy.',
       },
       {
-        id: 6,
-        question: 'Czy wymiana części jest wliczona w koszt przeglądu?',
-        answer: 'Brak odpowiedzi',
-      },
-      {
         id: 7,
         question: 'Czy oferujecie rabaty na regularny serwis?',
         answer: 'Brak odpowiedzi',
       },
       {
         id: 8,
-        question: 'Ile kosztuje naprawa przerzutek?',
-        answer: 'Brak odpowiedzi',
-      },
-      {
-        id: 9,
-        question: 'Czy wymiana części jest wliczona w koszt przeglądu?',
-        answer: 'Brak odpowiedzi',
+        question: 'Jaki jest koszt regulacji przerzutek?',
+        answer: 'Koszt regulacji przerzutek zaczyna się od 40 zł.',
       },
     ],
   },
@@ -133,44 +108,39 @@ const faqSections = [
     items: [
       {
         id: 1,
-        question: 'Na czym polega usługa door to door?',
-        answer: 'Brak odpowiedzi',
-      },
-      {
-        id: 2,
         question: 'Jaki jest czas realizacji?',
         answer: 'Od odbioru roweru do naprawy do 5 dni roboczych',
       },
       {
-        id: 3,
+        id: 2,
         question: 'Jaki jest koszt usługi?',
         answer:
           'Koszt transportu roweru w obie strony w obrębie Tomaszowa Mazowieckiego jest bezpłatny.',
       },
       {
-        id: 4,
+        id: 3,
         question: 'Czy usługa door to door obejmuje wszystkie rodzaje napraw?',
         answer: 'Brak odpowiedzi.',
       },
       {
-        id: 5,
+        id: 4,
         question: 'Czy mogę zamówić usługę poza standardowymi godzinami pracy?',
-        answer: 'Brak odpowiedzi.',
+        answer: 'Tak, ale tylko po konsultacji telefonicznej.',
+      },
+      {
+        id: 5,
+        question: 'Czy odbieracie rowery z innych miast?',
+        answer: 'Nie, usługa obejmuje Tomaszów Mazowiecki w obrębie 20 km.',
       },
       {
         id: 6,
-        question: 'Czy odbieracie rowery z innych miast?',
-        answer: 'Brak odpowiedzi.',
+        question: 'Czy usługa door to door jest dostępna w weekendy?',
+        answer: 'Nie, odbieramy rowery od poniedziału do piątku.',
       },
       {
         id: 7,
-        question: 'Czy usługa door to door jest dostępna w weekendy?',
-        answer: 'Brak odpowiedzi.',
-      },
-      {
-        id: 8,
         question: 'Jak mogę umówić wizytę mobilnego serwisu?',
-        answer: 'Skorzystaj z zakładki "Serwis" lub skontaktuj się z nami telefonicznie',
+        answer: 'Skorzystaj z zakładki "Terminarz" lub skontaktuj się z nami telefonicznie',
       },
     ],
   },

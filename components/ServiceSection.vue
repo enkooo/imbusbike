@@ -294,7 +294,7 @@ const serviceDateValue = computed({
           v-auto-animate
           class="col-span-3"
         >
-          <FormLabel required>{{ $t('contactForm.fields.messageContent') }}</FormLabel>
+          <FormLabel required>{{ $t('serviceForm.fields.messageContent') }}</FormLabel>
           <FormControl>
             <Textarea
               class="resize-none"

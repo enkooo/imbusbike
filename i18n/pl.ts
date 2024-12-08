@@ -47,7 +47,7 @@ export default {
   bestsellers: {
     title: 'Bestsellery',
     description:
-      'Odkryj nasze topowe produkty, które pokochało już tysiące rowerzystów! Niezawodne akcesoria, części i narzędzia, które ułatwią każdą jazdę. Sprawdź, co wybierają inni i dołącz do grona zadowolonych klientów.',
+      'Zapoznaj się z najczęściej wybieranymi produktami w ofercie Imbusbike.  Topowa oferta w zasięgu twojej ręki.',
   },
   recommendedProducts: {
     title: 'Polecane produkty',
@@ -217,14 +217,13 @@ export default {
   serviceForm: {
     heading: 'Umów termin serwis',
     subheading:
-      'Zgłoś swój rower do serwisu i pozwól nam zadbać o jego perfekcyjny stan! Podaj proponowaną datę wizyty, a my skontaktujemy się z Tobą, aby potwierdzić dostępność i szczegóły.' +
-      'Proszę pamiętać: Wybrana data jest terminem wstępnym i nie gwarantuje realizacji serwisu w tym dniu. Dołożymy wszelkich starań, aby znaleźć najdogodniejszy termin.',
+      'W tym miejscu zgłaszasz usługę serwisową! Podaj proponowaną datę wizyty. Będziemy wdzięczni za pozostawienie opisu w zakładce "Zakres Usługi” co przyspieszy proces weryfikacji. Dojazd do 10 km w obrębie Tomaszowa Mazowieckiego gratis.',
     fields: {
       name: 'Imię i nazwisko',
       email: 'Adres e-mail',
       phone: 'Numer telefonu',
-      messageTitle: 'Tytuł',
-      messageContent: 'Treść',
+      messageTitle: 'Model sprzętu',
+      messageContent: 'Zakres usługi',
       images: 'Zdjęcia',
       serviceDate: 'Data serwisu',
     },
@@ -272,7 +271,7 @@ export default {
       },
       service: {
         link: '/serwis',
-        label: 'Serwis',
+        label: 'Terminarz',
       },
       faq: {
         link: '/faq',
