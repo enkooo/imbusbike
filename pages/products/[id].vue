@@ -51,6 +51,7 @@ if (productData.value) {
                       densities="x1"
                       quality="80"
                       alt=""
+                      format="webp"
                       class="h-full w-full overflow-hidden rounded-lg object-cover"
                     />
                   </div>

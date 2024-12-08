@@ -68,6 +68,7 @@ const formattedDate = formatPolishDate(article.value?.date || '')
                     densities="x1"
                     quality="80"
                     alt=""
+                    format="webp"
                     class="absolute inset-0 h-full w-full object-cover"
                   />
                 </div>

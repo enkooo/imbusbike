@@ -63,6 +63,7 @@ if (newsData.value) {
             alt=""
             width="262"
             height="206"
+            format="webp"
           />
 
           <NuxtLinkLocale

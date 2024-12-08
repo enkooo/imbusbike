@@ -18,6 +18,7 @@ const formattedDate = formatPolishDate(date)
       <NuxtImg
         :src="imageUrl"
         alt=""
+        format="webp"
         class="max-h-40 w-full min-w-36 rounded-l-sm object-cover sm:max-h-48"
       />
       <div class="flex min-w-0 flex-col gap-y-2 p-6">
