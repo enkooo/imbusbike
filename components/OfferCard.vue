@@ -13,7 +13,7 @@ defineProps<{
   <div class="mx-auto h-full w-full max-w-[435px] rounded-sm p-[1px]">
     <div class="flex h-full w-full items-center justify-center rounded-sm">
       <div
-        class="relative z-10 flex h-full flex-col gap-8 overflow-hidden rounded-sm p-8 text-muted-foreground shadow-[0px_16px_25px_0px_rgba(0,0,0,0.06)]"
+        class="relative z-10 flex h-full flex-col gap-8 overflow-hidden rounded-sm p-8 text-muted-foreground [box-shadow:0_1px_15px_-1px_rgba(0,0,0,0.1)]"
       >
         <h3 class="line-clamp-2 text-balance text-2xl font-bold text-primary">{{ title }}</h3>
         <p class="line-clamp-2 text-muted-foreground sm:line-clamp-3 lg:line-clamp-4">

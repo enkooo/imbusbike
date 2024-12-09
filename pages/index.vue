@@ -5,7 +5,7 @@
       :title="$t('bestsellers.title')"
       :description="$t('bestsellers.description')"
       type="bestseller"
-      class="mt-16 sm:mt-24 md:mt-10 lg:mt-0"
+      class="mt-0"
     />
     <NewsSection class="mt-32" />
     <CarouselSection

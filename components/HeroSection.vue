@@ -14,7 +14,9 @@
         <div
           class="xxl:px-0 relative z-10 mx-auto flex h-full min-h-[500px] max-w-[1840px] flex-col justify-center gap-8 px-10 md:px-24"
         >
-          <h1 class="text-5xl font-bold text-primary-foreground sm:text-[3.75rem] lg:text-[5rem]">
+          <h1
+            class="text-balance text-5xl font-bold text-primary-foreground sm:text-[3.75rem] lg:text-[5rem]"
+          >
             {{ $t('hero.title') }}
           </h1>
           <p class="max-w-[755px] text-sm text-typography-light sm:text-base">
