@@ -22,12 +22,17 @@ defineProps<{
         >
           <div class="lg:p-1">
             <div class="flex aspect-square items-center justify-center">
-              <ProductCard
-                :image-url="product.imageUrl"
-                :name="product.name"
-                :category="product.category"
-                :price="product.price"
-              />
+              <NuxtLink
+                class="truncate rounded-sm"
+                :to="product.link"
+              >
+                <ProductCard
+                  :image-url="product.imageUrl"
+                  :name="product.name"
+                  :category="product.category"
+                  :price="product.price"
+                />
+              </NuxtLink>
             </div>
           </div>
         </CarouselItem>

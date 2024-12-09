@@ -37,7 +37,7 @@ if (productData.value) {
     <main class="container mx-auto px-4 pb-24 pt-8">
       <div class="grid gap-8 md:grid-cols-2">
         <div class="space-y-4">
-          <div class="relative aspect-square">
+          <div class="relative aspect-square rounded-lg border">
             <Carousel class="relative w-full">
               <CarouselContent>
                 <CarouselItem
