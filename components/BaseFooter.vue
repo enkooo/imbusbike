@@ -1,47 +1,84 @@
 <template>
   <div class="relative z-10 -mt-10 overflow-hidden bg-primary py-10">
     <div class="container text-typography-light md:grid md:grid-cols-3 md:items-center md:gap-2">
-      <div class="flex justify-center text-xs sm:px-10 md:px-0">
-        <div class="flex w-1/2 flex-col gap-3 md:w-full lg:flex-row lg:gap-3">
-          <div class="flex flex-col gap-3 md:flex-row">
-            <NuxtLinkLocale
-              class="hover:underline"
-              :to="$t('footer.navigation.products.link')"
-            >
-              {{ $t('footer.navigation.products.label') }}
-            </NuxtLinkLocale>
-            <NuxtLinkLocale
-              class="hover:underline"
-              :to="$t('footer.navigation.news.link')"
-            >
-              {{ $t('footer.navigation.news.label') }}
-            </NuxtLinkLocale>
+      <div class="flex text-xs sm:px-10 md:px-0">
+        <div class="flex w-1/2 flex-col flex-wrap gap-3 md:w-full lg:flex-row lg:gap-3">
+          <div class="flex flex-col gap-3">
+            <div class="flex flex-col gap-3 md:flex-row">
+              <NuxtLinkLocale
+                class="hover:underline"
+                :to="$t('footer.navigation.products.link')"
+              >
+                {{ $t('footer.navigation.products.label') }}
+              </NuxtLinkLocale>
+              <NuxtLinkLocale
+                class="hover:underline"
+                :to="$t('footer.navigation.news.link')"
+              >
+                {{ $t('footer.navigation.news.label') }}
+              </NuxtLinkLocale>
+            </div>
+            <div class="flex flex-col gap-3 md:flex-row">
+              <NuxtLinkLocale
+                class="hover:underline"
+                :to="$t('footer.navigation.offer.link')"
+              >
+                {{ $t('footer.navigation.offer.label') }}
+              </NuxtLinkLocale>
+              <NuxtLinkLocale
+                class="hover:underline"
+                :to="$t('footer.navigation.service.link')"
+              >
+                {{ $t('footer.navigation.service.label') }}
+              </NuxtLinkLocale>
+              <NuxtLinkLocale
+                class="hover:underline"
+                :to="$t('footer.navigation.faq.link')"
+              >
+                {{ $t('footer.navigation.faq.label') }}
+              </NuxtLinkLocale>
+              <NuxtLinkLocale
+                class="hover:underline"
+                :to="$t('footer.navigation.contact.link')"
+              >
+                {{ $t('footer.navigation.contact.label') }}
+              </NuxtLinkLocale>
+            </div>
           </div>
-          <div class="flex flex-col gap-3 md:flex-row">
-            <NuxtLinkLocale
-              class="hover:underline"
-              :to="$t('footer.navigation.offer.link')"
+          <div class="hidden gap-3 md:flex">
+            <a
+              :href="$t('footer.navigation.facebook.link')"
+              target="_blank"
+              class="flex items-end"
             >
-              {{ $t('footer.navigation.offer.label') }}
-            </NuxtLinkLocale>
-            <NuxtLinkLocale
-              class="hover:underline"
-              :to="$t('footer.navigation.service.link')"
+              <Icon
+                name="mdi:facebook"
+                class="text-muted-foreground"
+                size="25"
+              />
+            </a>
+            <a
+              :href="$t('footer.navigation.instagram.link')"
+              target="_blank"
+              class="flex items-end"
             >
-              {{ $t('footer.navigation.service.label') }}
-            </NuxtLinkLocale>
-            <NuxtLinkLocale
-              class="hover:underline"
-              :to="$t('footer.navigation.faq.link')"
+              <Icon
+                name="ant-design:instagram-outlined"
+                class="text-muted-foreground"
+                size="25"
+              />
+            </a>
+            <a
+              :href="$t('footer.navigation.tik-tok.link')"
+              target="_blank"
+              class="flex items-end"
             >
-              {{ $t('footer.navigation.faq.label') }}
-            </NuxtLinkLocale>
-            <NuxtLinkLocale
-              class="hover:underline"
-              :to="$t('footer.navigation.contact.link')"
-            >
-              {{ $t('footer.navigation.contact.label') }}
-            </NuxtLinkLocale>
+              <Icon
+                name="ant-design:tik-tok-filled"
+                class="text-muted-foreground"
+                size="25"
+              />
+            </a>
           </div>
         </div>
         <div class="flex w-1/2 flex-col gap-3 md:hidden">
@@ -63,6 +100,38 @@
               {{ $t('footer.companyDetails.email.label') }}
             </a>
           </p>
+          <div class="flex gap-3 md:hidden">
+            <a
+              :href="$t('footer.navigation.facebook.link')"
+              target="_blank"
+            >
+              <Icon
+                name="mdi:facebook"
+                class="text-muted-foreground"
+                size="25"
+              />
+            </a>
+            <a
+              :href="$t('footer.navigation.instagram.link')"
+              target="_blank"
+            >
+              <Icon
+                name="ant-design:instagram-outlined"
+                class="text-muted-foreground"
+                size="25"
+              />
+            </a>
+            <a
+              :href="$t('footer.navigation.tik-tok.link')"
+              target="_blank"
+            >
+              <Icon
+                name="ant-design:tik-tok-filled"
+                class="text-muted-foreground"
+                size="25"
+              />
+            </a>
+          </div>
         </div>
       </div>
       <div class="mt-10 text-center text-xs md:mt-0">

@@ -296,6 +296,18 @@ export default {
         link: '/kontakt',
         label: 'Kontakt',
       },
+      facebook: {
+        link: 'https://www.facebook.com/Imbusbikeservis',
+        label: 'Facebook',
+      },
+      instagram: {
+        link: 'https://www.instagram.com/imbusbike/',
+        label: 'Instagram',
+      },
+      'tik-tok': {
+        link: 'https://www.tiktok.com/@imbusbike?_t=8gQjdh2bXBQ&_r=1',
+        label: 'TikTok',
+      },
     },
     copyright: 'Copyrigh {year} IMBUSBIKE.',
     allRightReserved: 'Wszelkie prawa zastrzeżone.',
