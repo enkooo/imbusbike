@@ -2,54 +2,53 @@
   <div class="relative z-10 -mt-10 overflow-hidden bg-primary py-10">
     <div class="container text-typography-light md:grid md:grid-cols-3 md:items-center md:gap-2">
       <div class="flex text-xs sm:px-10 md:px-0">
-        <div class="flex w-1/2 flex-col flex-wrap gap-3 md:w-full lg:flex-row lg:gap-3">
-          <div class="flex flex-col gap-3">
-            <div class="flex flex-col gap-3 md:flex-row">
-              <NuxtLinkLocale
-                class="hover:underline"
-                :to="$t('footer.navigation.products.link')"
-              >
-                {{ $t('footer.navigation.products.label') }}
-              </NuxtLinkLocale>
-              <NuxtLinkLocale
-                class="hover:underline"
-                :to="$t('footer.navigation.news.link')"
-              >
-                {{ $t('footer.navigation.news.label') }}
-              </NuxtLinkLocale>
-            </div>
-            <div class="flex flex-col gap-3 md:flex-row">
-              <NuxtLinkLocale
-                class="hover:underline"
-                :to="$t('footer.navigation.offer.link')"
-              >
-                {{ $t('footer.navigation.offer.label') }}
-              </NuxtLinkLocale>
-              <NuxtLinkLocale
-                class="hover:underline"
-                :to="$t('footer.navigation.service.link')"
-              >
-                {{ $t('footer.navigation.service.label') }}
-              </NuxtLinkLocale>
-              <NuxtLinkLocale
-                class="hover:underline"
-                :to="$t('footer.navigation.faq.link')"
-              >
-                {{ $t('footer.navigation.faq.label') }}
-              </NuxtLinkLocale>
-              <NuxtLinkLocale
-                class="hover:underline"
-                :to="$t('footer.navigation.contact.link')"
-              >
-                {{ $t('footer.navigation.contact.label') }}
-              </NuxtLinkLocale>
-            </div>
+        <div
+          class="flex w-1/2 max-w-[300px] flex-col flex-wrap gap-3 md:w-full lg:flex-row lg:gap-3"
+        >
+          <div class="flex flex-col gap-3 md:flex-row">
+            <NuxtLinkLocale
+              class="hover:underline"
+              :to="$t('footer.navigation.products.link')"
+            >
+              {{ $t('footer.navigation.products.label') }}
+            </NuxtLinkLocale>
+            <NuxtLinkLocale
+              class="hover:underline"
+              :to="$t('footer.navigation.news.link')"
+            >
+              {{ $t('footer.navigation.news.label') }}
+            </NuxtLinkLocale>
+          </div>
+          <div class="flex flex-col gap-3 md:flex-row">
+            <NuxtLinkLocale
+              class="hover:underline"
+              :to="$t('footer.navigation.offer.link')"
+            >
+              {{ $t('footer.navigation.offer.label') }}
+            </NuxtLinkLocale>
+            <NuxtLinkLocale
+              class="hover:underline"
+              :to="$t('footer.navigation.service.link')"
+            >
+              {{ $t('footer.navigation.service.label') }}
+            </NuxtLinkLocale>
+            <NuxtLinkLocale
+              class="hover:underline"
+              :to="$t('footer.navigation.faq.link')"
+            >
+              {{ $t('footer.navigation.faq.label') }}
+            </NuxtLinkLocale>
+            <NuxtLinkLocale
+              class="hover:underline"
+              :to="$t('footer.navigation.contact.link')"
+            >
+              {{ $t('footer.navigation.contact.label') }}
+            </NuxtLinkLocale>
           </div>
           <div class="hidden gap-3 md:flex">
             <a
               :href="$t('footer.navigation.facebook.link')"
               target="_blank"
-              class="flex items-end"
             >
               <Icon
                 name="mdi:facebook"
@@ -60,7 +59,6 @@
             <a
               :href="$t('footer.navigation.instagram.link')"
               target="_blank"
-              class="flex items-end"
             >
               <Icon
                 name="ant-design:instagram-outlined"
@@ -71,7 +69,6 @@
             <a
               :href="$t('footer.navigation.tik-tok.link')"
               target="_blank"
-              class="flex items-end"
             >
               <Icon
                 name="ant-design:tik-tok-filled"
@@ -139,9 +136,7 @@
         <p class="text-[10px]">{{ $t('footer.allRightReserved') }}</p>
       </div>
       <div class="ml-auto hidden md:block">
-        <div
-          class="md:flex md:flex-col md:justify-end md:gap-x-3 md:text-xs lg:flex-row lg:gap-x-8"
-        >
+        <div class="md:flex md:flex-col md:justify-end md:gap-x-3 md:text-xs lg:gap-x-8">
           <div>
             <p>{{ $t('footer.companyDetails.name') }}</p>
             <p>{{ $t('footer.companyDetails.address') }}</p>
