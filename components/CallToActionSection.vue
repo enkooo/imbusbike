@@ -9,7 +9,7 @@
       <p class="mx-auto max-w-5xl text-typography-light">
         {{ $t('callToAction.description') }}
       </p>
-      <NuxtLinkLocale to="/produkty">
+      <NuxtLinkLocale to="/sklep">
         <Button
           class="self-center"
           variant="inverted"

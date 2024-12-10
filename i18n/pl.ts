@@ -6,8 +6,8 @@ export default {
       subLabel: 'Pracownia - Serwis Rowerów',
     },
     products: {
-      link: '/produkty',
-      label: 'Produkty',
+      link: '/sklep',
+      label: 'Sklep',
     },
     news: {
       link: '/aktualnosci',
@@ -18,8 +18,8 @@ export default {
       label: 'Oferta',
     },
     service: {
-      link: '/serwis',
-      label: 'Serwis',
+      link: '/terminarz',
+      label: 'Terminarz',
     },
     faq: {
       link: '/faq',
@@ -71,7 +71,7 @@ export default {
     empty: 'Brak artykułów',
   },
   products: {
-    title: 'Produkty',
+    title: 'Sklep',
     searchInput: {
       label: 'Szukaj',
       placeholder: 'Szukaj...',
@@ -230,7 +230,7 @@ export default {
     },
   },
   serviceForm: {
-    heading: 'Umów termin serwis',
+    heading: 'Termin serwisu',
     subheading:
       'W tym miejscu zgłaszasz usługę serwisową! Podaj proponowaną datę wizyty. Będziemy wdzięczni za pozostawienie opisu w zakładce "Zakres Usługi” co przyspieszy proces weryfikacji. Dojazd do 10 km w obrębie Tomaszowa Mazowieckiego gratis.',
     fields: {
@@ -247,10 +247,10 @@ export default {
       nameMin: 'Imię i nazwisko musi mieć co najmniej 2 znaki.',
       invalidEmail: 'To nie jest prawidłowy email.',
       invalidNumber: 'Nieprawidłowy numer!',
-      messageTitleRequired: 'Model sprzętu jest wymagany.',
+      messageTitleRequired: 'Model sprzętu wiadomości jest wymagany.',
       messageTitleMin: 'Pole musi mieć co najmniej 2 znaki.',
-      messageContentMin: 'Treść wiadomości musi mieć co najmniej 10 znaków.',
-      messageContentMax: 'Treść wiadomości nie może być dłuższa niż 2000 znaków.',
+      messageContentMin: 'Pole musi mieć co najmniej 10 znaków.',
+      messageContentMax: 'Pole  nie może być dłuższa niż 2000 znaków.',
       acceptTerms: 'Musisz zaakceptować warunki.',
       emailRequired: 'Adres e-mail jest wymagany.',
       phoneRequired: 'Numer telefonu jest wymagany.',
@@ -269,14 +269,12 @@ export default {
       label: 'Zgoda na przetwarzanie danych osobowych',
       text: 'Wyrażam zgodę na przetwarzanie moich danych osobowych zgodnie z polityką prywatności w celu otrzymania odpowiedzi na moje zapytanie oraz dalszego kontaktu związanego z moim zapytaniem.',
     },
-    understoodDate:
-      'Rozumiem, że wybrana data jest terminem wstępnym i muszę poczekać na jej potwierdzenie mailowo lub telefonicznie.',
   },
   footer: {
     navigation: {
       products: {
-        link: '/produkty',
-        label: 'Produkty',
+        link: '/sklep',
+        label: 'Sklep',
       },
       news: {
         link: '/aktualnosci',
@@ -287,7 +285,7 @@ export default {
         label: 'Oferta',
       },
       service: {
-        link: '/serwis',
+        link: '/terminarz',
         label: 'Terminarz',
       },
       faq: {

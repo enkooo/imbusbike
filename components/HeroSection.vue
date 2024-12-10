@@ -81,6 +81,14 @@
           />
 
           <NuxtImg
+            src="/img/magick.png"
+            format="webp"
+            alt="Magick Logo"
+            width="65"
+            height="65"
+            densities="x1"
+          />
+          <NuxtImg
             src="/img/shimano-logo.svg"
             alt="Shimano Logo"
             width="122"
@@ -92,14 +100,6 @@
             format="webp"
             alt="Oko Logo"
             width="90"
-            height="65"
-            densities="x1"
-          />
-          <NuxtImg
-            src="/img/magick.png"
-            format="webp"
-            alt="Magick Logo"
-            width="65"
             height="65"
             densities="x1"
           />

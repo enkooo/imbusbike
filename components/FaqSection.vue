@@ -92,12 +92,7 @@ const faqSections = [
           'Koszt centrowania koła od 30-50zł. W przypadku kół karbonowych oraz zaplatanych na płaskich szprychach koszt może być wyższy.',
       },
       {
-        id: 7,
-        question: 'Czy oferujecie rabaty na regularny serwis?',
-        answer: 'Brak odpowiedzi',
-      },
-      {
-        id: 8,
+        id: 6,
         question: 'Jaki jest koszt regulacji przerzutek?',
         answer: 'Koszt regulacji przerzutek zaczyna się od 40 zł.',
       },
@@ -119,26 +114,21 @@ const faqSections = [
       },
       {
         id: 3,
-        question: 'Czy usługa door to door obejmuje wszystkie rodzaje napraw?',
-        answer: 'Brak odpowiedzi.',
-      },
-      {
-        id: 4,
         question: 'Czy mogę zamówić usługę poza standardowymi godzinami pracy?',
         answer: 'Tak, ale tylko po konsultacji telefonicznej.',
       },
       {
-        id: 5,
+        id: 4,
         question: 'Czy odbieracie rowery z innych miast?',
         answer: 'Nie, usługa obejmuje Tomaszów Mazowiecki w obrębie 20 km.',
       },
       {
-        id: 6,
+        id: 5,
         question: 'Czy usługa door to door jest dostępna w weekendy?',
         answer: 'Nie, odbieramy rowery od poniedziału do piątku.',
       },
       {
-        id: 7,
+        id: 6,
         question: 'Jak mogę umówić wizytę mobilnego serwisu?',
         answer: 'Skorzystaj z zakładki "Terminarz" lub skontaktuj się z nami telefonicznie',
       },

@@ -58,7 +58,7 @@ export default defineNuxtConfig({
         pl: '/kontakt',
       },
       service: {
-        pl: '/serwis',
+        pl: '/terminarz',
       },
       'news/index': {
         pl: '/aktualnosci',
@@ -67,10 +67,10 @@ export default defineNuxtConfig({
         pl: '/aktualnosci/[id]',
       },
       'products/index': {
-        pl: '/produkty',
+        pl: '/sklep',
       },
       'products/[id]': {
-        pl: '/produkty/[id]',
+        pl: '/sklep/[id]',
       },
       offer: {
         pl: '/oferta',

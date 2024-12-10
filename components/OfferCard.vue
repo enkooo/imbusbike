@@ -32,7 +32,7 @@ defineProps<{
         <p class="mb-5">{{ summary }}</p>
         <NuxtLinkLocale
           class="mt-auto"
-          to="/serwis"
+          to="/terminarz"
         >
           <Button
             size="lg"
