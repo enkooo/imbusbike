@@ -30,6 +30,14 @@ if (productData.value) {
 } else {
   product.value = null
 }
+
+const title = product.value?.name
+const description = product.value?.description
+
+useSeoMeta({
+  title,
+  description,
+})
 </script>
 
 <template>

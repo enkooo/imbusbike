@@ -5,6 +5,15 @@ import { useRouter, useRoute, type LocationQuery } from 'vue-router'
 import * as z from 'zod'
 import type { CategoryResponse, Filter, Product, ProductResponse } from '~/types'
 
+const title = 'Sklep'
+const description =
+  'Sklep lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+
+useSeoMeta({
+  title,
+  description,
+})
+
 const config = useRuntimeConfig()
 const baseUrl = config.public.baseUrl
 const { t } = useI18n()

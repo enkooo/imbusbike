@@ -28,6 +28,14 @@ if (articleData.value) {
   article.value = null
 }
 
+const title = article.value?.title
+const description = article.value?.description
+
+useSeoMeta({
+  title,
+  description,
+})
+
 const { formatPolishDate } = useDateFormatter()
 const formattedDate = formatPolishDate(article.value?.date || '')
 </script>

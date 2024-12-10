@@ -1,6 +1,15 @@
 <script setup lang="ts">
 import type { NewsItem, NewsItemResponse } from '~/types'
 
+const title = 'Artykuly'
+const description =
+  'Artykuly lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+
+useSeoMeta({
+  title,
+  description,
+})
+
 const config = useRuntimeConfig()
 const baseUrl = config.public.baseUrl
 const { t } = useI18n()
