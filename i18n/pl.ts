@@ -269,6 +269,8 @@ export default {
       label: 'Zgoda na przetwarzanie danych osobowych',
       text: 'Wyrażam zgodę na przetwarzanie moich danych osobowych zgodnie z polityką prywatności w celu otrzymania odpowiedzi na moje zapytanie oraz dalszego kontaktu związanego z moim zapytaniem.',
     },
+    understoodDate:
+      'Rozumiem, że wybrana data jest terminem wstępnym i muszę poczekać na jej potwierdzenie mailowo lub telefonicznie.',
   },
   footer: {
     navigation: {
