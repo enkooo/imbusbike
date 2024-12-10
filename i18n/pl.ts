@@ -327,4 +327,14 @@ export default {
       },
     },
   },
+  errorPage: {
+    pageNotFound: 'Strona nie znaleziona',
+    pageNotFoundDescription:
+      'Przepraszamy, ale strona, której szukasz, nie istnieje lub została przeniesiona.',
+    serverError: 'Błąd serwera',
+    serverErrorDescription: 'Wystąpił wewnętrzny błąd serwera. Spróbuj ponownie później.',
+    unknownError: 'Nieznany błąd',
+    unknownErrorDescription: 'Przepraszamy, za niedogodności. Spróbuj ponownie za chwilę.',
+    backToHome: 'Wróć do strony głównej',
+  },
 }
