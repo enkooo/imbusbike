@@ -22,7 +22,7 @@ const route = useRoute()
 
 useServerHead({
   bodyAttrs: {
-    class: 'font-primary antialiased',
+    class: 'font-primary',
   },
 })
 
