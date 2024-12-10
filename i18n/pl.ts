@@ -247,15 +247,15 @@ export default {
       nameMin: 'Imię i nazwisko musi mieć co najmniej 2 znaki.',
       invalidEmail: 'To nie jest prawidłowy email.',
       invalidNumber: 'Nieprawidłowy numer!',
-      messageTitleRequired: 'Tytuł wiadomości jest wymagany.',
-      messageTitleMin: 'Tytuł wiadomości musi mieć co najmniej 2 znaki.',
+      messageTitleRequired: 'Model sprzętu jest wymagany.',
+      messageTitleMin: 'Pole musi mieć co najmniej 2 znaki.',
       messageContentMin: 'Treść wiadomości musi mieć co najmniej 10 znaków.',
       messageContentMax: 'Treść wiadomości nie może być dłuższa niż 2000 znaków.',
       acceptTerms: 'Musisz zaakceptować warunki.',
       emailRequired: 'Adres e-mail jest wymagany.',
       phoneRequired: 'Numer telefonu jest wymagany.',
       serviceDateRequired: 'Data serwisu jest wymagana.',
-      messageContentRequired: 'Treść wiadomości jest wymagana.',
+      messageContentRequired: 'Zakres usługi jest wymagany.',
       acceptTermsRequired: 'Musisz zaakceptować warunki.',
       messageSuccessSent: 'Twoja wiadomość została wysłana pomyślnie!',
       messageErrorSent: 'Wystąpił błąd podczas wysyłania wiadomości. Spróbuj ponownie później.',
@@ -269,6 +269,8 @@ export default {
       label: 'Zgoda na przetwarzanie danych osobowych',
       text: 'Wyrażam zgodę na przetwarzanie moich danych osobowych zgodnie z polityką prywatności w celu otrzymania odpowiedzi na moje zapytanie oraz dalszego kontaktu związanego z moim zapytaniem.',
     },
+    understoodDate:
+      'Rozumiem, że wybrana data jest terminem wstępnym i muszę poczekać na jej potwierdzenie mailowo lub telefonicznie.',
   },
   footer: {
     navigation: {
@@ -305,7 +307,7 @@ export default {
         label: 'Instagram',
       },
       'tik-tok': {
-        link: 'https://www.tiktok.com/@imbusbike?_t=8gQjdh2bXBQ&_r=1',
+        link: "https://www.tiktok.com/{'@'}imbusbike?_t=8gQjdh2bXBQ&_r=1",
         label: 'TikTok',
       },
     },

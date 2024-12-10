@@ -64,6 +64,13 @@ const formSchema = toTypedSchema(
       .refine((val) => val === true, {
         message: t('serviceForm.messages.acceptTerms'),
       }),
+    understoodServiceDate: z
+      .boolean({
+        required_error: t('serviceForm.messages.acceptTermsRequired'),
+      })
+      .refine((val) => val === true, {
+        message: t('serviceForm.messages.acceptTerms'),
+      }),
     images: z
       .array(z.instanceof(File))
       .refine((files) => files.reduce((total, file) => total + file.size, 0) <= 5 * 1024 * 1024, {
@@ -325,9 +332,33 @@ const serviceDateValue = computed({
             v-auto-animate
             class="space-y-1 leading-none"
           >
-            <FormLabel required>{{ $t('contactForm.checkbox.label') }}</FormLabel>
+            <FormLabel required>{{ $t('serviceForm.understoodDate') }}</FormLabel>
+          </div>
+        </FormItem>
+      </FormField>
+
+      <FormField
+        v-slot="{ value, handleChange }"
+        type="checkbox"
+        name="acceptTerms"
+      >
+        <FormItem
+          v-auto-animate
+          class="col-span-3 flex flex-row items-start gap-x-3 space-y-0 rounded-md"
+        >
+          <FormControl>
+            <Checkbox
+              :checked="value"
+              @update:checked="handleChange"
+            />
+          </FormControl>
+          <div
+            v-auto-animate
+            class="space-y-1 leading-none"
+          >
+            <FormLabel required>{{ $t('serviceForm.checkbox.label') }}</FormLabel>
             <FormDescription class="!mt-2 text-xs text-primary">
-              {{ $t('contactForm.checkbox.text') }}
+              {{ $t('serviceForm.checkbox.text') }}
             </FormDescription>
             <FormMessage />
           </div>
