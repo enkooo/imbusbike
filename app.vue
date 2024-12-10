@@ -7,13 +7,10 @@ useSeoMeta({
   author: 'Imbusbike',
   ogUrl: 'https://imbusbike.pl',
   ogImage: 'https://imbusbike.pl/_ipx/s_60x60/img/logo.svg',
-  ogSiteName: 'www.imbusbike.pl',
-  twitterCard: 'summary_large_image',
   twitterTitle: 'Imbusbike | Pracownia Serwis rowerów',
   twitterDescription:
     'Imbusbike to profesjonalny serwis rowerów klasycznych i elektrycznych renomowanych marek jak Bosch, Brose, Shimano.',
   twitterImage: 'https://imbusbike.pl/_ipx/s_60x60/img/logo.svg',
-  themeColor: '#000000',
   viewport: 'width=device-width, initial-scale=1.0',
   robots: 'index, follow',
 })
