@@ -6,9 +6,6 @@ useSeoMeta({
   applicationName: 'Imbusbike',
   author: 'Imbusbike',
   ogUrl: 'https://imbusbike.pl',
-  ogTitle: 'Imbusbike | Pracownia - Serwis Rowerów',
-  ogDescription:
-    'Imbusbike to renomowana pracownia serwisująca rowery klasyczne oraz elektryczne, w tym marki Bosch, Brose, Shimano. Zaufaj nam, aby zapewnić swojemu rowerowi kompleksową naprawę i profesjonalną obsługę.',
   ogImage: 'https://imbusbike.pl/_ipx/s_60x60/img/logo.svg',
   ogSiteName: 'www.imbusbike.pl',
   twitterCard: 'summary_large_image',
@@ -22,6 +19,12 @@ useSeoMeta({
 })
 
 const route = useRoute()
+
+useServerHead({
+  bodyAttrs: {
+    class: 'font-primary antialiased',
+  },
+})
 
 useHead(() => ({
   link: [
@@ -41,9 +44,7 @@ useHead(() => ({
 </script>
 
 <template>
-  <div class="font-primary">
-    <NuxtLayout>
-      <NuxtPage />
-    </NuxtLayout>
-  </div>
+  <NuxtLayout>
+    <NuxtPage />
+  </NuxtLayout>
 </template>
