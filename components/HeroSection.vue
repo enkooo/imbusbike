@@ -4,7 +4,7 @@
       <div class="relative w-full overflow-hidden rounded-sm bg-primary py-10 sm:py-0 md:h-[70dvh]">
         <NuxtImg
           src="/img/hero.webp"
-          class="absolute left-0 top-0 z-0 h-full w-full object-cover opacity-10"
+          class="absolute left-0 top-0 z-0 h-full w-full object-cover opacity-20"
           sizes="365px sm:640px md:320px md:800px lg:1024px xl:1280px 2xl:1536px"
           densities="x1"
           quality="80"
