@@ -316,7 +316,7 @@ const serviceDateValue = computed({
       <FormField
         v-slot="{ value, handleChange }"
         type="checkbox"
-        name="acceptTerms"
+        name="understoodServiceDate"
       >
         <FormItem
           v-auto-animate

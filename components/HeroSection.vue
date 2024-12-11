@@ -79,15 +79,6 @@
             height="65"
             densities="x1"
           />
-
-          <NuxtImg
-            src="/img/magick.png"
-            format="webp"
-            alt="Magick Logo"
-            width="65"
-            height="65"
-            densities="x1"
-          />
           <NuxtImg
             src="/img/shimano-logo.svg"
             alt="Shimano Logo"
@@ -103,8 +94,18 @@
             height="65"
             densities="x1"
           />
+          <NuxtImg
+            src="/img/magick.png"
+            format="webp"
+            alt="Magick Logo"
+            width="65"
+            height="65"
+            densities="x1"
+          />
         </div>
       </div>
     </section>
   </div>
 </template>
+<script setup lang="ts">
+</script>
