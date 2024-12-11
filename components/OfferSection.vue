@@ -65,7 +65,7 @@ const OFFER_SECTION_ITEMS = computed(() => [
       <p class="mx-auto mt-7 max-w-5xl text-muted-foreground">{{ $t('offer.description') }}</p>
     </section>
     <div
-      class="mt-14 grid place-content-center items-center justify-center gap-5 gap-y-10 md:grid-cols-2 xl:grid-cols-4"
+      class="mt-14 grid items-center justify-center gap-5 gap-y-10 md:grid-cols-2 md:place-content-center xl:grid-cols-4"
     >
       <OfferCard
         v-for="offer in OFFER_SECTION_ITEMS"
