@@ -119,11 +119,11 @@ const onSubmit = handleSubmit(async (values) => {
       from: values.email,
       subject: values.messageTitle,
       text: `
-        Name: ${values.name}
+        Nazwa: ${values.name}
         Email: ${values.email}
-        Phone: ${values.phone}
-        Message Title: ${values.messageTitle}
-        Message Content: ${values.messageContent}
+        Telefon: ${values.phone}
+        Model sprzetu: ${values.messageTitle}
+        Zakres uslugi: ${values.messageContent}
       `,
       attachments: attachments.map((attachment) => ({
         filename: attachment.name,
