@@ -91,11 +91,11 @@ async function onSubmit(values: FormValues) {
       from: values.email,
       subject: values.messageTitle,
       text: `
-        Name: ${values.name}
+        Imię i nazwisko: ${values.name}
         Email: ${values.email}
-        Phone: ${values.phone}
-        Message Title: ${values.messageTitle}
-        Message Content: ${values.messageContent}
+        Telefon: ${values.phone}
+        Rodzaj wiadomości: ${values.messageType}
+        Wiadomość: ${values.messageContent}
       `,
     })
 
