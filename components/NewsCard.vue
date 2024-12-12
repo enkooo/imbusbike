@@ -19,9 +19,9 @@ const formattedDate = formatPolishDate(date)
         :src="imageUrl"
         alt=""
         format="webp"
-        class="max-h-40 w-full min-w-36 rounded-l-sm object-cover sm:max-h-48"
+        class="max-h-40 w-full min-w-36 rounded-l-sm object-cover sm:max-h-48 sm:w-2/3 md:w-full lg:w-2/3"
       />
-      <div class="flex min-w-0 flex-col gap-y-2 p-6">
+      <div class="flex w-full min-w-0 flex-col gap-y-2 p-6">
         <h3 class="relative truncate font-semibold">
           <TooltipProvider>
             <Tooltip>
