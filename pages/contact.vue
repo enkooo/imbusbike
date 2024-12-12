@@ -1,7 +1,7 @@
 <script setup lang="ts">
-const title = 'Kontakt'
+const title = 'Kontakt – Skontaktuj się z naszym serwisem rowerowym'
 const description =
-  'Kontakt lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+  'Masz pytania lub chcesz skorzystać z naszych usług serwisowych? Wypełnij formularz kontaktowy, wybierz temat rozmowy i daj nam znać, czego potrzebujesz.'
 
 useSeoMeta({
   title,

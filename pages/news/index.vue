@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import type { NewsItem, NewsItemResponse } from '~/types'
 
-const title = 'Artykuly'
+const title = 'Aktualności z serwisu rowerowego'
 const description =
-  'Artykuly lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+  'Bądź na bieżąco z najświeższymi informacjami z naszego serwisu rowerowego. Sprawdź relacje z wydarzeń, w których braliśmy udział, odkryj nowe produkty w naszym sklepie i poznaj bieżące promocje.'
 
 useSeoMeta({
   title,

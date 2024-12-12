@@ -1,7 +1,7 @@
 <script setup lang="ts">
-const title = 'Terminarz'
+const title = 'Terminarz serwisu rowerowego – Zarezerwuj dogodny termin'
 const description =
-  'Terminarz lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+  'Zaplanuj swój serwis rowerowy, wybierając dogodny termin poprzez nasz formularz kontaktowy. Skorzystaj z kalendarza i zamów naprawę lub przegląd, dostosowany do Twojego harmonogramu.'
 
 useSeoMeta({
   title,

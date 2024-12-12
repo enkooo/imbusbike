@@ -1,7 +1,7 @@
 <script setup lang="ts">
-const title = 'FAQ'
+const title = 'Najczęściej zadawane pytania – Serwis i Pracownia Rowerowa'
 const description =
-  'FAQ lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+  'Poznaj odpowiedzi na najczęściej zadawane pytania dotyczące naszego serwisu i pracowni rowerowej. Dowiedz się więcej o naprawach, terminach i dostępnych usługach.'
 
 useSeoMeta({
   title,

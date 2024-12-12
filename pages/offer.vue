@@ -1,7 +1,7 @@
 <script setup lang="ts">
-const title = 'Oferta'
+const title = 'Oferta serwisu rowerowego – Profesjonalne usługi, konwersje i serwis door-to-door'
 const description =
-  'FAQ lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+  'Sprawdź naszą kompleksową ofertę: serwis rowerów tradycyjnych i elektrycznych, konwersje na e-bike, a także wygodny serwis door-to-door. Wybierz profesjonalizm, precyzję i indywidualne podejście.'
 
 useSeoMeta({
   title,

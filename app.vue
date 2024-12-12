@@ -2,7 +2,7 @@
 useSeoMeta({
   charset: 'utf-8',
   description:
-    'Imbusbike to renomowana pracownia specjalizująca się w serwisie rowerów klasycznych oraz elektrycznych renomowanych marek takich jak Bosch, Brose oraz Shimano. Jeśli szukasz profesjonalnej obsługi i kompleksowej naprawy swojego roweru to trafiłeś w idealne miejsce.',
+    'Imbusbike to renomowana pracownia specjalizująca się w serwisie rowerów klasycznych oraz elektrycznych renomowanych marek takich jak Bosch, Brose oraz Shimano. Profesjonalna obsługa i kompleksowa naprawa Twojego roweru.',
   applicationName: 'Imbusbike',
   author: 'Imbusbike',
   ogUrl: 'https://imbusbike.pl',

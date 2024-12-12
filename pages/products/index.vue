@@ -5,9 +5,9 @@ import { useRouter, useRoute, type LocationQuery } from 'vue-router'
 import * as z from 'zod'
 import type { CategoryResponse, Filter, Product, ProductResponse } from '~/types'
 
-const title = 'Sklep'
+const title = 'Sklep rowerowy – Akcesoria, części i wyposażenie dla Twojego roweru'
 const description =
-  'Sklep lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+  'Odkryj szeroką ofertę akcesoriów, części i wyposażenia rowerowego dostępnych w naszym stacjonarnym serwisie. Znajdź produkty idealnie dopasowane do Twoich potrzeb i ciesz się niezawodnością swojego roweru.'
 
 useSeoMeta({
   title,
