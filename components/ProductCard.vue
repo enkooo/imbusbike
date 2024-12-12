@@ -22,7 +22,7 @@ defineProps<{
         />
       </div>
       <span
-        class="mb-2 self-start rounded-sm border border-gray-100 px-4 py-2 text-[9px] uppercase text-muted-foreground md:px-2 md:py-1 lg:px-4 lg:py-2"
+        class="mb-2 max-w-[140px] self-start truncate rounded-sm border border-gray-100 px-4 py-2 text-[9px] uppercase text-muted-foreground md:px-2 md:py-1 lg:px-4 lg:py-2"
       >
         {{ category }}
       </span>

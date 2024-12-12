@@ -52,7 +52,7 @@
             >
               <Icon
                 name="mdi:facebook"
-                class="text-muted-foreground"
+                class="text-typography-light"
                 size="25"
               />
             </a>
@@ -62,7 +62,7 @@
             >
               <Icon
                 name="ant-design:instagram-outlined"
-                class="text-muted-foreground"
+                class="text-typography-light"
                 size="25"
               />
             </a>
@@ -72,7 +72,7 @@
             >
               <Icon
                 name="ant-design:tik-tok-filled"
-                class="text-muted-foreground"
+                class="text-typography-light"
                 size="25"
               />
             </a>
@@ -104,7 +104,7 @@
             >
               <Icon
                 name="mdi:facebook"
-                class="text-muted-foreground"
+                class="text-typography-light"
                 size="25"
               />
             </a>
@@ -114,7 +114,7 @@
             >
               <Icon
                 name="ant-design:instagram-outlined"
-                class="text-muted-foreground"
+                class="text-typography-light"
                 size="25"
               />
             </a>
@@ -124,7 +124,7 @@
             >
               <Icon
                 name="ant-design:tik-tok-filled"
-                class="text-muted-foreground"
+                class="text-typography-light"
                 size="25"
               />
             </a>
