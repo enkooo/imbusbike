@@ -68,7 +68,7 @@ const fetchProducts = async (query: LocationQuery) => {
 
 const fetchFilters = async () => {
   const { data: filtersData } = await useIFetch<{ data: CategoryResponse[] }>(
-    '/categories?populate=*&filters[parent][$notNull]',
+    '/categories?populate=*&filters[parent][$notNull]&filters[active][$eq]=true&sort=order:asc',
   )
 
   if (filtersData.value) {
