@@ -15,9 +15,9 @@ if (newsData.value) {
 
   news.value = newsData.value.data.map((newsItem) => {
     const truncatedDescription =
-      newsItem.description.length > maxDescriptionLength
-        ? newsItem.description.slice(0, maxDescriptionLength) + '...'
-        : newsItem.description
+      newsItem.description?.length > maxDescriptionLength
+        ? newsItem?.description?.slice(0, maxDescriptionLength) + '...'
+        : (newsItem?.description ?? '')
 
     return {
       id: newsItem.id,
