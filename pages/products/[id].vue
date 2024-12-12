@@ -96,11 +96,15 @@ useSeoMeta({
           </div>
 
           <a
+            v-if="product?.url"
             :href="product?.url"
             target="_blank"
           >
             <Button class="mt-10 w-full py-6 text-lg">{{ $t('products.moveToPurchase') }}</Button>
           </a>
+          <p v-else>
+            {{ $t('products.noLink') }}
+          </p>
         </div>
       </div>
 
