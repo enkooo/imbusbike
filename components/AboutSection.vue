@@ -30,7 +30,7 @@ const FEATURE_SECTION_ITEMS = computed(() => [
     <div class="container flex flex-col gap-16 lg:grid lg:grid-cols-12 lg:gap-10">
       <NuxtImg
         src="/img/about-us.jpg"
-        alt=""
+        alt="Zdjecie o nas"
         format="webp"
         class="hidden h-full w-full rounded-sm object-cover shadow-lg lg:col-span-4 lg:block lg:max-h-none xl:col-span-3"
       />

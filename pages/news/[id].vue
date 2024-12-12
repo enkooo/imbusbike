@@ -75,7 +75,7 @@ const formattedDate = formatPolishDate(article.value?.date || '')
                     sizes="365px sm:640px md:320px md:800px lg:1024px xl:1280px 2xl:1536px"
                     densities="x1"
                     quality="80"
-                    alt=""
+                    alt="news image"
                     format="webp"
                     class="absolute inset-0 h-full w-full object-cover"
                   />

@@ -57,7 +57,7 @@ useSeoMeta({
                       :src="baseUrl + image?.url"
                       sizes="320px sm:640px md:320px lg:480px xl:640px"
                       densities="x1"
-                      alt=""
+                      alt="product image"
                       format="webp"
                       class="h-full w-full overflow-hidden rounded-lg object-cover"
                     />

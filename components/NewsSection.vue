@@ -60,7 +60,7 @@ if (newsData.value) {
         <div class="hidden flex-col justify-between overflow-hidden rounded-sm bg-primary xl:flex">
           <NuxtImg
             src="/img/news/news-bike.jpg"
-            alt=""
+            alt="News bike"
             width="262"
             height="206"
             format="webp"
