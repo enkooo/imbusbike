@@ -89,6 +89,7 @@ export default {
     productDescription: 'Opis produktu',
     specifications: 'Specyfikacja',
     moveToPurchase: 'Przejdź do zakupu',
+    loadMore: 'Zobacz więcej',
   },
   offer: {
     title: 'Oferta',

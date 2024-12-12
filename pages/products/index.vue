@@ -25,7 +25,10 @@ const filters = ref<Filter[]>([])
 const selectedSort = ref<string>(typeof route.query.sort === 'string' ? route.query.sort : '')
 const searchQuery = ref<string>(typeof route.query.search === 'string' ? route.query.search : '')
 
-const fetchProducts = async (query: LocationQuery) => {
+const currentPage = ref(0)
+const totalItems = ref(0)
+
+const fetchProducts = async (query: LocationQuery, append = false) => {
   let queryString = ''
 
   const filterValue = query.filters
@@ -45,12 +48,18 @@ const fetchProducts = async (query: LocationQuery) => {
       (queryString ? '&' : '') + `filters[name][$contains]=${encodeURIComponent(query.search)}`
   }
 
-  const { data: productsData } = await useIFetch<{ data: ProductResponse[] }>(
-    `products?populate=*&filters[active][$eq]=true&${queryString}`,
+  const paginationLimit = 24
+  const paginationStart = currentPage.value * paginationLimit
+
+  const { data: productsData } = await useIFetch<{
+    data: ProductResponse[]
+    meta: { pagination: { total: number } }
+  }>(
+    `products?populate=*&pagination[limit]=${paginationLimit}&pagination[start]=${paginationStart}&filters[active][$eq]=true&${queryString}`,
   )
 
   if (productsData.value) {
-    products.value = productsData.value.data.map((product) => ({
+    const newProducts = productsData.value.data.map((product) => ({
       id: product.id,
       name: product.name,
       category: product.category.name,
@@ -61,7 +70,15 @@ const fetchProducts = async (query: LocationQuery) => {
       imageUrl: `${baseUrl}${product.images?.[0]?.url}`,
       link: `${t('menu.products.link')}/${product.documentId}`,
     }))
-  } else {
+
+    if (append) {
+      products.value.push(...newProducts)
+    } else {
+      products.value = newProducts
+    }
+
+    totalItems.value = productsData.value.meta.pagination.total
+  } else if (!append) {
     products.value = []
   }
 }
@@ -84,6 +101,13 @@ const fetchFilters = async () => {
           : [],
       }
     })
+  }
+}
+
+const loadMoreProducts = async () => {
+  if (products.value.length < totalItems.value) {
+    currentPage.value++
+    await fetchProducts(route.query, true)
   }
 }
 
@@ -259,6 +283,18 @@ watch(
               :price="product.price"
             />
           </NuxtLinkLocale>
+
+          <div
+            v-if="products.length < totalItems"
+            class="col-start-1 -col-end-1 mt-5 flex justify-center"
+          >
+            <Button
+              size="lg"
+              @click="loadMoreProducts"
+            >
+              {{ $t('products.loadMore') }}
+            </Button>
+          </div>
         </div>
       </div>
     </div>
