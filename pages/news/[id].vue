@@ -18,7 +18,7 @@ if (articleData.value) {
     documentId: articleData.value.data.documentId,
     title: articleData.value.data.title,
     description: articleData.value.data.description,
-    imageUrl: articleData.value.data.cover.url,
+    imageUrl: articleData.value?.data?.cover?.url,
     images: articleData.value.data.images,
     date: articleData.value.data.publishedAt,
     link: articleData.value.data.link,
