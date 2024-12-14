@@ -59,7 +59,7 @@ await fetchNews()
 </script>
 
 <template>
-  <main class="mx-2 min-h-[calc(100dvh-189px)] sm:container">
+  <main class="mx-2 sm:container">
     <div
       class="mt-2 flex h-36 w-full items-center justify-center rounded-sm bg-primary text-secondary sm:mt-6"
     >

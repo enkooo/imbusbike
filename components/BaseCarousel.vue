@@ -18,12 +18,12 @@ defineProps<{
         <CarouselItem
           v-for="product in products"
           :key="product.id"
-          class="basis-[65%] min-[500px]:basis-[40%] md:basis-1/4 xl:basis-1/5"
+          class="basis-[65%] min-[500px]:basis-[40%] md:basis-1/3 lg:basis-1/4 xl:basis-1/5"
         >
           <div class="lg:p-1">
             <div class="flex aspect-square items-center justify-center">
               <NuxtLink
-                class="truncate rounded-sm"
+                class="w-full truncate rounded-sm"
                 :to="product.link"
               >
                 <ProductCard
