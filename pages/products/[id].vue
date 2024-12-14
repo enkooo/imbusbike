@@ -43,7 +43,7 @@ useSeoMeta({
 <template>
   <div class="min-h-screen bg-white">
     <main class="container mx-auto px-4 pb-24 pt-8">
-      <div class="grid gap-8 md:grid-cols-2">
+      <div class="grid gap-20 md:grid-cols-2 md:gap-8">
         <div class="space-y-4">
           <div class="relative aspect-square rounded-lg border">
             <Carousel class="relative w-full">
