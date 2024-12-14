@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { NewsItemResponse, NewsItem } from '~/types'
+import { CarouselNext, CarouselPrevious } from '@/components/ui/carousel'
 
 const route = useRoute()
 const articleId = route.params.id as string
@@ -59,36 +60,35 @@ const formattedDate = formatPolishDate(article.value?.date || '')
         </div>
       </div>
 
-      <div class="container relative mb-8 overflow-hidden rounded-lg px-14">
+      <div class="relative mb-8 rounded-lg">
         <Carousel class="relative w-full">
           <CarouselContent>
             <CarouselItem
               v-for="(image, index) in article?.images || []"
               :key="index"
             >
-              <div class="relative h-full w-full overflow-hidden rounded-lg">
+              <div class="relative h-full rounded-lg">
                 <div
-                  class="h-full min-h-[300px] w-full overflow-hidden rounded-lg md:min-h-[400px] lg:min-h-[500px]"
+                  class="flex h-full min-h-[300px] items-center justify-center overflow-hidden rounded-lg md:min-h-[400px] lg:min-h-[500px]"
                 >
                   <NuxtImg
                     :src="baseUrl + image?.url"
-                    sizes="365px sm:640px md:320px md:800px lg:1024px xl:1280px 2xl:1536px"
                     densities="x1"
                     quality="80"
                     alt="news image"
                     format="webp"
-                    class="absolute inset-0 h-full w-full object-cover"
+                    class="absolute inset-0 mx-auto max-h-[300px] overflow-hidden rounded-lg object-contain md:max-h-[400px] lg:max-h-[500px]"
                   />
                 </div>
               </div>
             </CarouselItem>
           </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
+          <CarouselPrevious class="left-[50%] top-full -translate-x-[40px] translate-y-[25px]" />
+          <CarouselNext class="right-[50%] top-full translate-x-[40px] translate-y-[25px]" />
         </Carousel>
       </div>
 
-      <div class="prose prose-gray mx-auto max-w-3xl">
+      <div class="prose prose-gray mx-auto mt-20 max-w-3xl">
         <DynamicContent :blocks="article?.text || []" />
       </div>
       <CarouselSection
