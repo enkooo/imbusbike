@@ -69,16 +69,19 @@ const formattedDate = formatPolishDate(article.value?.date || '')
             >
               <div class="relative h-full rounded-lg">
                 <div
-                  class="flex h-full min-h-[300px] items-center justify-center overflow-hidden rounded-lg md:min-h-[400px] lg:min-h-[500px]"
+                  class="flex h-full min-h-[300px] flex-col items-center justify-center overflow-hidden rounded-lg md:min-h-[400px] lg:min-h-[500px]"
                 >
                   <NuxtImg
                     :src="baseUrl + image?.url"
                     densities="x1"
                     quality="80"
-                    alt="news image"
+                    alt=""
                     format="webp"
-                    class="absolute inset-0 mx-auto max-h-[300px] overflow-hidden rounded-lg object-contain md:max-h-[400px] lg:max-h-[500px]"
+                    class="inset-0 mx-auto max-h-[300px] overflow-hidden rounded-lg object-contain md:max-h-[400px] lg:max-h-[500px]"
                   />
+                  <p class="prose prose-gray mx-auto mt-4 max-w-3xl">
+                    {{ article?.images?.[index].alternativeText }}
+                  </p>
                 </div>
               </div>
             </CarouselItem>
@@ -87,7 +90,6 @@ const formattedDate = formatPolishDate(article.value?.date || '')
           <CarouselNext class="right-[50%] top-full translate-x-[40px] translate-y-[25px]" />
         </Carousel>
       </div>
-
       <div class="prose prose-gray mx-auto mt-20 max-w-3xl">
         <DynamicContent :blocks="article?.text || []" />
       </div>

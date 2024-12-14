@@ -114,7 +114,7 @@ useSeoMeta({
         :title="$t('recommendedProducts.title')"
         :description="$t('recommendedProducts.description')"
         type="magick"
-        class="mb-32 mt-24"
+        class="mb-0 mt-24"
       />
     </main>
   </div>

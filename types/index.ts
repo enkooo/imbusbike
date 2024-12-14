@@ -23,6 +23,7 @@ export interface Filter {
 
 export interface Images {
   url: string
+  alternativeText?: string
 }
 
 export interface Attribute {
