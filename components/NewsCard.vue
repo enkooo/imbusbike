@@ -8,19 +8,18 @@ const { title, description, date, imageUrl } = defineProps<{
 
 const { formatPolishDate } = useDateFormatter()
 const formattedDate = formatPolishDate(date)
-
 </script>
 
 <template>
   <div
-    class="overflow-hidden rounded-sm border border-gray-200 sm:h-[192px] md:h-auto lg:h-[192px]"
+    class="overflow-hidden rounded-sm border border-gray-200 sm:h-[192px] md:h-full lg:h-[192px]"
   >
     <div class="flex h-full flex-col sm:flex-row md:flex-col lg:flex-row">
       <NuxtImg
         :src="imageUrl"
         alt="Zdjecie dla postu aktualnosci"
         format="webp"
-        class="max-h-40 w-full min-w-36 rounded-l-sm object-cover sm:max-h-48 sm:w-2/3 md:w-full lg:w-2/3"
+        class="h-40 w-full min-w-36 rounded-l-sm object-cover sm:h-auto sm:max-h-48 sm:w-2/3 md:h-40 md:w-full lg:h-auto lg:w-2/3"
       />
       <div class="flex w-full min-w-0 flex-col gap-y-2 p-6">
         <h3 class="relative truncate font-semibold">
