@@ -59,7 +59,7 @@ useSeoMeta({
                       densities="x1"
                       alt="product image"
                       format="webp"
-                      class="h-full w-full overflow-hidden rounded-lg object-cover"
+                      class="h-full w-full overflow-hidden rounded-lg object-contain"
                     />
                   </div>
                 </CarouselItem>
