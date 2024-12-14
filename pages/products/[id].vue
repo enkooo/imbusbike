@@ -64,8 +64,10 @@ useSeoMeta({
                   </div>
                 </CarouselItem>
               </CarouselContent>
-              <CarouselPrevious class="left-4" />
-              <CarouselNext class="right-4" />
+              <CarouselPrevious
+                class="left-[50%] top-full -translate-x-[40px] translate-y-[25px]"
+              />
+              <CarouselNext class="right-[50%] top-full translate-x-[40px] translate-y-[25px]" />
             </Carousel>
           </div>
         </div>
