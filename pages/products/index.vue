@@ -112,7 +112,6 @@ const loadMoreProducts = async () => {
 }
 
 await fetchFilters()
-await fetchProducts(route.query)
 
 const formSchema = toTypedSchema(
   z.object({
