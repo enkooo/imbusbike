@@ -15,7 +15,22 @@ defineProps<{
       class="mb-4"
       :class="block.type === 'heading' ? 'text-2xl font-bold' : ''"
     >
-      {{ block.children.map((child) => child.text).join('') }}
+      <template
+        v-for="(child, childIndex) in block.children"
+        :key="childIndex"
+      >
+        <a
+          v-if="child.type === 'link'"
+          :href="child.url"
+          target="_blank"
+          class="text-black underline"
+        >
+          {{ child.children.map((linkChild) => linkChild.text).join('') }}
+        </a>
+        <span v-else>
+          {{ child.text }}
+        </span>
+      </template>
     </component>
   </div>
 </template>

@@ -62,15 +62,21 @@ export type TextChild = {
   type: 'text'
 }
 
+export type LinkChild = {
+  url: string
+  type: 'link'
+  children: TextChild[]
+}
+
 export type HeadingBlock = {
   type: 'heading'
   level: number
-  children: TextChild[]
+  children: (TextChild | LinkChild)[]
 }
 
 export type ParagraphBlock = {
   type: 'paragraph'
-  children: TextChild[]
+  children: (TextChild | LinkChild)[]
 }
 
 export type Block = HeadingBlock | ParagraphBlock
