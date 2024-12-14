@@ -55,7 +55,7 @@ const fetchProducts = async (query: LocationQuery, append = false) => {
     data: ProductResponse[]
     meta: { pagination: { total: number } }
   }>(
-    `products?populate=*&pagination[limit]=${paginationLimit}&pagination[start]=${paginationStart}&filters[active][$eq]=true&${queryString}`,
+    `products?populate=*&pagination[limit]=${paginationLimit}&pagination[start]=${paginationStart}&filters[active][$eq]=true&filters[category][active][$eq]=true&${queryString}`,
   )
 
   if (productsData.value) {
@@ -136,6 +136,7 @@ const onSubmit = handleSubmit(async (formValues) => {
     filters: selectedFilters.join(','),
   }
 
+  currentPage.value = 0
   router.push({ query: newQuery })
 
   await fetchProducts(newQuery)
@@ -147,6 +148,7 @@ const handleSearch = async () => {
     search: searchQuery.value || null,
   }
 
+  currentPage.value = 0
   router.push({ query: newQuery })
 
   await fetchProducts(newQuery)
@@ -160,6 +162,7 @@ watch(
       sort: newSort || null,
     }
 
+    currentPage.value = 0
     router.push({ query: newQuery })
 
     await fetchProducts(newQuery)
@@ -271,30 +274,35 @@ watch(
           </div>
         </div>
         <div class="mb-20 mt-6 grid grid-cols-2 gap-2 sm:grid-cols-3 md:gap-6 xl:grid-cols-4">
-          <NuxtLinkLocale
-            v-for="product in products"
-            :key="product.id"
-            :to="product.link"
-          >
-            <ProductCard
-              :image-url="product.imageUrl"
-              :name="product.name"
-              :category="product.category"
-              :price="product.price"
-            />
-          </NuxtLinkLocale>
-
-          <div
-            v-if="products.length < totalItems"
-            class="col-start-1 -col-end-1 mt-5 flex justify-center"
-          >
-            <Button
-              size="lg"
-              @click="loadMoreProducts"
+          <template v-if="products.length">
+            <NuxtLinkLocale
+              v-for="product in products"
+              :key="product.id"
+              :to="product.link"
             >
-              {{ $t('products.loadMore') }}
-            </Button>
-          </div>
+              <ProductCard
+                :image-url="product.imageUrl"
+                :name="product.name"
+                :category="product.category"
+                :price="product.price"
+              />
+            </NuxtLinkLocale>
+
+            <div
+              v-if="products.length < totalItems"
+              class="col-start-1 -col-end-1 mt-5 flex justify-center"
+            >
+              <Button
+                size="lg"
+                @click="loadMoreProducts"
+              >
+                {{ $t('products.loadMore') }}
+              </Button>
+            </div>
+          </template>
+          <p v-else>
+            {{ $t('products.empty') }}
+          </p>
         </div>
       </div>
     </div>

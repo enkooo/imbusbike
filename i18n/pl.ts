@@ -90,7 +90,9 @@ export default {
     specifications: 'Specyfikacja',
     moveToPurchase: 'Przejdź do zakupu',
     loadMore: 'Zobacz więcej',
-    noLink: 'Produkt niedostępny online, aby go zakupić skontaktuj się z nami.',
+    noLink:
+      'Jesteś zainteresowany zakupem? Skontaktuj się z nami poprzez formularz w zakładce kontakt!',
+    empty: 'Brak produktów',
   },
   offer: {
     title: 'Oferta',
