@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { onClickOutside } from '@vueuse/core'
+
 const { t } = useI18n()
 
 const MENU_ITEMS = computed(() => [
@@ -19,6 +21,9 @@ function onToggleMenu() {
 function onLinkClick() {
   isOpen.value = false
 }
+
+const menuRef = ref(null)
+onClickOutside(menuRef, () => (isOpen.value = false))
 </script>
 
 <template>
@@ -43,6 +48,7 @@ function onLinkClick() {
         </span>
       </NuxtLinkLocale>
       <div
+        ref="menuRef"
         class="absolute left-[-100%] top-[101px] flex w-full items-center bg-transparent bg-white px-5 duration-500 md:static md:min-h-fit md:w-auto md:bg-transparent md:px-0"
         :class="{ 'left-[0%]': isOpen }"
       >
