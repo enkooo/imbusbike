@@ -22,19 +22,12 @@ const fetchNews = async (params: string = '') => {
   )
 
   if (data.value) {
-    const maxDescriptionLength = 100
-
     news.value = data.value.data.map((newsItem) => {
-      const truncatedDescription =
-        newsItem?.description?.length > maxDescriptionLength
-          ? newsItem?.description?.slice(0, maxDescriptionLength) + '...'
-          : (newsItem?.description ?? '')
-
       return {
         id: newsItem.id,
         documentId: newsItem.documentId,
         title: newsItem.title,
-        description: truncatedDescription,
+        description: newsItem.description,
         date: newsItem.publishedAt,
         link: `${t('menu.news.link')}/${newsItem.documentId}`,
         imageUrl: newsItem.cover?.url
@@ -91,7 +84,9 @@ await fetchNews()
       </Button>
     </div>
 
-    <div class="mb-20 mt-6 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
+    <div
+      class="mb-20 mt-6 grid grid-cols-1 gap-2 min-[500px]:grid-cols-2 min-[580px]:grid-cols-3 md:grid-cols-3 md:gap-6 min-[870px]:grid-cols-4 lg:grid-cols-3 xl:grid-cols-3"
+    >
       <template v-if="news.length">
         <NuxtLinkLocale
           v-for="newsItem in news"

@@ -7,23 +7,16 @@ const { t } = useI18n()
 const news = ref<NewsItem[]>([])
 
 const { data: newsData } = await useIFetch<{ data: NewsItemResponse[] }>(
-  `articles?populate=*&pagination[limit]=4&sort=publishedAt:desc`,
+  `articles?populate=*&pagination[limit]=3&sort=publishedAt:desc`,
 )
 
 if (newsData.value) {
-  const maxDescriptionLength = 100
-
   news.value = newsData.value.data.map((newsItem) => {
-    const truncatedDescription =
-      newsItem.description?.length > maxDescriptionLength
-        ? newsItem?.description?.slice(0, maxDescriptionLength) + '...'
-        : (newsItem?.description ?? '')
-
     return {
       id: newsItem.id,
       documentId: newsItem.documentId,
       title: newsItem.title,
-      description: truncatedDescription,
+      description: newsItem.description,
       date: newsItem.publishedAt,
       link: `${t('menu.news.link')}/${newsItem.documentId}`,
       imageUrl: newsItem.cover?.url ? `${baseUrl}${newsItem.cover.url}` : '/img/news/article1.jpg',
@@ -43,7 +36,9 @@ if (newsData.value) {
     </section>
     <div class="mt-10">
       <div class="flex gap-x-6">
-        <div class="grid w-full grid-cols-1 gap-6 md:grid-cols-2">
+        <div
+          class="grid w-full grid-cols-1 gap-6 min-[500px]:grid-cols-2 min-[580px]:grid-cols-3 min-[700px]:grid-cols-3 md:grid-cols-3 min-[860px]:grid-cols-4 lg:grid-cols-3"
+        >
           <NuxtLinkLocale
             v-for="newsItem in news"
             :key="newsItem.id"
@@ -56,33 +51,35 @@ if (newsData.value) {
               :date="newsItem.date"
             />
           </NuxtLinkLocale>
-        </div>
-        <div class="hidden flex-col justify-between overflow-hidden rounded-sm bg-primary xl:flex">
-          <NuxtImg
-            src="/img/news/news-bike.jpg"
-            alt="News bike"
-            width="262"
-            height="206"
-            format="webp"
-          />
-
-          <NuxtLinkLocale
-            :to="$t('news.link.url')"
-            class="flex flex-col justify-end px-7 pb-14 text-center"
+          <div
+            class="hidden flex-col justify-between overflow-hidden rounded-sm bg-primary min-[500px]:flex min-[580px]:hidden min-[700px]:hidden min-[860px]:flex lg:hidden"
           >
-            <span class="text-4xl font-bold text-primary-foreground">
-              {{ $t('news.link.label1') }}
-            </span>
-            <span class="text-sm text-muted-foreground">
-              {{ $t('news.link.label2') }}
-            </span>
-          </NuxtLinkLocale>
+            <NuxtImg
+              src="/img/news/news-bike.jpg"
+              alt="News bike"
+              width="262"
+              height="206"
+              format="webp"
+            />
+
+            <NuxtLinkLocale
+              :to="$t('news.link.url')"
+              class="flex flex-col justify-end px-7 pb-14 text-center"
+            >
+              <span class="text-4xl font-bold text-primary-foreground">
+                {{ $t('news.link.label1') }}
+              </span>
+              <span class="text-sm text-muted-foreground">
+                {{ $t('news.link.label2') }}
+              </span>
+            </NuxtLinkLocale>
+          </div>
         </div>
       </div>
-      <div class="mt-5 text-right xl:hidden">
+      <div class="mt-5 text-right">
         <NuxtLinkLocale
           :to="$t('news.link.url')"
-          class="text-muted-foreground hover:underline"
+          class="flex-col justify-between overflow-hidden rounded-sm text-muted-foreground underline hover:underline min-[500px]:hidden min-[580px]:block min-[700px]:block min-[860px]:hidden lg:block"
         >
           {{ $t('news.link.label3') }}
         </NuxtLinkLocale>
