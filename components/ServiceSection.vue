@@ -237,6 +237,7 @@ const serviceDateValue = computed({
                   v-model="serviceDateValue"
                   :calendar-label="$t('serviceForm.fields.serviceDate')"
                   initial-focus
+                  locale="pl"
                   :min-value="today(getLocalTimeZone())"
                   @update:model-value="
                     (v) => {
