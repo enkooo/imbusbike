@@ -18,6 +18,8 @@ const formattedDate = formatPolishDate(date)
       :src="imageUrl"
       alt="Zdjecie dla postu aktualnosci"
       format="webp"
+      sizes="360px"
+      densities="x1"
       class="h-40 w-full min-w-36 rounded-l-sm object-cover"
     />
     <div class="flex w-full min-w-0 flex-col gap-y-2 p-6">
