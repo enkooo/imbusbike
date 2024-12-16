@@ -80,7 +80,7 @@ const formattedDate = formatPolishDate(article.value?.date || '')
                     class="inset-0 mx-auto max-h-[300px] overflow-hidden rounded-lg object-contain md:max-h-[400px] lg:max-h-[500px]"
                   />
                   <p class="prose prose-gray mx-auto mt-4 max-w-3xl">
-                    {{ article?.images?.[index]?.alternativeText }}
+                    {{ article?.images?.[index]?.caption }}
                   </p>
                 </div>
               </div>

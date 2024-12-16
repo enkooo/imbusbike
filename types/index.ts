@@ -24,6 +24,7 @@ export interface Filter {
 export interface Images {
   url: string
   alternativeText?: string
+  caption?: string
 }
 
 export interface Attribute {
