@@ -35,7 +35,6 @@ defineProps<{
               </NuxtLink>
             </div>
           </div>
-          <p>Test adas </p>
         </CarouselItem>
       </CarouselContent>
       <CarouselPrevious class="hidden md:inline-flex" />
