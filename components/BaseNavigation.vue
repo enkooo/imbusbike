@@ -23,12 +23,13 @@ function onLinkClick() {
 }
 
 const menuRef = ref(null)
-onClickOutside(menuRef, () => (isOpen.value = false))
+const ignoreElRef = ref()
+onClickOutside(menuRef, () => (isOpen.value = false), { ignore: [ignoreElRef] })
 </script>
 
 <template>
   <header class="sticky top-0 z-50 border-b bg-white md:border-gray-200">
-    <nav class="container flex items-center justify-between py-5 text-sm font-semibold">
+    <nav class="container flex items-center justify-between py-2 text-sm font-semibold md:py-5">
       <NuxtLinkLocale
         to="/"
         class="flex items-center gap-2"
@@ -49,7 +50,7 @@ onClickOutside(menuRef, () => (isOpen.value = false))
       </NuxtLinkLocale>
       <div
         ref="menuRef"
-        class="absolute left-[-100%] top-[101px] flex w-full items-center bg-transparent bg-white px-5 duration-500 md:static md:min-h-fit md:w-auto md:bg-transparent md:px-0"
+        class="absolute left-[-100%] top-[76px] flex w-full items-center bg-transparent bg-white px-5 duration-500 md:static md:top-[101px] md:min-h-fit md:w-auto md:bg-transparent md:px-0"
         :class="{ 'left-[0%]': isOpen }"
       >
         <ul
@@ -84,12 +85,15 @@ onClickOutside(menuRef, () => (isOpen.value = false))
         </ul>
       </div>
       <div class="flex items-center md:hidden">
-        <Button variant="ghost">
+        <Button
+          ref="ignoreElRef"
+          variant="ghost"
+          @click="onToggleMenu"
+        >
           <Icon
             class="cursor-pointer md:hidden"
             size="30"
             :name="!isOpen ? 'mdi:menu' : 'mdi:close'"
-            @click="onToggleMenu"
           />
         </Button>
       </div>

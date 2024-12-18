@@ -10,7 +10,7 @@ defineProps<{
 
 <template>
   <div class="h-full truncate rounded-sm border border-gray-100 shadow-sm">
-    <div class="flex h-full flex-col items-center p-7">
+    <div class="flex h-full flex-col items-center p-4 md:p-7">
       <div class="mb-4 h-full max-h-[88px] overflow-hidden">
         <NuxtImg
           :src="imageUrl"
@@ -18,7 +18,7 @@ defineProps<{
           densities="x1"
           sizes="154px"
           format="webp"
-          class="mb-4 h-[88px] w-full object-contain"
+          class="mb-4 h-[88px] w-full rounded-sm object-contain"
         />
       </div>
       <span
@@ -28,18 +28,8 @@ defineProps<{
       </span>
 
       <div class="flex w-full truncate">
-        <h3 class="relative mb-2 w-full self-start text-wrap text-sm">
-          <TooltipProvider>
-            <Tooltip>
-              <TooltipTrigger as-child>
-                <p class="absolute w-full opacity-0">&nbsp;</p>
-                {{ name }}
-              </TooltipTrigger>
-              <TooltipContent>
-                <p>{{ name }}</p>
-              </TooltipContent>
-            </Tooltip>
-          </TooltipProvider>
+        <h3 class="relative mb-2 w-full self-start whitespace-break-spaces text-sm">
+          {{ name }}
         </h3>
       </div>
       <div class="mt-auto flex w-full flex-col justify-end">
