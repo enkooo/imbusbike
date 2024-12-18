@@ -19,6 +19,7 @@ const formattedDate = formatPolishDate(date)
       alt="Zdjecie dla postu aktualnosci"
       format="webp"
       sizes="360px"
+      placeholder
       densities="x1"
       class="h-40 w-full min-w-36 rounded-l-sm object-cover"
     />
