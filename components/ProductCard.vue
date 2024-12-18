@@ -9,7 +9,7 @@ defineProps<{
 </script>
 
 <template>
-  <div class="truncate rounded-sm border border-gray-100 shadow-sm">
+  <div class="h-full truncate rounded-sm border border-gray-100 shadow-sm">
     <div class="flex h-full flex-col items-center p-7">
       <div class="mb-4 h-full max-h-[88px] overflow-hidden">
         <NuxtImg
@@ -28,7 +28,7 @@ defineProps<{
       </span>
 
       <div class="flex w-full truncate">
-        <h3 class="relative mb-2 self-start truncate text-base md:text-sm lg:text-base">
+        <h3 class="relative mb-2 w-full self-start text-wrap text-sm">
           <TooltipProvider>
             <Tooltip>
               <TooltipTrigger as-child>
