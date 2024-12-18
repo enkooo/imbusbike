@@ -112,9 +112,14 @@ const resetZoom = () => {
                       :style="imageStyle"
                       :src="baseUrl + image?.url"
                       sizes="320px sm:640px md:320px lg:480px xl:640px"
+                      width="640"
+                      height="640"
+                      fit="contain"
+                      background="white"
+                      class="rounded-sm"
+                      preload
                       densities="x1"
                       format="webp"
-                      class="overflow-hidden rounded-sm object-contain"
                     />
                   </div>
                 </CarouselItem>

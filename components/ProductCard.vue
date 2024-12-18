@@ -16,9 +16,13 @@ defineProps<{
           :src="imageUrl"
           :alt="name"
           densities="x1"
-          sizes="154px"
+          :placeholder="[154, 88, 75, 5]"
+          quality="30"
+          width="154"
+          height="88"
+          fit="contain"
+          background="white"
           format="webp"
-          class="mb-4 h-[88px] w-full rounded-sm object-contain"
         />
       </div>
       <span

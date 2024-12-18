@@ -60,24 +60,25 @@ const formattedDate = formatPolishDate(article.value?.date || '')
         </div>
       </div>
 
-      <div class="relative mb-8 rounded-lg">
+      <div class="relative mb-8 rounded-sm">
         <Carousel class="relative w-full">
           <CarouselContent>
             <CarouselItem
               v-for="(image, index) in article?.images || []"
               :key="index"
             >
-              <div class="relative h-full rounded-lg">
+              <div class="relative h-full rounded-sm">
                 <div
-                  class="flex h-full min-h-[300px] flex-col items-center justify-center overflow-hidden rounded-lg md:min-h-[400px] lg:min-h-[500px]"
+                  class="flex h-full flex-col items-center justify-center overflow-hidden rounded-sm md:min-h-[500px]"
                 >
                   <NuxtImg
                     :src="baseUrl + image?.url"
                     densities="x1"
-                    quality="80"
                     alt=""
+                    height="500"
                     format="webp"
-                    class="inset-0 mx-auto max-h-[300px] overflow-hidden rounded-lg object-contain md:max-h-[400px] lg:max-h-[500px]"
+                    quality="30"
+                    class="rounded-sm"
                   />
                   <p class="prose prose-gray mx-auto mt-4 max-w-3xl">
                     {{ article?.images?.[index]?.caption }}
