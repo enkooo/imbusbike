@@ -38,6 +38,52 @@ useSeoMeta({
   title,
   description,
 })
+
+const isZoomed = ref(false)
+const imageStyle = ref({ transformOrigin: 'center center', transform: 'scale(1)' })
+
+const toggleZoom = (event: MouseEvent) => {
+  isZoomed.value = !isZoomed.value
+
+  if (isZoomed.value) {
+    const img = event.currentTarget as HTMLElement
+    const rect = img.getBoundingClientRect()
+    const offsetX = event.clientX - rect.left
+    const offsetY = event.clientY - rect.top
+
+    const originX = (offsetX / img.offsetWidth) * 100
+    const originY = (offsetY / img.offsetHeight) * 100
+
+    imageStyle.value = {
+      transformOrigin: `${originX}% ${originY}%`,
+      transform: 'scale(2)',
+    }
+  } else {
+    imageStyle.value = { transformOrigin: 'center center', transform: 'scale(1)' }
+  }
+}
+
+const handleZoom = (event: MouseEvent) => {
+  if (!isZoomed.value) return
+
+  const img = event.currentTarget as HTMLElement
+  const rect = img.getBoundingClientRect()
+  const offsetX = event.clientX - rect.left
+  const offsetY = event.clientY - rect.top
+
+  const originX = (offsetX / img.offsetWidth) * 100
+  const originY = (offsetY / img.offsetHeight) * 100
+
+  imageStyle.value = {
+    transformOrigin: `${originX}% ${originY}%`,
+    transform: 'scale(2)',
+  }
+}
+
+const resetZoom = () => {
+  if (isZoomed.value) return
+  imageStyle.value = { transformOrigin: 'center center', transform: 'scale(1)' }
+}
 </script>
 
 <template>
@@ -45,29 +91,36 @@ useSeoMeta({
     <main class="container mx-auto px-4 pb-24 pt-8">
       <div class="grid gap-20 md:grid-cols-2 md:gap-8">
         <div class="space-y-4">
-          <div class="relative aspect-square rounded-lg border">
+          <div class="relative aspect-square rounded-sm">
             <Carousel class="relative w-full">
               <CarouselContent>
                 <CarouselItem
                   v-for="(image, index) in product?.images"
                   :key="index"
                 >
-                  <div class="flex aspect-square items-center justify-center">
+                  <div
+                    class="flex h-full items-center justify-center overflow-hidden rounded-sm"
+                    :class="{ 'cursor-zoom-in': !isZoomed }"
+                    @click="toggleZoom"
+                    @mousemove="handleZoom"
+                    @mouseleave="resetZoom"
+                  >
                     <NuxtImg
+                      ref="imageElement"
+                      alt=""
+                      :class="{ 'cursor-zoom-out': isZoomed }"
+                      :style="imageStyle"
                       :src="baseUrl + image?.url"
                       sizes="320px sm:640px md:320px lg:480px xl:640px"
                       densities="x1"
-                      alt="product image"
                       format="webp"
-                      class="h-full w-full overflow-hidden rounded-lg object-contain"
+                      class="overflow-hidden rounded-sm object-contain"
                     />
                   </div>
                 </CarouselItem>
               </CarouselContent>
-              <CarouselPrevious
-                class="left-[50%] top-full -translate-x-[40px] translate-y-[25px]"
-              />
-              <CarouselNext class="right-[50%] top-full translate-x-[40px] translate-y-[25px]" />
+              <CarouselPrevious class="left-4" />
+              <CarouselNext class="right-4" />
             </Carousel>
           </div>
         </div>
