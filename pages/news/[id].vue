@@ -61,7 +61,7 @@ const formattedDate = formatPolishDate(article.value?.date || '')
       </div>
 
       <div class="relative mb-8 rounded-sm">
-        <Carousel class="relative w-full">
+        <Carousel class="relative mx-auto w-full max-w-[889px]">
           <CarouselContent>
             <CarouselItem
               v-for="(image, index) in article?.images || []"
@@ -87,8 +87,8 @@ const formattedDate = formatPolishDate(article.value?.date || '')
               </div>
             </CarouselItem>
           </CarouselContent>
-          <CarouselPrevious class="left-[50%] top-full -translate-x-[40px] translate-y-[25px]" />
-          <CarouselNext class="right-[50%] top-full translate-x-[40px] translate-y-[25px]" />
+          <CarouselPrevious class="left-4" />
+          <CarouselNext class="right-4" />
         </Carousel>
       </div>
       <div class="prose prose-gray mx-auto mt-20 max-w-3xl">
