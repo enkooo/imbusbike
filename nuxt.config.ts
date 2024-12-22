@@ -30,6 +30,7 @@ export default defineNuxtConfig({
       },
     ],
     '@nuxtjs/seo',
+    '@nuxtjs/robots',
   ],
 
   image: {
