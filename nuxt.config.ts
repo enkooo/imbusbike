@@ -29,7 +29,7 @@ export default defineNuxtConfig({
         },
       },
     ],
-    '@nuxtjs/seo',
+//    '@nuxtjs/seo',
   ],
 
   image: {
