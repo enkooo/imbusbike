@@ -11,15 +11,15 @@ defineProps<{
 <template>
   <div class="h-full truncate rounded-sm border border-gray-100 shadow-sm">
     <div class="flex h-full flex-col items-center p-4 md:p-7">
-      <div class="mb-4 h-full max-h-[88px] overflow-hidden">
+      <div class="mb-4 h-full max-h-[154px] overflow-hidden">
         <NuxtImg
           :src="imageUrl"
           :alt="name"
           densities="x1"
-          :placeholder="[154, 88, 75, 5]"
+          :placeholder="[154, 154, 75, 5]"
           quality="30"
           width="154"
-          height="88"
+          height="154"
           fit="contain"
           background="white"
           format="webp"
