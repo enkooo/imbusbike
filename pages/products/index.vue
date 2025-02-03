@@ -112,6 +112,7 @@ const loadMoreProducts = async () => {
 }
 
 await fetchFilters()
+await fetchProducts(route.query)
 
 const formSchema = toTypedSchema(
   z.object({
@@ -153,21 +154,17 @@ const handleSearch = async () => {
   await fetchProducts(newQuery)
 }
 
-watch(
-  selectedSort,
-  async (newSort) => {
-    const newQuery = {
-      ...route.query,
-      sort: newSort || null,
-    }
+watch(selectedSort, async (newSort) => {
+  const newQuery = {
+    ...route.query,
+    sort: newSort || null,
+  }
 
-    currentPage.value = 0
-    router.push({ query: newQuery })
+  currentPage.value = 0
+  router.push({ query: newQuery })
 
-    await fetchProducts(newQuery)
-  },
-  { immediate: true },
-)
+  await fetchProducts(newQuery)
+})
 
 const handleFilterChange = async (selectedFilters: number[]) => {
   const newQuery = {
