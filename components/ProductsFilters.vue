@@ -12,9 +12,17 @@ const { filters } = defineProps<{
 const { setFieldValue } = useFormContext()
 const route = useRoute()
 
+const emit = defineEmits(['filter-change'])
+
 onMounted(() => {
   const filters = route.query.filters
-  const initialFilters = typeof filters === 'string' ? filters.split(',').map(Number) : []
+  const initialFilters =
+    typeof filters === 'string'
+      ? filters
+          .split(',')
+          .map((id) => parseInt(id, 10))
+          .filter((id) => !isNaN(id))
+      : []
   setFieldValue('selectedFilters', initialFilters)
 })
 </script>
@@ -45,7 +53,17 @@ onMounted(() => {
                 <Checkbox
                   :id="`form-item-checkbox-id-${child.id}`"
                   :checked="value.includes(child.id)"
-                  @update:checked="handleChange"
+                  @update:checked="
+                    (checked) => {
+                      handleChange(checked)
+                      emit(
+                        'filter-change',
+                        value.includes(child.id)
+                          ? value.filter((id: number) => id !== child.id)
+                          : [...value, child.id],
+                      )
+                    }
+                  "
                 />
               </FormControl>
               {{ child.name }}

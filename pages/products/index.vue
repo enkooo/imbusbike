@@ -168,6 +168,18 @@ watch(
   },
   { immediate: true },
 )
+
+const handleFilterChange = async (selectedFilters: number[]) => {
+  const newQuery = {
+    ...route.query,
+    filters: selectedFilters.length ? selectedFilters.join(',') : null,
+  }
+
+  currentPage.value = 0
+  router.push({ query: newQuery })
+
+  await fetchProducts(newQuery)
+}
 </script>
 
 <template>
@@ -182,15 +194,10 @@ watch(
         class="my-20 mr-6 mt-6 hidden min-w-[240px] rounded-sm border border-gray-100 p-5 shadow-sm lg:block"
       >
         <form @submit="onSubmit">
-          <ProductsFilters :filters="filters" />
-          <div class="mt-6 flex justify-start">
-            <Button
-              type="submit"
-              class="w-full"
-            >
-              {{ $t('products.filters.label') }}
-            </Button>
-          </div>
+          <ProductsFilters
+            :filters="filters"
+            @filter-change="handleFilterChange"
+          />
         </form>
       </div>
       <div class="w-full">
@@ -242,7 +249,7 @@ watch(
                 </Button>
               </DrawerTrigger>
               <DrawerContent>
-                <form @submit="onSubmit">
+                <form @submit.prevent>
                   <div class="mx-auto w-full max-w-sm">
                     <DrawerHeader class="sr-only">
                       <DrawerTitle>{{ $t('products.filters.filters') }}</DrawerTitle>
@@ -255,13 +262,11 @@ watch(
                         <ProductsFilters
                           :is-mobile="true"
                           :filters="filters"
+                          @filter-change="handleFilterChange"
                         />
                       </ScrollArea>
                     </div>
                     <DrawerFooter>
-                      <DrawerClose as-child>
-                        <Button type="submit"> {{ $t('products.filters.label') }} </Button>
-                      </DrawerClose>
                       <DrawerClose as-child>
                         <Button variant="outline"> {{ $t('products.filters.cancel') }} </Button>
                       </DrawerClose>
