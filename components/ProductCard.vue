@@ -10,7 +10,7 @@ defineProps<{
 
 <template>
   <div class="h-full truncate rounded-sm border border-gray-100 shadow-sm">
-    <div class="flex h-full flex-col items-center p-4 md:p-7">
+    <div class="flex h-full flex-col items-center p-4 md:p-6">
       <div class="mb-4 h-full max-h-[154px] overflow-hidden">
         <NuxtImg
           :src="imageUrl"
