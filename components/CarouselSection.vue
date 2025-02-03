@@ -39,7 +39,10 @@ await fetchProducts()
 </script>
 
 <template>
-  <div class="container">
+  <div
+    v-if="products.length > 3"
+    class="container"
+  >
     <section class="text-center">
       <h2 class="text-3xl font-bold">{{ title }}</h2>
       <p class="mx-auto mt-7 max-w-5xl text-muted-foreground">{{ description }}</p>
