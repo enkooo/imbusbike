@@ -5,17 +5,18 @@ const config = useRuntimeConfig()
 const baseUrl = config.public.baseUrl
 const { t } = useI18n()
 
-const { title, description, type } = defineProps<{
+const { title, description, type, productId } = defineProps<{
   title: string
   description: string
   type: 'bestseller' | 'magick'
+  productId?: string
 }>()
 
 const products = ref<Product[]>([])
 
 const fetchProducts = async () => {
   const { data: productsData } = await useIFetch<{ data: ProductResponse[] }>(
-    `products?populate=*&filters[active][$eq]=true&filters[${type}][$eq]=true`,
+    `products?populate=*&filters[active][$eq]=true&filters[${type}][$eq]=true${productId ? `&filters[documentId][$ne]=${productId}` : ''}`,
   )
 
   if (productsData.value) {

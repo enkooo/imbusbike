@@ -171,6 +171,7 @@ const resetZoom = () => {
       <CarouselSection
         :title="$t('recommendedProducts.title')"
         :description="$t('recommendedProducts.description')"
+        :product-id="productId"
         type="magick"
         class="mb-0 mt-24"
       />
