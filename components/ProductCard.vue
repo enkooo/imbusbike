@@ -17,7 +17,6 @@ defineProps<{
           :alt="name"
           densities="x1"
           :placeholder="[154, 154, 75, 5]"
-          quality="30"
           width="154"
           height="154"
           fit="contain"
