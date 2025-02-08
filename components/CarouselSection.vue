@@ -16,7 +16,7 @@ const products = ref<Product[]>([])
 
 const fetchProducts = async () => {
   const { data: productsData } = await useIFetch<{ data: ProductResponse[] }>(
-    `products?populate=*&filters[active][$eq]=true&filters[${type}][$eq]=true${productId ? `&filters[documentId][$ne]=${productId}` : ''}`,
+    `products?populate=*&filters[active][$eq]=true&sort[0]=createdAt:desc&filters[${type}][$eq]=true${productId ? `&filters[documentId][$ne]=${productId}` : ''}`,
   )
 
   if (productsData.value) {

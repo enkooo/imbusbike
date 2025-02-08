@@ -39,9 +39,8 @@ const fetchProducts = async (query: LocationQuery, append = false) => {
     queryString += filters.join('&')
   }
 
-  if (query.sort && query.sort !== 'default') {
-    queryString += (queryString ? '&' : '') + `sort[0]=${query.sort}`
-  }
+
+  queryString += (queryString ? '&' : '') + `sort[0]=${query.sort}`
 
   if (query.search && typeof query.search === 'string') {
     queryString +=
@@ -230,7 +229,7 @@ const handleFilterChange = async (selectedFilters: number[]) => {
               </SelectTrigger>
               <SelectContent>
                 <SelectGroup>
-                  <SelectItem value="default"> {{ $t('products.filters.default') }} </SelectItem>
+                  <SelectItem value="createdAt:desc"> {{ $t('products.filters.default') }} </SelectItem>
                   <SelectItem value="price:asc">{{ $t('products.filters.priceAsc') }}</SelectItem>
                   <SelectItem value="price:desc">{{ $t('products.filters.priceDesc') }}</SelectItem>
                 </SelectGroup>

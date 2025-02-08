@@ -163,7 +163,7 @@ const resetZoom = () => {
             <Button class="mt-10 w-full py-6 text-lg">{{ $t('products.moveToPurchase') }}</Button>
           </a>
           <p v-else>
-            {{ $t('products.noLink') }}
+            {{ $t("products.noLink") }} <a href="/kontakt" class="underline"> {{ $t("products.noLinkHref") }}</a>!
           </p>
         </div>
       </div>

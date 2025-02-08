@@ -91,7 +91,8 @@ export default {
     moveToPurchase: 'Przejdź do zakupu',
     loadMore: 'Zobacz więcej',
     noLink:
-      'Jesteś zainteresowany zakupem? Skontaktuj się z nami poprzez formularz w zakładce kontakt!',
+      'Jesteś zainteresowany zakupem? Skontaktuj się z nami poprzez formularz w zakładce',
+    noLinkHref: " kontakt",
     empty: 'Brak produktów',
   },
   offer: {
