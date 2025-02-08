@@ -39,8 +39,9 @@ const fetchProducts = async (query: LocationQuery, append = false) => {
     queryString += filters.join('&')
   }
 
-
-  queryString += (queryString ? '&' : '') + `sort[0]=${query.sort}`
+  if (query.sort) {
+    queryString += (queryString ? '&' : '') + `sort[0]=${query.sort}`
+  }
 
   if (query.search && typeof query.search === 'string') {
     queryString +=
