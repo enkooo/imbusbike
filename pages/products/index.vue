@@ -22,7 +22,7 @@ const route = useRoute()
 
 const products = ref<Product[]>([])
 const filters = ref<Filter[]>([])
-const selectedSort = ref<string>(typeof route.query.sort === 'string' ? route.query.sort : '')
+const selectedSort = ref<string>(typeof route.query.sort === 'string' ? route.query.sort : 'createdAt:desc')
 const searchQuery = ref<string>(typeof route.query.search === 'string' ? route.query.search : '')
 
 const currentPage = ref(0)
@@ -41,6 +41,8 @@ const fetchProducts = async (query: LocationQuery, append = false) => {
 
   if (query.sort) {
     queryString += (queryString ? '&' : '') + `sort[0]=${query.sort}`
+  }  else {
+    queryString += (queryString ? '&' : '') + `sort[0]=createdAt:desc`
   }
 
   if (query.search && typeof query.search === 'string') {
