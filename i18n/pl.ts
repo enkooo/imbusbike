@@ -320,7 +320,7 @@ export default {
     allRightReserved: 'Wszelkie prawa zastrzeżone.',
     companyDetails: {
       name: 'IMBUSBIKE Pracownia - Serwis Rowerów',
-      address: 'ul. Gen. Grota-Roweckiego 26 A',
+      address: 'ul. Polna 6B',
       postCode: '97-200 Tomaszów Mazowiecki,',
       phone: {
         label: 'tel. 695 789 537',

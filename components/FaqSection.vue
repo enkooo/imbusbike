@@ -13,7 +13,7 @@ const faqSections = [
       {
         id: 1,
         question: 'Gdzie znajduje się serwis?',
-        answer: 'Na ul. Gen. Grota-Roweckiego 26 w Tomaszowie Mazowieckim',
+        answer: 'Na ul. Polnej 6B w Tomaszowie Mazowieckim',
       },
       {
         id: 2,
